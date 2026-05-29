@@ -26,7 +26,7 @@ export const handler = async (event) => {
 
     await resend.emails.send({
       from: 'Contacto Web <onboarding@resend.dev>',
-      to: 'contact@palenkke.org',
+      to: 'palenkke.mkt@gmail.com',
       subject: `Nuevo contacto: ${name} — ${interest || 'General'}`,
       html,
       reply_to: email,
