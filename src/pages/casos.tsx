@@ -124,7 +124,7 @@ const projects = [
     subtitle: 'De la idea al mercado global',
     desc: 'Acompañamos productos desde la validación hasta su lanzamiento en mercados nacionales e internacionales, con metodología probada y red de distribución activa.',
     tag: 'Activo',
-    imgSlot: '/airo-assets/images/pages/home/artisan-craft',
+    imgSlot: '/assets/incubacionproductospremium.png',
   },
   {
     id: 'expansion',
@@ -134,7 +134,7 @@ const projects = [
     subtitle: 'Marcas mexicanas en el mundo',
     desc: 'Llevamos marcas a mercados estratégicos: EE.UU., Sudamérica, Europa y Asia. Gestión regulatoria, distribución y posicionamiento local.',
     tag: 'Activo',
-    imgSlot: '/airo-assets/images/pages/nosotros/vision',
+    imgSlot: '/assets/expansioncomercialinternacional.png',
   },
   {
     id: 'branding',
@@ -144,7 +144,7 @@ const projects = [
     subtitle: 'Identidad y posicionamiento',
     desc: 'Construimos marcas con identidad sólida, diferenciación estratégica y presencia premium. Desde el naming hasta la activación comercial.',
     tag: 'Activo',
-    imgSlot: '/airo-assets/images/pages/home/branding-service',
+    imgSlot: '/assets/desarrollodemarcaspremium.png',
   },
   {
     id: 'alianzas',
@@ -154,7 +154,7 @@ const projects = [
     subtitle: 'Sinergias de alto impacto',
     desc: 'Conectamos productores, inversionistas y distribuidores para crear ecosistemas de negocio sostenibles con proyección internacional.',
     tag: 'En Desarrollo',
-    imgSlot: '/airo-assets/images/pages/nosotros/historia',
+    imgSlot: '/assets/alianzasestrategicas.png',
   },
 ];
 

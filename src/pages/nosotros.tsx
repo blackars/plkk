@@ -156,7 +156,7 @@ export default function NosotrosPage() {
             <InViewSingle variant={fadeLeft}>
               <div className="relative">
                 <div className="overflow-hidden rounded-sm shadow-[0_24px_80px_rgba(27,58,107,0.13)] group">
-                  <motion.img src="/airo-assets/images/pages/nosotros/historia" alt={t('nosotros.historia_heading')} whileHover={{ scale: 1.04 }} transition={{ duration: 0.6, ease: 'easeOut' as const }} className="w-full h-[480px] object-cover" />
+                  <motion.img src="/assets/nuestrahistoria.jpeg" alt={t('nosotros.historia_heading')} whileHover={{ scale: 1.04 }} transition={{ duration: 0.6, ease: 'easeOut' as const }} className="w-full h-[480px] object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2E]/30 via-transparent to-transparent pointer-events-none" />
                 </div>
                 <motion.div initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5, duration: 0.5 }} className="absolute -bottom-6 -right-6 bg-[#1B3A6B] text-white p-6 rounded-sm shadow-xl">
