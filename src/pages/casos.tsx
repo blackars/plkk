@@ -79,6 +79,7 @@ const MARKET_COLORS: Record<string, string> = {
 };
 
 const COMPANY_LOGO_IMAGES: Record<string, string> = {
+  'MEZCAL ELIXIR DEL ALMA': '/assets/images/logos/elixir-del-alma.png',
   'ELIXIR DEL ALMA': '/assets/images/logos/elixir-del-alma.png',
   'SAN ROJO': '/assets/images/logos/san-rojo.png',
   'KANAN': '/assets/images/logos/kanan.png',
