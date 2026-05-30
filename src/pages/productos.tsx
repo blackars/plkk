@@ -245,11 +245,11 @@ export default function ProductosPage() {
         <script type="application/ld+json">{JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Product',
-            name: 'Palenkke Mezcal',
+            name: 'Mezcal Elixír del Alma',
             description: t('productos.meta_desc'),
             brand: {
               '@type': 'Brand',
-              name: 'Palenkke Mezcal'
+              name: 'Mezcal Elixír del Alma'
             },
             manufacturer: {
               '@type': 'Organization',
@@ -716,7 +716,7 @@ export default function ProductosPage() {
               <div className="h-0.5 w-12 bg-[#C9A84C]" />
             </motion.div>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,52px)] font-bold text-white leading-tight mb-5 max-w-2xl mx-auto">
-              ¿Interesado en distribuir Palenkke Mezcal?
+              ¿Interesado en distribuir Mezcal Elixír del Alma?
             </motion.h2>
             <motion.p variants={fadeUp} className="text-white/55 text-lg mb-10 max-w-lg mx-auto">
               Buscamos distribuidores y socios estratégicos en mercados internacionales. Contáctanos para conocer las oportunidades disponibles.
