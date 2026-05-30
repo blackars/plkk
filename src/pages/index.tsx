@@ -261,7 +261,7 @@ export default function HomePage() {
 
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
               <div className="h-px w-8 bg-[#C9A84C] shrink-0" />
-              <span className="text-white/55 text-lg md:text-xl leading-relaxed">
+              <span className="text-[#C9A84C] text-lg font-large semibold md:text-xl leading-relaxed">
                 {t('hero.slogan')}
               </span>
             </motion.div>
@@ -282,8 +282,8 @@ export default function HomePage() {
             </motion.h1>
 
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4 min-w-0 overflow-x-auto">
-              <div className="h-px w-8 bg-[#C9A84C] shrink-0" />
-              <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase whitespace-nowrap">
+              <div className="h-px w-8 bg-[#FFFFFF] shrink-0" />
+              <span className="text-[#FFFFFF] text-xs font-semibold tracking-[0.3em] uppercase whitespace-nowrap">
                 {t('hero.geo')}
               </span>
             </motion.div>
