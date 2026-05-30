@@ -20,9 +20,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-5">
-              <div className="w-9 h-9 bg-[#1B3A6B] rounded-sm flex items-center justify-center">
-                <span className="text-[#C9A84C] font-heading font-bold text-sm">GP</span>
-              </div>
+              <img
+                src="/assets/images/logos/palenkke-logo.png"
+                alt="Grupo Palenkke"
+                className="h-9 w-9 object-contain shrink-0"
+              />
               <span className="text-white font-heading font-bold text-sm tracking-wide">Grupo Palenkke</span>
             </Link>
             <p className="text-white/40 text-sm leading-relaxed mb-5">{t('footer.tagline')}</p>
