@@ -580,6 +580,8 @@ export default function ProductosPage() {
                 muted
                 loop
                 playsInline
+                preload="auto"
+                poster="/assets/mezcal-process-poster.jpg"
                 className="w-full h-[420px] object-cover">
                 
                 <source src="/assets/mezcal-process.mp4" type="video/mp4" />
