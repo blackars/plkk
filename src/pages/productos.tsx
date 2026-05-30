@@ -412,7 +412,7 @@ export default function ProductosPage() {
             <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">
               Colección
             </motion.span>
-            <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-white leading-tight">Variantes
+            <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-black leading-tight">Variantes
 
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
