@@ -78,12 +78,6 @@ const MARKET_COLORS: Record<string, string> = {
   'Spain': 'bg-[#FEF2F2] text-[#991B1B]'
 };
 
-const LOGO_COLORS = [
-  'bg-[#1B3A6B]', 'bg-[#241b6b]', 'bg-[#1B3A6B]',
-  'bg-[#2D6A4F]', 'bg-[#7B3F00]', 'bg-[#8B1A1A]',
-  'bg-[#1B3A6B]', 'bg-[#241b6b]', 'bg-[#2D6A4F]'
-];
-
 const COMPANY_LOGO_IMAGES: Record<string, string> = {
   'ELIXIR DEL ALMA': '/assets/images/logos/elixir-del-alma.png',
   'SAN ROJO': '/assets/images/logos/san-rojo.png',
@@ -94,8 +88,8 @@ const COMPANY_LOGO_IMAGES: Record<string, string> = {
   'HEARTFULCRAFT': '/assets/images/logos/heartfulcraft.png'
 };
 
-// ─── CompanyLogoBox ──────────────────────────────────────────────────────
-function CompanyLogoBox({ name }: { name: string }) {
+// ─── CompanyLogo ─────────────────────────────────────────────────────────
+function CompanyLogo({ name }: { name: string }) {
   const key = name.toUpperCase();
   const logoImg = COMPANY_LOGO_IMAGES[key] ?? null;
   const [imgFailed, setImgFailed] = useState(false);
@@ -104,23 +98,19 @@ function CompanyLogoBox({ name }: { name: string }) {
 
   if (logoImg && !imgFailed) {
     return (
-      <div className="w-full h-48 flex items-center justify-center bg-white rounded-sm mb-4">
-        <img
-          src={logoImg}
-          alt={`${name} logo`}
-          className="max-h-36 max-w-[85%] object-contain"
-          onError={() => setImgFailed(true)}
-        />
-      </div>
+      <img
+        src={logoImg}
+        alt={`${name} logo`}
+        className="w-full h-full object-contain"
+        onError={() => setImgFailed(true)}
+      />
     );
   }
 
   return (
-    <div className={`w-full h-48 flex items-center justify-center rounded-sm mb-4 ${LOGO_COLORS[0]}`}>
-      <span className="text-white font-heading font-bold text-4xl tracking-wider select-none">
-        {initials}
-      </span>
-    </div>
+    <span className="font-heading font-bold text-[clamp(2.5rem,8vw,4.5rem)] tracking-wider select-none text-[#1B3A6B]/25">
+      {initials}
+    </span>
   );
 }
 
@@ -311,7 +301,7 @@ export default function CasosPage() {
                       boxShadow: '0 28px 72px rgba(27,58,107,0.20)',
                     }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className={`group relative flex flex-col rounded-sm border border-[#D4DCE8] bg-white p-6 transition-all duration-300 ${
+                    className={`group relative flex flex-col min-h-[300px] overflow-hidden rounded-sm border border-[#D4DCE8] bg-white transition-all duration-300 ${
                       hasWebsite || isComingSoon
                         ? 'cursor-pointer hover:border-[#1B3A6B]/40'
                         : 'cursor-default'
@@ -322,36 +312,40 @@ export default function CasosPage() {
                       style={{ boxShadow: 'inset 0 0 0 1.5px rgba(27,58,107,0.18), 0 0 48px rgba(27,58,107,0.10)' }}
                     />
 
-                    <CompanyLogoBox name={co.name} />
+                    <div className="flex-[2] min-h-0 flex items-center justify-center px-5 pt-5 pb-2">
+                      <CompanyLogo name={co.name} />
+                    </div>
 
-                    <span className={`inline-block self-start px-2.5 py-0.5 text-[10px] font-semibold tracking-wider uppercase rounded-sm mb-3 ${tagColor}`}>
-                      {co.tag}
-                    </span>
+                    <div className="flex-[1] flex flex-col px-5 pb-5 pt-1 min-h-0">
+                      <span className={`inline-block self-start px-2.5 py-0.5 text-[10px] font-semibold tracking-wider uppercase rounded-sm mb-2 ${tagColor}`}>
+                        {co.tag}
+                      </span>
 
-                    <h3 className="font-heading font-bold text-base leading-snug mb-2 text-[#0D1B2E] group-hover:text-[#1B3A6B] transition-colors duration-300">
-                      {co.name}
-                    </h3>
+                      <h3 className="font-heading font-bold text-base leading-snug mb-1.5 text-[#0D1B2E] group-hover:text-[#1B3A6B] transition-colors duration-300">
+                        {co.name}
+                      </h3>
 
-                    <p className="text-xs leading-relaxed flex-1 text-[#5A7099]">
-                      {co.desc}
-                    </p>
+                      <p className="text-xs leading-relaxed flex-1 text-[#5A7099] line-clamp-3">
+                        {co.desc}
+                      </p>
 
-                    {(hasWebsite || isComingSoon) && (
-                      <div className={`mt-4 flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase transition-all duration-300 ${
-                        hasWebsite ? 'text-[#1B3A6B] group-hover:text-[#C9A84C]' : 'text-[#9AAAC0]'
-                      }`}>
-                        <Globe size={10} />
-                        <span className="truncate max-w-[160px]">{co.websiteLabel}</span>
-                        {hasWebsite && <ArrowRight size={9} className="shrink-0 group-hover:translate-x-1 transition-transform duration-300" />}
-                      </div>
-                    )}
+                      {(hasWebsite || isComingSoon) && (
+                        <div className={`mt-3 flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase transition-all duration-300 ${
+                          hasWebsite ? 'text-[#1B3A6B] group-hover:text-[#C9A84C]' : 'text-[#9AAAC0]'
+                        }`}>
+                          <Globe size={10} />
+                          <span className="truncate max-w-[160px]">{co.websiteLabel}</span>
+                          {hasWebsite && <ArrowRight size={9} className="shrink-0 group-hover:translate-x-1 transition-transform duration-300" />}
+                        </div>
+                      )}
 
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileHover={{ width: '100%' }}
-                      transition={{ duration: 0.4, ease: 'easeOut' }}
-                      className="mt-4 h-px bg-[#1B3A6B]/20"
-                    />
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileHover={{ width: '100%' }}
+                        transition={{ duration: 0.4, ease: 'easeOut' }}
+                        className="mt-3 h-px bg-[#1B3A6B]/20"
+                      />
+                    </div>
                   </motion.div>
                 );
 
