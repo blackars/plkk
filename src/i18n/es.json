@@ -73,13 +73,13 @@
     "heading": "Marcas y Proyectos",
     "sub": "Grupo PALENKKE participa en el desarrollo, posicionamiento y expansión de marcas enfocadas en identidad, innovación y crecimiento nacional e internacional.\n\nCada proyecto representa una visión estratégica construida sobre autenticidad, calidad y proyección global.\n\nNuestro ecosistema integra marcas orientadas a bebidas premium, desarrollo creativo, identidad comercial y nuevas oportunidades de mercado.",
     "items": [
-      { "name": "ELIXIR DEL ALMA", "tag": "México", "desc": "Tradición, esencia y autenticidad mexicana reflejadas en una propuesta enfocada en experiencia, calidad y herencia cultural.", "website": null, "websiteLabel": "En construcción" },
-      { "name": "KANAN", "tag": "México", "desc": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea.", "website": null, "websiteLabel": "En construcción" },
-      { "name": "PALENKKE MEZCAL", "tag": "México", "desc": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional.", "website": null, "websiteLabel": "En construcción" },
-      { "name": "SAN ROJO", "tag": "México", "desc": "Concepto creativo enfocado en diseño, identidad visual y experiencias de marca contemporáneas.", "website": "https://sanrojo.com", "websiteLabel": "sanrojo.com" },
-      { "name": "KOLDVOLT", "tag": "Asia", "desc": "Proyecto orientado a innovación, desarrollo comercial y posicionamiento estratégico de nuevas oportunidades de mercado.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
-      { "name": "RITEVOLT", "tag": "Asia", "desc": "Marca enfocada en evolución comercial, expansión estratégica y visión internacional.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
-      { "name": "HEARTFULCRAFT", "tag": "India", "desc": "Concepto centrado en creatividad, autenticidad y desarrollo de productos con identidad y valor humano.", "website": "https://heartfulcraft.com", "websiteLabel": "heartfulcraft.com" }
+      { "name": "ELIXIR DEL ALMA", "tag": "México", "desc": "Descubre el sabor auténtico de un mezcal hecho a mano con cupeatra silvestre, elaborado en las tierras de Turicato, Michoacán. Cada botella guarda siglos de tradición, pasión y respeto por la naturaleza.", "website": null, "websiteLabel": "En construcción" },
+      { "name": "KANAN", "tag": "México", "desc": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea, con tres variedades: joven, rosé y añejo.", "website": null, "websiteLabel": "En construcción" },
+      { "name": "PALENKKE MEZCAL", "tag": "México", "desc": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional, con tres variedades: Rosé, Joven y Añejo.", "website": null, "websiteLabel": "En construcción" },
+      { "name": "SAN ROJO", "tag": "México", "desc": "Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo. Un homenaje a nuestras costumbres y tradiciones, capturando en cada botella la esencia de México.", "website": "https://sanrojo.com", "websiteLabel": "sanrojo.com" },
+      { "name": "KOLDVOLT", "tag": "Asia", "desc": "Socio integral para vehículos refrigerados de reparto y soluciones de alto rendimiento para furgonetas y camiones frigoríficos de hasta 28 pies.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
+      { "name": "RITEVOLT", "tag": "Asia", "desc": "Empresa dedicada a la investigación, desarrollo, producción, venta, servicio e integración de equipos de energía solar.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
+      { "name": "HEARTFULCRAFT", "tag": "India", "desc": "Marca que empodera a más de 350 artesanos en la India rural, preservando técnicas artesanales centenarias y creando piezas únicas hechas a mano que llegan a compradores de todo el mundo.", "website": "https://heartfulcraft.com", "websiteLabel": "heartfulcraft.com" }
     ]
   },
   "mezcal": {
