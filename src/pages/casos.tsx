@@ -457,7 +457,7 @@ export default function CasosPage() {
               {[
                 { value: '7', label: 'Marcas en Portafolio' },
                 { value: '4', label: 'Proyectos Activos' },
-                { value: '6', label: 'Mercados Internacionales' },
+                { value: '7', label: 'Mercados Internacionales' },
                 { value: '17+', label: 'Años de Experiencia' },
               ].map(({ value, label }) => (
                 <motion.div key={label} variants={fadeUp} className="p-6">
