@@ -33,7 +33,7 @@ export default function Header() {
             className="group shrink-0 rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#C9A84C] focus-visible:outline-offset-2"
           >
             <img
-              src="/assets/images/logos/logocuadrado.png"
+              src="/assets/images/logos/palenkke-logo.png"
               alt="Grupo Palenkke"
               className="h-10 w-10 object-contain transition-all duration-300 ease-out group-hover:scale-110 group-hover:brightness-125 group-hover:drop-shadow-[0_0_14px_rgba(201,168,76,0.55)] active:scale-95"
             />
