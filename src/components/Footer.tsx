@@ -54,6 +54,8 @@ export default function Footer() {
               <li><Link to="/nosotros" className="text-white/40 text-sm hover:text-[#C9A84C] transition-colors">{t('footer.links.about')}</Link></li>
               <li><Link to="/casos" className="text-white/40 text-sm hover:text-[#C9A84C] transition-colors">{t('footer.links.cases')}</Link></li>
               <li><Link to="/productos" className="text-white/40 text-sm hover:text-[#C9A84C] transition-colors">{t('footer.links.products')}</Link></li>
+              <li><Link to="/galerias" className="text-white/40 text-sm hover:text-[#C9A84C] transition-colors">{t('nav.galleries')}</Link></li>
+              <li><Link to="/legal" className="text-white/40 text-sm hover:text-[#C9A84C] transition-colors">{t('footer.links.partnerships')}</Link></li>
             </ul>
           </div>
 
