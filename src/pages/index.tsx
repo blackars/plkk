@@ -259,12 +259,9 @@ export default function HomePage() {
 
 
 
-            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
-              <div className="h-px w-8 bg-[#C9A84C]" />
-              <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">
-                {t('hero.geo')}
-              </span>
-            </motion.div>
+            <motion.p variants={fadeUp} className="text-white/55 text-lg md:text-xl leading-relaxed max-w-lg mb-8">
+              {t('hero.geo')}
+            </motion.p>
 
             <motion.h1
               variants={stagger}
@@ -281,9 +278,12 @@ export default function HomePage() {
               )}
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-white text-sm font-medium mb-4">
-              {t('hero.slogan')}
-            </motion.p>
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
+              <div className="h-px w-8 bg-[#C9A84C]" />
+              <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">
+                {t('hero.slogan')}
+              </span>
+            </motion.div>
             <motion.div
               variants={fadeUp}
               className="text-white/35 text-base md:text-lg leading-relaxed max-w-2xl mb-10 flex flex-col gap-5"
@@ -552,13 +552,11 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="text-[#5A7099] text-xs tracking-wide uppercase mb-1">{t(`contact_section.${labelKey}`)}</p>
-                      {href ? (
-                    <a href={href} className="text-[#0D1B2E] text-sm font-medium hover:text-[#1B3A6B] transition-colors">{value}</a>
-                      ) : labelKey === 'office_label' ? (
-                    <p className="text-[#0D1B2E]/55 text-lg md:text-xl leading-relaxed max-w-lg">{value}</p>
-                      ) : (
+                      {href ?
+                    <a href={href} className="text-[#0D1B2E] text-sm font-medium hover:text-[#1B3A6B] transition-colors">{value}</a> :
+
                     <p className="text-[#0D1B2E] text-sm font-medium">{value}</p>
-                      )}
+                    }
                     </div>
                   </motion.div>
                 )}
@@ -577,6 +575,7 @@ export default function HomePage() {
                         height="14"
                         alt="USA"
                         className="rounded-[2px] shadow-[0_0_0_1px_rgba(0,0,0,0.08)] object-cover shrink-0" />
+                      
                       
                       <span>+1 (703) 981-2991</span>
                     </a>
