@@ -281,7 +281,7 @@ export default function HomePage() {
               )}
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-white/55 text-lg md:text-xl leading-relaxed max-w-lg mb-4">
+            <motion.p variants={fadeUp} className="text-white text-sm font-medium mb-4">
               {t('hero.slogan')}
             </motion.p>
             <motion.div
@@ -552,11 +552,13 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="text-[#5A7099] text-xs tracking-wide uppercase mb-1">{t(`contact_section.${labelKey}`)}</p>
-                      {href ?
-                    <a href={href} className="text-[#0D1B2E] text-sm font-medium hover:text-[#1B3A6B] transition-colors">{value}</a> :
-
+                      {href ? (
+                    <a href={href} className="text-[#0D1B2E] text-sm font-medium hover:text-[#1B3A6B] transition-colors">{value}</a>
+                      ) : labelKey === 'office_label' ? (
+                    <p className="text-[#0D1B2E]/55 text-lg md:text-xl leading-relaxed max-w-lg">{value}</p>
+                      ) : (
                     <p className="text-[#0D1B2E] text-sm font-medium">{value}</p>
-                    }
+                      )}
                     </div>
                   </motion.div>
                 )}
