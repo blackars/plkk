@@ -18,6 +18,7 @@ export default function Header() {
     { to: '/servicios', label: t('nav.services') },
     { to: '/casos', label: t('nav.cases') },
     { to: '/productos', label: t('nav.products') },
+    { to: '/galerias', label: t('nav.galleries') },
     { to: '/contacto', label: t('nav.contact') },
   ]
 
