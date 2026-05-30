@@ -25,7 +25,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="shrink-0">
             <img
-              src="/public/assets/logogrupoPalenkkecuadrado.png"
+              src="/assets/images/logos/palenkke-logo.png"
+         
               alt="Grupo Palenkke"
               className="h-10 w-10 object-contain"
             />
