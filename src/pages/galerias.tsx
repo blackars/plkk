@@ -51,7 +51,7 @@ const COMPANIES: CompanyEntry[] = [
     name: 'ELIXIR DEL ALMA',
     tag: 'México',
     desc: 'Tradición, esencia y autenticidad mexicana en una propuesta de experiencia premium.',
-    website: null,
+    website: 'https://mezcalelixirdelalma.com',
     logoSlot: '/airo-assets/images/logos/elixir',
     logoImg: '/assets/images/logos/elixir-del-alma.png',
     color: 'bg-[#241b6b]',
