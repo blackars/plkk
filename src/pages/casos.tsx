@@ -78,21 +78,16 @@ const MARKET_COLORS: Record<string, string> = {
   'Spain': 'bg-[#FEF2F2] text-[#991B1B]'
 };
 
-const COMPANY_LOGO_IMAGES: Record<string, string> = {
-  'MEZCAL ELIXIR DEL ALMA': '/assets/images/logos/elixir-del-alma.png',
-  'ELIXIR DEL ALMA': '/assets/images/logos/elixir-del-alma.png',
-  'SAN ROJO': '/assets/images/logos/san-rojo.png',
-  'KANAN': '/assets/images/logos/kanan.png',
-  'PALENKKE MEZCAL': '/assets/images/logos/palenkke-mezcal.png',
-  'KOLDVOLT': '/assets/images/logos/koldvolt.png',
-  'RITEVOLT': '/assets/images/logos/ritevolt.png',
-  'HEARTFULCRAFT': '/assets/images/logos/heartfulcraft.png'
-};
+const LOGOS_BASE = '/assets/images/logos';
+
+function resolveCompanyLogoSrc(name: string, logoId?: string): string | null {
+  if (logoId) return `${LOGOS_BASE}/${logoId}.png`;
+  return null;
+}
 
 // ─── CompanyLogo ─────────────────────────────────────────────────────────
-function CompanyLogo({ name }: { name: string }) {
-  const key = name.toUpperCase();
-  const logoImg = COMPANY_LOGO_IMAGES[key] ?? null;
+function CompanyLogo({ name, logoId }: { name: string; logoId?: string }) {
+  const logoImg = resolveCompanyLogoSrc(name, logoId);
   const [imgFailed, setImgFailed] = useState(false);
 
   const initials = name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase();
@@ -102,7 +97,7 @@ function CompanyLogo({ name }: { name: string }) {
       <img
         src={logoImg}
         alt={`${name} logo`}
-        className="w-full h-full object-contain"
+        className="max-h-44 max-w-full w-auto h-auto object-contain"
         onError={() => setImgFailed(true)}
       />
     );
@@ -163,8 +158,8 @@ const projects = [
 export default function CasosPage() {
   const { t } = useTranslation();
 
-  const companyItems: Array<{ name: string; tag: string; desc: string; website?: string | null; websiteLabel?: string | null; }> =
-    t('companies.items', { returnObjects: true }) as Array<{ name: string; tag: string; desc: string; website?: string | null; websiteLabel?: string | null; }>;
+  const companyItems: Array<{ name: string; logo?: string; tag: string; desc: string; website?: string | null; websiteLabel?: string | null; }> =
+    t('companies.items', { returnObjects: true }) as Array<{ name: string; logo?: string; tag: string; desc: string; website?: string | null; websiteLabel?: string | null; }>;
 
   return (
     <>
@@ -313,8 +308,8 @@ export default function CasosPage() {
                       style={{ boxShadow: 'inset 0 0 0 1.5px rgba(27,58,107,0.18), 0 0 48px rgba(27,58,107,0.10)' }}
                     />
 
-                    <div className="flex-[2] min-h-0 flex items-center justify-center px-5 pt-5 pb-2">
-                      <CompanyLogo name={co.name} />
+                    <div className="flex-[2] min-h-[160px] flex items-center justify-center px-5 pt-5 pb-2">
+                      <CompanyLogo name={co.name} logoId={co.logo} />
                     </div>
 
                     <div className="flex-[1] flex flex-col px-5 pb-5 pt-1 min-h-0">
