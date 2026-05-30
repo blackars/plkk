@@ -137,73 +137,6 @@ function HoverImage({ src, alt, className = '' }: {src: string;alt: string;class
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-// Market tag colour map
-const MARKET_COLORS: Record<string, string> = {
-  'México': 'bg-[#EEF2F8] text-[#1B3A6B]',
-  'Mexico': 'bg-[#EEF2F8] text-[#1B3A6B]',
-  'Sudamérica': 'bg-[#F0F7EE] text-[#2D6A4F]',
-  'South America': 'bg-[#F0F7EE] text-[#2D6A4F]',
-  'Asia': 'bg-[#FFF8EE] text-[#92400E]',
-  'India': 'bg-[#FFF3E0] text-[#B45309]',
-  'España': 'bg-[#FEF2F2] text-[#991B1B]',
-  'Spain': 'bg-[#FEF2F2] text-[#991B1B]'
-};
-
-// Company initials colour palette (cycles through 9 companies)
-const LOGO_COLORS = [
-'bg-[#1B3A6B]',
-'bg-[#241b6b]',
-'bg-[#1B3A6B]',
-'bg-[#2D6A4F]',
-'bg-[#7B3F00]',
-'bg-[#8B1A1A]',
-'bg-[#1B3A6B]',
-'bg-[#241b6b]',
-'bg-[#2D6A4F]'];
-
-
-// Logo image paths — keyed by company name (uppercase)
-const COMPANY_LOGO_IMAGES: Record<string, string> = {
-  'ELIXIR DEL ALMA': '/assets/images/logos/elixir-del-alma.png',
-  'SAN ROJO': '/assets/images/logos/san-rojo.png',
-  'KANAN': '/assets/images/logos/kanan.png',
-  'PALENKKE MEZCAL': '/assets/images/logos/palenkke-mezcal.png',
-  'KOLDVOLT': '/assets/images/logos/koldvolt.png',
-  'RITEVOLT': '/assets/images/logos/ritevolt.png',
-  'HEARTFULCRAFT': '/assets/images/logos/heartfulcraft.png'
-};
-
-// ─── CompanyLogoBox ────────────────────────────────────────────────────────────
-function CompanyLogoBox({ name }: {name: string;}) {
-  const key = name.toUpperCase();
-  const logoImg = COMPANY_LOGO_IMAGES[key] ?? null;
-  const [imgFailed, setImgFailed] = useState(false);
-
-  const initials = name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase();
-
-  if (logoImg && !imgFailed) {
-    return (
-      <div className="w-full h-28 flex items-center justify-center bg-white rounded-sm mb-4">
-        <img
-          src={logoImg}
-          alt={`${name} logo`}
-          className="max-h-20 max-w-[80%] object-contain"
-          onError={() => setImgFailed(true)}
-        />
-      </div>
-    );
-  }
-
-  return (
-    <div className={`w-full h-28 flex items-center justify-center rounded-sm mb-4 ${LOGO_COLORS[0]}`}>
-      <span className="text-white font-heading font-bold text-2xl tracking-wider select-none">
-        {initials}
-      </span>
-    </div>
-  );
-}
-
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function HomePage() {
   const { t } = useTranslation();
@@ -211,8 +144,6 @@ export default function HomePage() {
 
 
   const whyItems: Array<{num: string;title: string;desc: string;}> = t('why.items', { returnObjects: true }) as Array<{num: string;title: string;desc: string;}>;
-  const companyItems: Array<{name: string;tag: string;desc: string;website?: string | null;websiteLabel?: string | null;}> = t('companies.items', { returnObjects: true }) as Array<{name: string;tag: string;desc: string;website?: string | null;websiteLabel?: string | null;}>;
-  // mezcalVariants removed — Palenkke Mezcal section no longer uses variants list
   const headlineWords: string[] = t('hero.headline', { returnObjects: true }) as string[];
 
 
@@ -557,98 +488,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── COMPAÑÍAS INTEGRADAS ──────────────────────────────────────────── */}
-      <section className="py-28 bg-white flex flex-col items-center text-center">
-        <div className="container mx-auto px-6 lg:px-10 flex flex-col items-center">
-          <InView className="mb-16 max-w-2xl flex flex-col items-center">
-            <AccentLine />
-            <Eyebrow>{t('companies.eyebrow')}</Eyebrow>
-            <motion.h2 variants={fadeUp} className="font-heading text-[clamp(32px,4.5vw,56px)] font-bold text-[#0D1B2E] leading-tight">
-              {t('companies.heading')}
-            </motion.h2>
-            <motion.div variants={fadeUp} className="text-[#5A7099] text-base mt-4 max-w-2xl mx-auto flex flex-col gap-3 text-center">
-              {t('companies.sub').split('\n\n').map((para, i) => <p key={i}>{para}</p>)}
-            </motion.div>
-          </InView>
-
-          <InView>
-            <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {companyItems.map((co, idx) => {
-                const tagColor = MARKET_COLORS[co.tag] ?? 'bg-[#EEF2F8] text-[#1B3A6B]';
-                const hasWebsite = co.website && co.website !== null;
-                const isComingSoon = !co.website && co.websiteLabel !== null && co.websiteLabel !== undefined;
-
-                const CardContent = (
-                <motion.div
-                  key={co.name}
-                  variants={fadeUp}
-                  whileHover={{
-                    y: -10,
-                    boxShadow: '0 28px 72px rgba(27,58,107,0.22)'
-                  }}
-                  transition={{ duration: 0.3, ease: 'easeOut' }}
-                  className={`group relative flex flex-col rounded-sm border border-[#D4DCE8] bg-white p-6 transition-all duration-300 ${
-                  hasWebsite || isComingSoon
-                  ? 'cursor-pointer hover:border-[#1B3A6B]/40'
-                  : 'cursor-default'
-                  }`}>
-
-                    {/* Corporate blue glow on hover */}
-                    <div className="absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{ boxShadow: 'inset 0 0 0 1.5px rgba(27,58,107,0.18), 0 0 48px rgba(27,58,107,0.10)' }} />
-
-                    <CompanyLogoBox name={co.name} />
-
-                    {/* Market tag */}
-                    <span className={`inline-block self-start px-2.5 py-0.5 text-[10px] font-semibold tracking-wider uppercase rounded-sm mb-3 ${tagColor}`}>
-                      {co.tag}
-                    </span>
-
-                    {/* Name */}
-                    <h3 className="font-heading font-bold text-base leading-snug mb-2 text-[#0D1B2E] group-hover:text-[#1B3A6B] transition-colors duration-300">
-                      {co.name}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-xs leading-relaxed flex-1 text-[#5A7099]">
-                      {co.desc}
-                    </p>
-
-                    {/* Website tooltip / coming soon */}
-                    {(hasWebsite || isComingSoon) &&
-                  <div className={`mt-4 flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase transition-all duration-300 ${
-                  hasWebsite ? 'text-[#1B3A6B] group-hover:text-[#C9A84C]' : 'text-[#9AAAC0]'}`
-                  }>
-                      <Globe size={10} />
-                      <span className="truncate max-w-[160px]">{co.websiteLabel}</span>
-                      {hasWebsite && <ArrowRight size={9} className="shrink-0 group-hover:translate-x-1 transition-transform duration-300" />}
-                    </div>
-                  }
-
-                    {/* Bottom accent line — slides in on hover */}
-                    <motion.div
-                    initial={{ width: 0 }}
-                    whileHover={{ width: '100%' }}
-                    transition={{ duration: 0.4, ease: 'easeOut' }}
-                    className="mt-4 h-px bg-[#1B3A6B]/20" />
-                  
-                  </motion.div>
-                );
-
-                return hasWebsite ?
-                <a key={co.name} href={co.website!} target="_blank" rel="noopener noreferrer" className="block no-underline">
-                    {CardContent}
-                  </a> :
-                <div key={co.name}>
-                    {CardContent}
-                  </div>;
-
-              })}
-            </motion.div>
-          </InView>
-        </div>
-      </section>
-
 
       {/* ── CTA SECTION ───────────────────────────────────────────────────── */}
       <section className="relative py-32 bg-[#1B3A6B] overflow-hidden">
@@ -737,7 +576,7 @@ export default function HomePage() {
                   </div>
                   <div className="space-y-2">
                     <p className="text-[#5A7099] text-xs tracking-wide uppercase mb-1">{t('contact_section.phones_label')}</p>
-                    <a href="tel:+17039812909" className="flex items-center gap-2.5 text-[#0D1B2E] text-sm font-medium hover:text-[#1B3A6B] transition-colors">
+                    <a href="tel:+17039812991" className="flex items-center gap-2.5 text-[#0D1B2E] text-sm font-medium hover:text-[#1B3A6B] transition-colors">
                       <img
                         src="https://flagcdn.com/w40/us.png"
                         srcSet="https://flagcdn.com/w80/us.png 2x"
@@ -746,9 +585,9 @@ export default function HomePage() {
                         alt="USA"
                         className="rounded-[2px] shadow-[0_0_0_1px_rgba(0,0,0,0.08)] object-cover shrink-0" />
                       
-                      <span>+1 (703) 981-2909</span>
+                      <span>+1 (703) 981-2991</span>
                     </a>
-                    <a href="tel:+522281447377" className="flex items-center gap-2.5 text-[#0D1B2E] text-sm font-medium hover:text-[#1B3A6B] transition-colors">
+                    <a href="tel:+522281447372" className="flex items-center gap-2.5 text-[#0D1B2E] text-sm font-medium hover:text-[#1B3A6B] transition-colors">
                       <img
                         src="https://flagcdn.com/w40/mx.png"
                         srcSet="https://flagcdn.com/w80/mx.png 2x"
@@ -757,7 +596,7 @@ export default function HomePage() {
                         alt="México"
                         className="rounded-[2px] shadow-[0_0_0_1px_rgba(0,0,0,0.08)] object-cover shrink-0" />
                       
-                      <span>+52 228 144 7377</span>
+                      <span>+52 228 144 7372</span>
                     </a>
                   </div>
                 </motion.div>

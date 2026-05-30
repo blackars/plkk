@@ -513,7 +513,7 @@ export default function NosotrosPage() {
                   <span className="text-2xl" role="img" aria-label="México">🇲🇽</span>
                 </div>
                 <p className="text-[#C9A84C] text-xs font-semibold tracking-wide uppercase mb-3">Dirección General · México</p>
-                <a href="tel:+522281447377" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+52 228 144 7377</a>
+                <a href="tel:+522281447372" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+52 228 144 7372</a>
                 <p className="text-[#5A7099] text-sm leading-relaxed mt-3">Liderazgo estratégico, relaciones internacionales y desarrollo del ecosistema de marcas premium de Grupo Palenkke.</p>
                 <div className="mt-5 h-0.5 bg-[#1B3A6B]/0 group-hover:bg-[#1B3A6B]/20 transition-all duration-500 w-0 group-hover:w-full" />
               </motion.div>
@@ -528,7 +528,7 @@ export default function NosotrosPage() {
                   <span className="text-2xl" role="img" aria-label="EE.UU">🇺🇸</span>
                 </div>
                 <p className="text-[#C9A84C] text-xs font-semibold tracking-wide uppercase mb-3">Desarrollo Comercial · EE.UU</p>
-                <a href="tel:+17039812909" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+1 (703) 981-2909</a>
+                <a href="tel:+17039812991" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+1 (703) 981-2991</a>
                 <p className="text-[#5A7099] text-sm leading-relaxed mt-3">Expansión de mercados en Norteamérica, apertura de canales y negociación con distribuidores en el mercado estadounidense.</p>
                 <div className="mt-5 h-0.5 bg-[#1B3A6B]/0 group-hover:bg-[#1B3A6B]/20 transition-all duration-500 w-0 group-hover:w-full" />
               </motion.div>

@@ -104,11 +104,11 @@ function CompanyLogoBox({ name }: { name: string }) {
 
   if (logoImg && !imgFailed) {
     return (
-      <div className="w-full h-28 flex items-center justify-center bg-white rounded-sm mb-4">
+      <div className="w-full h-48 flex items-center justify-center bg-white rounded-sm mb-4">
         <img
           src={logoImg}
           alt={`${name} logo`}
-          className="max-h-20 max-w-[80%] object-contain"
+          className="max-h-36 max-w-[85%] object-contain"
           onError={() => setImgFailed(true)}
         />
       </div>
@@ -116,8 +116,8 @@ function CompanyLogoBox({ name }: { name: string }) {
   }
 
   return (
-    <div className={`w-full h-28 flex items-center justify-center rounded-sm mb-4 ${LOGO_COLORS[0]}`}>
-      <span className="text-white font-heading font-bold text-2xl tracking-wider select-none">
+    <div className={`w-full h-48 flex items-center justify-center rounded-sm mb-4 ${LOGO_COLORS[0]}`}>
+      <span className="text-white font-heading font-bold text-4xl tracking-wider select-none">
         {initials}
       </span>
     </div>
