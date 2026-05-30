@@ -1,0 +1,252 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "cases": "Casos de Éxito",
+    "products": "Productos",
+    "galleries": "Galerías",
+    "contact": "Contacto",
+    "partnerships": "Asociaciones",
+    "cta": "Agenda una Reunión"
+  },
+  "hero": {
+    "phrases": [
+      "Desarrollo de Marcas",
+      "Expansión Internacional",
+      "Innovación Comercial",
+      "Tradición y Estrategia"
+    ],
+    "headline": ["Grupo", "PALENKKE", "Global"],
+    "slogan": "Impulsando marcas hacia el éxito global",
+    "description": "Grupo Palenkke: empresa mexicana especializada en desarrollo de marcas, comercialización, incubación de productos y expansión nacional e internacional.",
+    "geo": "México · Global",
+    "cta_primary": "Conoce Nuestro Modelo",
+    "cta_opportunities": "Contáctanos",
+    "cta_brand": "Lleva tu Marca al Siguiente Nivel",
+    "cta_expand": "Expande tu Producto Internacionalmente",
+    "cta_partner": "Conviértete en Socio Estratégico",
+    "scroll": "Scroll"
+  },
+  "stats": [
+    { "value": "17+", "label": "Años de Experiencia" },
+    { "value": "7", "label": "Regiones Internacionales" },
+    { "value": "7", "label": "Marcas Desarrolladas" },
+    { "value": "100%", "label": "Compromiso con el Éxito" }
+  ],
+  "about": {
+    "eyebrow": "Quiénes Somos",
+    "heading": "Grupo PALENKKE",
+    "p1": "Grupo PALENKKE nace con la visión de conectar tradición e identidad cultural como patrimonio cultural en una era de cambios constantes, hacia la expansión comercial global nacional e internacional.\n\nEl nombre PALENKKE representa por un lado el valor de la artesanía tradicional como patrimonio cultural, impulsando productos, conocimientos y técnicas que forman parte de la esencia de nuestras comunidades y en uso nuevas tecnologías; desarrolla no solo un nuevo marco de oportunidades para el beneficio de nuestra comunidad sino para generar dinámicas de progreso constante.",
+    "p2": "A través de nuestra experiencia en retail nacional e internacional y desarrollo de mercado, hemos construido relaciones comerciales enfocadas en crecimiento sostenible, posicionamiento estratégico y expansión hacia nuevos mercados.\n\nHoy, Grupo PALENKKE funciona como una plataforma comercial orientada al desarrollo de marcas, comercialización de productos y construcción de oportunidades nacionales e internacionales.",
+    "founded": "Año de Fundación",
+    "img_alt": "Equipo Grupo Palenkke"
+  },
+  "services_section": {
+    "eyebrow": "Servicios Estratégicos",
+    "heading": "Servicios Estratégicos",
+    "learn_more": "Conocer más",
+    "items": [
+      { "num": "01", "title": "Desarrollo de Marcas", "desc": "Creamos y desarrollamos marcas propias y privadas con visión comercial y posicionamiento estratégico." },
+      { "num": "02", "title": "Incubación de Productos", "desc": "Estructuramos productos desde su origen para prepararlos hacia mercados internacionales." },
+      { "num": "03", "title": "Comercialización y Distribución", "desc": "Conectamos productos con retail, distribuidores, tiendas especializadas y canales estratégicos de venta." },
+      { "num": "04", "title": "Expansión Internacional", "desc": "Facilitamos el crecimiento comercial en México, USA, Centroamérica, Sudamérica y Asia." },
+      { "num": "05", "title": "Desarrollo de Mercado", "desc": "Impulsamos estrategias enfocadas en posicionamiento, crecimiento sostenible y expansión territorial." }
+    ]
+  },
+  "why": {
+    "eyebrow": "¿Por qué Grupo PALENKKE?",
+    "heading": "¿Por qué Grupo PALENKKE?",
+    "sub": "Grupo PALENKKE se diferencia por ofrecer una solución integral que combina desarrollo de marca, expansión comercial, distribución y acceso real al mercado.\n\nNo solo conectamos productos con canales de venta; construimos estructuras comerciales diseñadas para crecer de forma sólida y sostenible.\n\nCreemos en el crecimiento estratégico basado en colaboración, desarrollo real y construcción conjunta de oportunidades.",
+    "items": [
+      { "num": "01", "title": "Acceso a canales comerciales establecidos", "desc": "Red consolidada de distribución, retail y puntos de consumo en múltiples mercados." },
+      { "num": "02", "title": "Experiencia en retail internacional", "desc": "Más de 17 años de trayectoria en retail entre México, EE.UU, Centroamérica, Sudamérica, Asia, España e India." },
+      { "num": "03", "title": "Desarrollo de marcas propias y privadas", "desc": "Creamos y posicionamos marcas con identidad sólida y visión comercial estratégica." },
+      { "num": "04", "title": "Expansión comercial internacional", "desc": "Estrategias de apertura de mercado con visión global y ejecución local." },
+      { "num": "05", "title": "Modelo de incubación y desarrollo", "desc": "Acompañamiento integral desde la concepción del producto hasta su lanzamiento y expansión." },
+      { "num": "06", "title": "Relaciones estratégicas de largo plazo", "desc": "Socios, distribuidores e inversionistas en múltiples mercados con visión compartida." },
+      { "num": "07", "title": "Visión global con identidad mexicana", "desc": "Combinamos tradición, estrategia y expansión global para construir proyectos sólidos con identidad y proyección internacional." }
+    ]
+  },
+  "companies": {
+    "eyebrow": "Marcas y Proyectos",
+    "heading": "Marcas y Proyectos",
+    "sub": "Grupo PALENKKE participa en el desarrollo, posicionamiento y expansión de marcas enfocadas en identidad, innovación y crecimiento nacional e internacional.\n\nCada proyecto representa una visión estratégica construida sobre autenticidad, calidad y proyección global.\n\nNuestro ecosistema integra marcas orientadas a bebidas premium, desarrollo creativo, identidad comercial y nuevas oportunidades de mercado.",
+    "items": [
+      { "name": "ELIXIR DEL ALMA", "tag": "México", "desc": "Tradición, esencia y autenticidad mexicana reflejadas en una propuesta enfocada en experiencia, calidad y herencia cultural.", "website": null, "websiteLabel": "En construcción" },
+      { "name": "KANAN", "tag": "México", "desc": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea.", "website": null, "websiteLabel": "En construcción" },
+      { "name": "PALENKKE MEZCAL", "tag": "México", "desc": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional.", "website": null, "websiteLabel": "En construcción" },
+      { "name": "SAN ROJO", "tag": "México", "desc": "Concepto creativo enfocado en diseño, identidad visual y experiencias de marca contemporáneas.", "website": "https://sanrojo.com", "websiteLabel": "sanrojo.com" },
+      { "name": "KOLDVOLT", "tag": "Asia", "desc": "Proyecto orientado a innovación, desarrollo comercial y posicionamiento estratégico de nuevas oportunidades de mercado.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
+      { "name": "RITEVOLT", "tag": "Asia", "desc": "Marca enfocada en evolución comercial, expansión estratégica y visión internacional.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
+      { "name": "HEARTFULCRAFT", "tag": "India", "desc": "Concepto centrado en creatividad, autenticidad y desarrollo de productos con identidad y valor humano.", "website": "https://heartfulcraft.com", "websiteLabel": "heartfulcraft.com" }
+    ]
+  },
+  "mezcal": {
+    "badge": "Producto Destacado",
+    "heading_line1": "Palenkke",
+    "heading_line2": "Mezcal",
+    "desc": "Mezcal artesanal elaborado en México bajo procesos tradicionales que respetan el origen y la calidad del agave. Representa la esencia de una marca mexicana con visión nacional e internacional premium.",
+    "quote": "\"Artesanía tradicional como patrimonio cultural\"",
+    "variants_label": "Variantes Disponibles",
+    "variants": ["Joven", "Añejo", "Rosé", "375 ml", "750 ml", "Edición Especial"]
+  },
+  "cta_section": {
+    "heading": "Construyamos Algo Más Grande Juntos",
+    "sub": "Estamos abiertos a desarrollar relaciones comerciales con productores, marcas, distribuidores e inversionistas interesados en crecer de manera estratégica.\n\nGrupo PALENKKE conecta oportunidades, mercados y visión internacional.",
+    "cta_partner": "Conviértete en Socio Estratégico",
+    "cta_expand": "Expande tu Producto Internacionalmente"
+  },
+  "contact_section": {
+    "eyebrow": "Contacto",
+    "heading": "Construyamos Algo Más Grande Juntos",
+    "sub": "Estamos abiertos a desarrollar relaciones comerciales con productores, marcas, distribuidores e inversionistas interesados en crecer de manera estratégica.\n\nGrupo PALENKKE conecta oportunidades, mercados y visión internacional.",
+    "email_label": "Correo",
+    "web_label": "Sitio Web",
+    "office_label": "Regiones",
+    "office_value": "México • USA • Centroamérica • Sudamérica • Asia • España",
+    "phones_label": "Teléfonos",
+    "form": {
+      "name": "Nombre",
+      "name_placeholder": "Tu nombre completo",
+      "company": "Empresa",
+      "company_placeholder": "Nombre de tu empresa",
+      "email": "Correo Electrónico",
+      "email_placeholder": "tu@empresa.com",
+      "help": "¿Cómo podemos ayudarte?",
+      "select_default": "Selecciona una opción",
+      "options": ["Desarrollo de Marca", "Incubación de Producto", "Comercialización y Distribución", "Expansión Internacional", "Inversión y Alianzas", "Otro"],
+      "message": "Mensaje",
+      "message_placeholder": "Cuéntanos sobre tu proyecto o idea...",
+      "submit": "Enviar Mensaje"
+    }
+  },
+  "nosotros": {
+    "meta_title": "Sobre Nosotros — Grupo Palenkke",
+    "meta_desc": "Conoce la historia, misión y equipo de Grupo Palenkke. Más de 17 años impulsando marcas hacia el éxito global.",
+    "hero_eyebrow": "Nuestra Historia",
+    "hero_heading": "Más de 17 Años Construyendo Puentes Comerciales",
+    "hero_sub": "Desde México hacia el mundo, con experiencia, visión y compromiso en mercados internacionales.",
+    "historia_eyebrow": "Nuestra Historia",
+    "historia_heading": "Nuestra Historia",
+    "historia_p1": "Desde nuestros inicios, hemos trabajado con la visión de construir oportunidades reales dentro del mercado internacional.\n\nLa experiencia adquirida en retail, distribución y desarrollo comercial nos ha permitido participar en proyectos enfocados en crecimiento, expansión y posicionamiento estratégico en distintos territorios.",
+    "historia_p2": "Cada proyecto ha fortalecido nuestra experiencia en expansión comercial, retail internacional y desarrollo de mercado.\n\nComenzamos con una idea, con una visión, y seguimos construyendo una plataforma enfocada en crecimiento global y oportunidades reales.",
+    "vision_eyebrow": "Visión Global",
+    "vision_heading": "Visión Global",
+    "vision_p1": "Nuestra visión es construir una estructura comercial internacional capaz de desarrollar productos y marcas con potencial de crecimiento sostenible.\n\nCreemos en relaciones comerciales basadas en confianza, lealtad, comunicación y visión compartida.",
+    "vision_p2": "No buscamos únicamente distribuir productos; buscamos construir marcas sólidas con permanencia, identidad y expansión internacional.",
+    "mision_eyebrow": "Misión",
+    "mision_heading": "Nuestra Misión",
+    "mision_text": "Impulsar el crecimiento de marcas y productores a través de estrategias comerciales integrales, alianzas estratégicas y expansión internacional, generando valor real y sostenible.",
+    "valores_eyebrow": "Nuestra Filosofía",
+    "valores_heading": "Nuestra Filosofía",
+    "valores": [
+      { "title": "Calidad Humana", "desc": "La calidad humana es uno de los elementos más importantes en el desarrollo de cada proyecto." },
+      { "title": "Relaciones Reales", "desc": "Creemos que los negocios sólidos se construyen a través de relaciones reales, confianza, comunicación y visión compartida." },
+      { "title": "Identidad y Crecimiento", "desc": "Cada marca representa una oportunidad para preservar identidad, generar crecimiento y construir algo duradero." },
+      { "title": "Experiencia y Estrategia", "desc": "Grupo PALENKKE combina experiencia, tradición y estrategia para impulsar proyectos con valor auténtico y proyección internacional." }
+    ],
+    "equipo_eyebrow": "Equipo",
+    "equipo_heading": "Las Personas Detrás de Grupo Palenkke",
+    "equipo_sub": "Un equipo con experiencia internacional, pasión por los negocios y compromiso con el éxito de cada proyecto.",
+    "equipo_img_alt": "Equipo Grupo Palenkke",
+    "cta_heading": "¿Listo para Crecer con Nosotros?",
+    "cta_sub": "Únete al ecosistema de Grupo Palenkke y lleva tu marca al siguiente nivel.",
+    "cta_contact": "Contáctanos",
+    "cta_services": "Ver Servicios"
+  },
+  "servicios": {
+    "meta_title": "Servicios — Grupo Palenkke",
+    "meta_desc": "Desarrollo de marcas, incubación, comercialización y expansión internacional. Servicios integrales para impulsar tu negocio.",
+    "hero_eyebrow": "Servicios Estratégicos",
+    "hero_heading": "Servicios Estratégicos",
+    "hero_sub": "Desde la concepción hasta la expansión internacional, acompañamos cada etapa de tu proyecto.",
+    "methodology_eyebrow": "Metodología",
+    "methodology_heading": "Nuestro Proceso de Trabajo",
+    "methodology_sub": "Un enfoque estructurado y probado para garantizar resultados.",
+    "audiences_eyebrow": "¿Para Quién?",
+    "audiences_heading": "Trabajamos con",
+    "cta_eyebrow": "Consulta Inicial Gratuita",
+    "cta_heading": "¿Listo para Impulsar tu Marca?",
+    "cta_sub": "Agenda una consulta inicial sin costo y descubre cómo podemos ayudarte a crecer.",
+    "cta_button": "Agenda tu Consulta Gratuita",
+    "cta_cases": "Ver Casos de Éxito"
+  },
+  "casos": {
+    "meta_title": "Casos de Éxito — Grupo Palenkke",
+    "meta_desc": "Descubre cómo Grupo Palenkke ha impulsado marcas como ELIXIR DEL ALMA, KANAN, Palenkke Mezcal, SAN ROJO, KOLDVOLT, RITEVOLT y HeartfulCraft hacia el éxito global."
+  },
+  "productos": {
+    "meta_title": "Productos — Grupo Palenkke",
+    "meta_desc": "Descubre Palenkke Mezcal: artesanía tradicional, identidad mexicana y expansión comercial internacional.",
+    "hero_eyebrow": "Productos",
+    "hero_heading_line1": "Palenkke",
+    "hero_heading_line2": "Mezcal",
+    "hero_sub": "Mezcal artesanal elaborado en México bajo procesos tradicionales que respetan el origen y la calidad del agave.",
+    "about_heading": "La Historia detrás de Palenkke Mezcal",
+    "about_p1": "Palenkke Mezcal nace de la pasión por la artesanía tradicional mexicana y el respeto por el agave como patrimonio cultural.",
+    "about_p2": "Cada botella representa horas de trabajo artesanal, desde la selección del agave hasta la destilación final en alambiques de cobre."
+  },
+  "contacto": {
+    "meta_title": "Contacto — Grupo Palenkke",
+    "meta_desc": "Contáctanos para explorar oportunidades de negocio, alianzas estratégicas o distribución internacional.",
+    "hero_eyebrow": "Contacto",
+    "hero_heading": "Construyamos Algo Más Grande Juntos",
+    "hero_sub": "Estamos abiertos a desarrollar relaciones comerciales con productores, marcas, distribuidores e inversionistas."
+  },
+  "legal": {
+    "meta_title": "Asociaciones — Grupo Palenkke",
+    "meta_desc": "Oportunidades de asociación con Grupo Palenkke: alianzas de distribución, colaboraciones retail y más.",
+    "hero_eyebrow": "Oportunidades de Asociación",
+    "hero_heading": "Oportunidades de Asociación con Grupo PALENKKE",
+    "hero_sub": "Descubre la esencia de México con Grupo PALENKKE, creado con pasión y tradición.\n\nLleva tu marca a otro nivel y únete a nosotros para celebrar el espíritu de México explorando oportunidades de asociación con Grupo PALENKKE.\n\nDesde distribución hasta retail, juntos podemos abrir nuevas posibilidades y construir un éxito duradero.",
+    "items": [
+      { "title": "Alianzas de Distribución", "desc": "Expande tu portafolio con los recursos y productos exclusivos de Grupo PALENKKE.\n\nAsóciate con nosotros para distribuir nuestros productos premium en mercados internacionales.\n\nBenefíciate de nuestro compromiso con la calidad, autenticidad y tradición, y juntos llevemos el legado de nuestros artesanos mexicanos a nuevos mercados y consumidores alrededor del mundo." },
+      { "title": "Colaboraciones Retail", "desc": "Eleva la experiencia de retail junto a Grupo PALENKKE.\n\nPresenta nuestros productos en tus espacios comerciales y ofrece a tus clientes la oportunidad de descubrir los sabores, identidad y esencia de México.\n\nColabora con nosotros para desarrollar promociones exclusivas, activaciones y experiencias comerciales únicas que conecten con tus consumidores." },
+      { "title": "Programa de Embajadores de Marca", "desc": "Únete a Grupo PALENKKE como embajador de marca.\n\nComparte tu pasión por nuestros productos y conviértete en un representante clave de nuestra marca o incluso de tu propia marca dentro de nuestro ecosistema comercial.\n\nObtén beneficios exclusivos mientras ayudas a expandir la esencia y experiencia de Grupo PALENKKE hacia nuevas comunidades y mercados." },
+      { "title": "Patrocinio de Eventos", "desc": "Conecta tu marca con la experiencia y presencia de Grupo PALENKKE mediante patrocinios exclusivos.\n\nDesde festivales hasta eventos privados y experiencias premium, nuestros productos pueden elevar la experiencia de cada invitado y generar un impacto memorable.\n\nExplora oportunidades de patrocinio personalizadas diseñadas para posicionar tu marca en ambientes dinámicos, atractivos y de alto valor comercial." },
+      { "title": "Asociaciones Personalizadas", "desc": "¿Tienes una idea única de colaboración?\n\nEstamos abiertos a explorar asociaciones personalizadas que se alineen con los valores y visión de Grupo PALENKKE.\n\nYa sea a través de productos de marca compartida, campañas promocionales o experiencias inmersivas, trabajemos juntos para transformar ideas en nuevas oportunidades de crecimiento mutuo." }
+    ],
+    "cta_text": "Para obtener más información sobre oportunidades de colaboración con Grupo PALENKKE, contáctanos.",
+    "cta_closing": "Let's embark together on this exciting experience and celebrate the essence of Grupo PALENKKE.",
+    "form_eyebrow": "Let's Connect",
+    "form_heading": "Tell Us Your Proposal",
+    "form_sub": "Complete the form and our team will get in touch with you within 24 hours.",
+    "form": {
+      "name": "Full Name",
+      "name_placeholder": "Your full name",
+      "email": "Email Address",
+      "email_placeholder": "you@company.com",
+      "phone": "Phone",
+      "phone_placeholder": "+1 (000) 000-0000",
+      "company": "Company",
+      "company_placeholder": "Your company name",
+      "interest": "Partnership Type",
+      "select_default": "Select an option",
+      "options": ["Distribution Alliance", "Retail Collaboration", "Brand Ambassador", "Event Sponsorship", "Personalized Partnership", "Other"],
+      "message": "Message",
+      "message_placeholder": "Tell us about your proposal or collaboration idea...",
+      "submit": "Send Proposal",
+      "success_title": "Proposal Sent!",
+      "success_msg": "Thank you for your interest. Our team will contact you within 24 hours.",
+      "error_msg": "There was an error sending. Please try again."
+    }
+  },
+  "footer": {
+    "tagline": "Driving brands toward global success.",
+    "company": "Company",
+    "services_label": "Services",
+    "contact_label": "Contact",
+    "rights": "All rights reserved.",
+    "links": {
+      "about": "About Us",
+      "cases": "Success Cases",
+      "products": "Products",
+      "contact": "Contact",
+      "branding": "Brand Development",
+      "incubation": "Incubation",
+      "distribution": "Commercialization",
+      "expansion": "International Expansion"
+    }
+  }
+}

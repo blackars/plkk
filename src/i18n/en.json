@@ -1,0 +1,243 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "cases": "Success Cases",
+    "products": "Products",
+    "galleries": "Galleries",
+    "contact": "Contact",
+    "partnerships": "Partnerships",
+    "cta": "Schedule a Meeting"
+  },
+  "hero": {
+    "phrases": [
+      "Brand Development",
+      "International Expansion",
+      "Commercial Innovation",
+      "Tradition & Strategy"
+    ],
+    "headline": ["Grupo", "PALENKKE", "Global"],
+    "slogan": "Driving brands toward global success",
+    "description": "Grupo Palenkke: Mexican company specialized in brand development, commercialization, product incubation and national/international expansion.",
+    "geo": "Mexico · Global",
+    "cta_primary": "Learn About Our Model",
+    "cta_opportunities": "Contact Us",
+    "cta_brand": "Take Your Brand to the Next Level",
+    "cta_expand": "Expand Your Product Internationally",
+    "cta_partner": "Become a Strategic Partner",
+    "scroll": "Scroll"
+  },
+  "stats": [
+    { "value": "17+", "label": "Years of Experience" },
+    { "value": "7", "label": "International Regions" },
+    { "value": "7", "label": "Brands Developed" },
+    { "value": "100%", "label": "Commitment to Success" }
+  ],
+  "about": {
+    "eyebrow": "Who We Are",
+    "heading": "Grupo PALENKKE",
+    "p1": "Grupo PALENKKE was born with the vision of connecting tradition and cultural identity as cultural heritage in an era of constant change, toward national and international global commercial expansion.\n\nThe PALENKKE name represents the value of traditional craftsmanship as cultural heritage, promoting products, knowledge and techniques that are part of the essence of our communities.",
+    "p2": "Through our experience in national and international retail and market development, we have built commercial relationships focused on sustainable growth, strategic positioning and expansion into new markets.\n\nToday, Grupo PALENKKE functions as a commercial platform oriented toward brand development, product commercialization and national and international opportunity building.",
+    "founded": "Year Founded",
+    "img_alt": "Grupo Palenkke Team"
+  },
+  "services_section": {
+    "eyebrow": "Strategic Services",
+    "heading": "Strategic Services",
+    "learn_more": "Learn more",
+    "items": [
+      { "num": "01", "title": "Brand Development", "desc": "We create and develop own and private brands with commercial vision and strategic positioning." },
+      { "num": "02", "title": "Product Incubation", "desc": "We structure products from their origin to prepare them for international markets." },
+      { "num": "03", "title": "Commercialization & Distribution", "desc": "We connect products with retail, distributors, specialized stores and strategic sales channels." },
+      { "num": "04", "title": "International Expansion", "desc": "We facilitate commercial growth in Mexico, USA, Central America, South America and Asia." },
+      { "num": "05", "title": "Market Development", "desc": "We drive strategies focused on positioning, sustainable growth and territorial expansion." }
+    ]
+  },
+  "why": {
+    "eyebrow": "Why Grupo PALENKKE?",
+    "heading": "Why Grupo PALENKKE?",
+    "sub": "Grupo PALENKKE differentiates itself by offering an integral solution that combines brand development, commercial expansion, distribution and real market access.\n\nWe don't just connect products with sales channels; we build commercial structures designed to grow solidly and sustainably.\n\nWe believe in strategic growth based on collaboration, real development and joint opportunity building.",
+    "items": [
+      { "num": "01", "title": "Access to established commercial channels", "desc": "Consolidated distribution, retail and consumption network across multiple markets." },
+      { "num": "02", "title": "International retail experience", "desc": "More than 17 years of trajectory in retail across Mexico, USA, Central America, South America, Asia, Spain and India." },
+      { "num": "03", "title": "Own and private brand development", "desc": "We create and position brands with solid identity and strategic commercial vision." },
+      { "num": "04", "title": "International commercial expansion", "desc": "Market opening strategies with global vision and local execution." },
+      { "num": "05", "title": "Incubation and development model", "desc": "Comprehensive accompaniment from product conception to launch and expansion." },
+      { "num": "06", "title": "Long-term strategic relationships", "desc": "Partners, distributors and investors across multiple markets with shared vision." },
+      { "num": "07", "title": "Global vision with Mexican identity", "desc": "We combine tradition, strategy and global expansion to build solid projects with identity and international projection." }
+    ]
+  },
+  "companies": {
+    "eyebrow": "Brands & Projects",
+    "heading": "Brands & Projects",
+    "sub": "Grupo PALENKKE participates in the development, positioning and expansion of brands focused on identity, innovation and national/international growth.\n\nEach project represents a strategic vision built on authenticity, quality and global projection.\n\nOur ecosystem integrates brands oriented to premium beverages, creative development, commercial identity and new market opportunities.",
+    "items": [
+      { "name": "ELIXIR DEL ALMA", "tag": "Mexico", "desc": "Mexican tradition, essence and authenticity reflected in a proposal focused on experience, quality and cultural heritage.", "website": null, "websiteLabel": "Under construction" },
+      { "name": "KANAN", "tag": "Mexico", "desc": "Brand focused on preserving the cultural value of mezcal through traditional processes and a contemporary vision.", "website": null, "websiteLabel": "Under construction" },
+      { "name": "PALENKKE MEZCAL", "tag": "Mexico", "desc": "Representation of artisanal tradition, Mexican identity and international commercial expansion.", "website": null, "websiteLabel": "Under construction" },
+      { "name": "SAN ROJO", "tag": "Mexico", "desc": "Creative concept focused on design, visual identity and contemporary brand experiences.", "website": "https://sanrojo.com", "websiteLabel": "sanrojo.com" },
+      { "name": "KOLDVOLT", "tag": "Asia", "desc": "Project oriented to innovation, commercial development and strategic positioning of new market opportunities.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
+      { "name": "RITEVOLT", "tag": "Asia", "desc": "Brand focused on commercial evolution, strategic expansion and international vision.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
+      { "name": "HEARTFULCRAFT", "tag": "India", "desc": "Concept centered on creativity, authenticity and product development with identity and human value.", "website": "https://heartfulcraft.com", "websiteLabel": "heartfulcraft.com" }
+    ]
+  },
+  "cta_section": {
+    "heading": "Let's Build Something Greater Together",
+    "sub": "We are open to developing commercial relationships with producers, brands, distributors and investors interested in growing strategically.\n\nGrupo PALENKKE connects opportunities, markets and international vision.",
+    "cta_partner": "Become a Strategic Partner",
+    "cta_expand": "Expand Your Product Internationally"
+  },
+  "contact_section": {
+    "eyebrow": "Contact",
+    "heading": "Let's Build Something Greater Together",
+    "sub": "We are open to developing commercial relationships with producers, brands, distributors and investors interested in growing strategically.\n\nGrupo PALENKKE connects opportunities, markets and international vision.",
+    "email_label": "Email",
+    "web_label": "Website",
+    "office_label": "Regions",
+    "office_value": "Mexico • USA • Central America • South America • Asia • Spain",
+    "phones_label": "Phones",
+    "form": {
+      "name": "Name",
+      "name_placeholder": "Your full name",
+      "company": "Company",
+      "company_placeholder": "Your company name",
+      "email": "Email",
+      "email_placeholder": "you@company.com",
+      "help": "How can we help you?",
+      "select_default": "Select an option",
+      "options": ["Brand Development", "Product Incubation", "Commercialization & Distribution", "International Expansion", "Investment & Alliances", "Other"],
+      "message": "Message",
+      "message_placeholder": "Tell us about your project or idea...",
+      "submit": "Send Message"
+    }
+  },
+  "nosotros": {
+    "meta_title": "About Us — Grupo Palenkke",
+    "meta_desc": "Learn about the history, mission and team of Grupo Palenkke. More than 17 years driving brands toward global success.",
+    "hero_eyebrow": "Our Story",
+    "hero_heading": "More Than 17 Years Building Commercial Bridges",
+    "hero_sub": "From Mexico to the world, with experience, vision and commitment in international markets.",
+    "historia_eyebrow": "Our Story",
+    "historia_heading": "Our Story",
+    "historia_p1": "Since our beginnings, we have worked with the vision of building real opportunities within the international market.\n\nThe experience acquired in retail, distribution and commercial development has allowed us to participate in projects focused on growth, expansion and strategic positioning in different territories.",
+    "historia_p2": "Each project has strengthened our experience in commercial expansion, international retail and market development.\n\nWe started with an idea, with a vision, and we continue building a platform focused on global growth and real opportunities.",
+    "vision_eyebrow": "Global Vision",
+    "vision_heading": "Global Vision",
+    "vision_p1": "Our vision is to build an international commercial structure capable of developing products and brands with sustainable growth potential.\n\nWe believe in commercial relationships based on trust, loyalty, communication and shared vision.",
+    "vision_p2": "We don't just seek to distribute products; we seek to build solid brands with permanence, identity and international expansion.",
+    "mision_eyebrow": "Mission",
+    "mision_heading": "Our Mission",
+    "mision_text": "Drive the growth of brands and producers through comprehensive commercial strategies, strategic alliances and international expansion, generating real and sustainable value.",
+    "valores_eyebrow": "Our Philosophy",
+    "valores_heading": "Our Philosophy",
+    "valores": [
+      { "title": "Human Quality", "desc": "Human quality is one of the most important elements in the development of each project." },
+      { "title": "Real Relationships", "desc": "We believe that solid businesses are built through real relationships, trust, communication and shared vision." },
+      { "title": "Identity & Growth", "desc": "Each brand represents an opportunity to preserve identity, generate growth and build something lasting." },
+      { "title": "Experience & Strategy", "desc": "Grupo PALENKKE combines experience, tradition and strategy to drive projects with authentic value and international projection." }
+    ],
+    "equipo_eyebrow": "Team",
+    "equipo_heading": "The People Behind Grupo Palenkke",
+    "equipo_sub": "A team with international experience, passion for business and commitment to the success of each project.",
+    "equipo_img_alt": "Grupo Palenkke Team",
+    "cta_heading": "Ready to Grow With Us?",
+    "cta_sub": "Join the Grupo Palenkke ecosystem and take your brand to the next level.",
+    "cta_contact": "Contact Us",
+    "cta_services": "View Services"
+  },
+  "servicios": {
+    "meta_title": "Services — Grupo Palenkke",
+    "meta_desc": "Brand development, incubation, commercialization and international expansion. Comprehensive services to boost your business.",
+    "hero_eyebrow": "Strategic Services",
+    "hero_heading": "Strategic Services",
+    "hero_sub": "From conception to international expansion, we accompany every stage of your project.",
+    "methodology_eyebrow": "Methodology",
+    "methodology_heading": "Our Work Process",
+    "methodology_sub": "A structured and proven approach to ensure results.",
+    "audiences_eyebrow": "Who We Work With",
+    "audiences_heading": "We Work With",
+    "cta_eyebrow": "Free Initial Consultation",
+    "cta_heading": "Ready to Boost Your Brand?",
+    "cta_sub": "Schedule a free initial consultation and discover how we can help you grow.",
+    "cta_button": "Schedule Your Free Consultation",
+    "cta_cases": "View Success Cases"
+  },
+  "casos": {
+    "meta_title": "Success Cases — Grupo Palenkke",
+    "meta_desc": "Discover how Grupo Palenkke has driven brands like ELIXIR DEL ALMA, KANAN, Palenkke Mezcal, SAN ROJO, KOLDVOLT, RITEVOLT and HeartfulCraft toward global success."
+  },
+  "productos": {
+    "meta_title": "Products — Grupo Palenkke",
+    "meta_desc": "Discover Palenkke Mezcal: artisanal tradition, Mexican identity and international commercial expansion.",
+    "hero_eyebrow": "Products",
+    "hero_heading_line1": "Palenkke",
+    "hero_heading_line2": "Mezcal",
+    "hero_sub": "Artisanal mezcal made in Mexico under traditional processes that respect the origin and quality of agave.",
+    "about_heading": "The Story Behind Palenkke Mezcal",
+    "about_p1": "Palenkke Mezcal is born from the passion for traditional Mexican craftsmanship and respect for agave as cultural heritage.",
+    "about_p2": "Each bottle represents hours of artisanal work, from agave selection to final distillation in copper stills."
+  },
+  "contacto": {
+    "meta_title": "Contact — Grupo Palenkke",
+    "meta_desc": "Contact us to explore business opportunities, strategic alliances or international distribution.",
+    "hero_eyebrow": "Contact",
+    "hero_heading": "Let's Build Something Greater Together",
+    "hero_sub": "We are open to developing commercial relationships with producers, brands, distributors and investors."
+  },
+  "legal": {
+    "meta_title": "Partnerships — Grupo Palenkke",
+    "meta_desc": "Partnership opportunities with Grupo Palenkke: distribution alliances, retail collaborations and more.",
+    "hero_eyebrow": "Partnership Opportunities",
+    "hero_heading": "Partnership Opportunities with Grupo PALENKKE",
+    "hero_sub": "Discover the essence of Mexico with Grupo PALENKKE, created with passion and tradition.\n\nTake your brand to the next level and join us to celebrate the spirit of Mexico by exploring partnership opportunities with Grupo PALENKKE.\n\nFrom distribution to retail, together we can open new possibilities and build lasting success.",
+    "items": [
+      { "title": "Distribution Alliances", "desc": "Expand your portfolio with Grupo PALENKKE's exclusive resources and products.\n\nPartner with us to distribute our premium products in international markets.\n\nBenefit from our commitment to quality, authenticity and tradition, and together let's bring the legacy of our Mexican artisans to new markets and consumers around the world." },
+      { "title": "Retail Collaborations", "desc": "Elevate your retail experience alongside Grupo PALENKKE.\n\nShowcase our products in your commercial spaces and offer your customers the opportunity to discover the flavors, identity and essence of Mexico.\n\nCollaborate with us to develop exclusive promotions, activations and unique commercial experiences that connect with your consumers." },
+      { "title": "Brand Ambassador Program", "desc": "Join Grupo PALENKKE as a brand ambassador.\n\nShare your passion for our products and become a key representative of our brand or even your own brand within our commercial ecosystem.\n\nEnjoy exclusive benefits while helping expand the essence and experience of Grupo PALENKKE to new communities and markets." },
+      { "title": "Event Sponsorship", "desc": "Connect your brand with the experience and presence of Grupo PALENKKE through exclusive sponsorships.\n\nFrom festivals to private events and premium experiences, our products can elevate the guest experience and generate a memorable impact.\n\nExplore personalized sponsorship opportunities designed to position your brand in dynamic, attractive and high commercial value environments." },
+      { "title": "Personalized Partnerships", "desc": "Do you have a unique collaboration idea?\n\nWe are open to exploring personalized partnerships that align with the values and vision of Grupo PALENKKE.\n\nWhether through co-branded products, promotional campaigns or immersive experiences, let's work together to transform ideas into new opportunities for mutual growth." }
+    ],
+    "cta_text": "For more information about collaboration opportunities with Grupo PALENKKE, contact us.",
+    "cta_closing": "Let's embark together on this exciting experience and celebrate the essence of Grupo PALENKKE.",
+    "form_eyebrow": "Let's Connect",
+    "form_heading": "Tell Us Your Proposal",
+    "form_sub": "Complete the form and our team will get in touch with you within 24 hours.",
+    "form": {
+      "name": "Full Name",
+      "name_placeholder": "Your full name",
+      "email": "Email Address",
+      "email_placeholder": "you@company.com",
+      "phone": "Phone",
+      "phone_placeholder": "+1 (000) 000-0000",
+      "company": "Company",
+      "company_placeholder": "Your company name",
+      "interest": "Partnership Type",
+      "select_default": "Select an option",
+      "options": ["Distribution Alliance", "Retail Collaboration", "Brand Ambassador", "Event Sponsorship", "Personalized Partnership", "Other"],
+      "message": "Message",
+      "message_placeholder": "Tell us about your proposal or collaboration idea...",
+      "submit": "Send Proposal",
+      "success_title": "Proposal Sent!",
+      "success_msg": "Thank you for your interest. Our team will contact you within 24 hours.",
+      "error_msg": "There was an error sending. Please try again."
+    }
+  },
+  "footer": {
+    "tagline": "Driving brands toward global success.",
+    "company": "Company",
+    "services_label": "Services",
+    "contact_label": "Contact",
+    "rights": "All rights reserved.",
+    "links": {
+      "about": "About Us",
+      "cases": "Success Cases",
+      "products": "Products",
+      "contact": "Contact",
+      "branding": "Brand Development",
+      "incubation": "Incubation",
+      "distribution": "Commercialization",
+      "expansion": "International Expansion"
+    }
+  }
+}
