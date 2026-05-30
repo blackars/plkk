@@ -456,9 +456,8 @@ export default function CasosPage() {
             <motion.div variants={stagger} className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
                 { value: '7', label: 'Marcas en Portafolio' },
-                { value: '4', label: 'Proyectos Activos' },
-                { value: '7', label: 'Mercados Internacionales' },
                 { value: '17+', label: 'Años de Experiencia' },
+                { value: '7', label: 'Mercados Internacionales' },
               ].map(({ value, label }) => (
                 <motion.div key={label} variants={fadeUp} className="p-6">
                   <span className="block font-heading text-5xl font-bold text-[#C9A84C] mb-2">{value}</span>
