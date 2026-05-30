@@ -84,7 +84,7 @@ const services = [
       'Guías de estilo y manuales',
       'Lanzamiento y activación',
     ],
-    imgSlot: '/assets/agave.jpeg',
+    imgSlot: '/assets/desarrollodemarca.png',
     color: '#EEF2F8',
     accent: '#1B3A6B',
     tag: 'Estrategia',
