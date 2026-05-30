@@ -259,13 +259,16 @@ export default function HomePage() {
 
 
 
-            <motion.p variants={fadeUp} className="text-white/55 text-lg md:text-xl leading-relaxed max-w-lg mb-8">
-              {t('hero.geo')}
-            </motion.p>
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
+              <div className="h-px w-8 bg-[#C9A84C] shrink-0" />
+              <span className="text-white/55 text-lg md:text-xl leading-relaxed">
+                {t('hero.slogan')}
+              </span>
+            </motion.div>
 
             <motion.h1
               variants={stagger}
-              className="font-heading text-[clamp(44px,7.5vw,108px)] font-bold leading-[0.93] tracking-tight text-white mb-8">
+              className="font-heading text-[clamp(44px,7.5vw,108px)] font-bold leading-[0.93] tracking-tight text-white mb-4">
               
               {headlineWords.map((word, i) =>
               <motion.span
@@ -278,10 +281,10 @@ export default function HomePage() {
               )}
             </motion.h1>
 
-            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4">
-              <div className="h-px w-8 bg-[#C9A84C]" />
-              <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">
-                {t('hero.slogan')}
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4 min-w-0 overflow-x-auto">
+              <div className="h-px w-8 bg-[#C9A84C] shrink-0" />
+              <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase whitespace-nowrap">
+                {t('hero.geo')}
               </span>
             </motion.div>
             <motion.div
