@@ -540,15 +540,6 @@ export default function HomePage() {
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <InView>
-              <AccentLine />
-              <Eyebrow>{t('contact_section.eyebrow')}</Eyebrow>
-              <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-[#0D1B2E] leading-tight mb-6">
-                {t('contact_section.heading')}
-              </motion.h2>
-              <motion.p variants={fadeUp} className="text-[#5A7099] text-base leading-relaxed mb-10">
-                {t('contact_section.sub')}
-              </motion.p>
-
               <motion.div variants={stagger} className="space-y-5 mb-10">
                 {[
                 { Icon: Mail, labelKey: 'email_label', value: 'contact@palenkke.org', href: 'mailto:contact@palenkke.org' },

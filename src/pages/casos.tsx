@@ -453,13 +453,13 @@ export default function CasosPage() {
 
         <div className="relative container mx-auto px-6 lg:px-10">
           <InView>
-            <motion.div variants={stagger} className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center max-w-3xl mx-auto justify-items-center">
               {[
                 { value: '7', label: 'Marcas en Portafolio' },
                 { value: '17+', label: 'Años de Experiencia' },
                 { value: '7', label: 'Mercados Internacionales' },
               ].map(({ value, label }) => (
-                <motion.div key={label} variants={fadeUp} className="p-6">
+                <motion.div key={label} variants={fadeUp} className="p-6 w-full max-w-[220px]">
                   <span className="block font-heading text-5xl font-bold text-[#C9A84C] mb-2">{value}</span>
                   <span className="block text-white/50 text-xs tracking-[0.2em] uppercase">{label}</span>
                 </motion.div>
