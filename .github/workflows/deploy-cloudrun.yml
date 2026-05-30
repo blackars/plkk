@@ -6,7 +6,7 @@ on:
 
 env:
   PROJECT_ID: palenkke-website
-  SERVICE: palenkke-service
+  SERVICE: palenkke
   REGION: us-central1
   AR_REPO: palenkke-repo
   IMAGE: palenkke
