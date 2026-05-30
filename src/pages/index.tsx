@@ -164,7 +164,7 @@ export default function HomePage() {
     areaServed: ['MX', 'US', 'SA'],
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'contact@palenkke.org',
+      email: 'palenkke.mkt@gmail.com',
       contactType: 'customer service'
     },
     sameAs: [
@@ -545,7 +545,7 @@ export default function HomePage() {
             <InView>
               <motion.div variants={stagger} className="space-y-5 mb-10">
                 {[
-                { Icon: Mail, labelKey: 'email_label', value: 'contact@palenkke.org', href: 'mailto:contact@palenkke.org' },
+                { Icon: Mail, labelKey: 'email_label', value: 'palenkke.mkt@gmail.com', href: 'mailto:palenkke.mkt@gmail.com' },
                 { Icon: Globe, labelKey: 'web_label', value: 'www.palenkke.org', href: 'https://www.palenkke.org' },
                 { Icon: MapPin, labelKey: 'office_label', value: t('contact_section.office_value'), href: null }].
                 map(({ Icon, labelKey, value, href }) =>

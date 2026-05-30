@@ -316,8 +316,8 @@ export default function LegalPage() {
               className="mt-6 text-center text-sm text-[#0D1B2E]/50"
             >
               O escríbenos directamente a{' '}
-              <a href="mailto:contact@palenkke.org" className="text-[#1B3A6B] font-medium hover:text-[#C9A84C] transition-colors duration-200">
-                contact@palenkke.org
+              <a href="mailto:palenkke.mkt@gmail.com" className="text-[#1B3A6B] font-medium hover:text-[#C9A84C] transition-colors duration-200">
+                palenkke.mkt@gmail.com
               </a>
             </motion.p>
           </div>

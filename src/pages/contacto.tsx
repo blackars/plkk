@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useRef, useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, useInView, type Variants } from 'motion/react';
 import { Helmet } from '@dr.pogodin/react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -76,8 +76,8 @@ const contactInfo = [
   {
     Icon: Mail,
     label: 'Correo Electrónico',
-    value: 'contact@palenkke.org',
-    href: 'mailto:contact@palenkke.org',
+    value: 'palenkke.mkt@gmail.com',
+    href: 'mailto:palenkke.mkt@gmail.com',
     flag: null,
   },
   {
@@ -316,6 +316,16 @@ function ContactForm() {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function ContactoPage() {
   const { t } = useTranslation();
+  const { hash } = useLocation();
+  const formSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (hash === '#form' && formSectionRef.current) {
+      setTimeout(() => {
+        formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
+  }, [hash]);
   return (
     <>
       <Helmet>
@@ -343,7 +353,7 @@ export default function ContactoPage() {
             '@type': 'Organization',
             name: 'Grupo Palenkke',
             url: 'https://www.palenkke.org',
-            email: 'contact@palenkke.org',
+            email: 'palenkke.mkt@gmail.com',
           },
         })}</script>
       </Helmet>
@@ -506,7 +516,7 @@ export default function ContactoPage() {
 
             {/* ── Right: Form (3/5) ── */}
             <InViewSingle variant={fadeRight} className="lg:col-span-3">
-              <div className="bg-white border border-[#D4DCE8] rounded-sm shadow-[0_4px_32px_rgba(27,58,107,0.08)] overflow-hidden">
+              <div id="form" ref={formSectionRef} className="bg-white border border-[#D4DCE8] rounded-sm shadow-[0_4px_32px_rgba(27,58,107,0.08)] overflow-hidden">
                 {/* Form header */}
                 <div className="px-8 pt-8 pb-6 border-b border-[#D4DCE8]">
                   <h2 className="font-heading text-2xl font-bold text-[#0D1B2E] mb-1">Envíanos un Mensaje</h2>

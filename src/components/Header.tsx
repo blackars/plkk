@@ -65,7 +65,7 @@ export default function Header() {
               {i18n.language === 'es' ? 'EN' : 'ES'}
             </button>
             <Link
-              to="/contacto"
+              to="/contacto#form"
               className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-[#C9A84C] text-[#0D1B2E] text-xs font-bold tracking-wider uppercase rounded-sm hover:bg-[#b8983f] transition-colors"
             >
               {t('nav.cta')}
@@ -106,7 +106,7 @@ export default function Header() {
               {i18n.language === 'es' ? 'English' : 'Español'}
             </button>
             <Link
-              to="/contacto"
+              to="/contacto#form"
               onClick={() => setOpen(false)}
               className="block mt-3 px-4 py-3 bg-[#C9A84C] text-[#0D1B2E] text-sm font-bold tracking-wider uppercase rounded-sm text-center"
             >
