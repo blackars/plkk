@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Globe } from 'lucide-react'
 
 export default function Header() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [open, setOpen] = useState(false)
   const location = useLocation()
+
+  const toggleLang = () => {
+    i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es')
+  }
 
   const navLinks = [
     { to: '/', label: t('nav.home') },
@@ -49,6 +53,14 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold tracking-wider uppercase text-white/60 hover:text-white border border-white/15 hover:border-white/30 rounded-sm transition-all duration-200"
+              aria-label="Toggle language"
+            >
+              <Globe size={13} />
+              {i18n.language === 'es' ? 'EN' : 'ES'}
+            </button>
             <Link
               to="/contacto"
               className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-[#C9A84C] text-[#0D1B2E] text-xs font-bold tracking-wider uppercase rounded-sm hover:bg-[#b8983f] transition-colors"
@@ -83,6 +95,13 @@ export default function Header() {
                 {label}
               </Link>
             ))}
+            <button
+              onClick={() => { toggleLang(); setOpen(false) }}
+              className="flex items-center justify-center gap-2 mt-3 px-4 py-3 border border-white/15 text-white/60 text-sm font-semibold tracking-wider uppercase rounded-sm hover:border-white/30 hover:text-white transition-all"
+            >
+              <Globe size={14} />
+              {i18n.language === 'es' ? 'English' : 'Español'}
+            </button>
             <Link
               to="/contacto"
               onClick={() => setOpen(false)}

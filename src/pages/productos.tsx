@@ -380,7 +380,7 @@ export default function ProductosPage() {
               
               <div className="overflow-hidden rounded-sm shadow-[0_24px_80px_rgba(27,58,107,0.12)] group">
                 <motion.img
-                  src="/airo-assets/images/pages/productos/agave-field"
+                  src="/assets/agave-fields.jpg"
                   alt="Campos de agave en Michoacán"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.6, ease: 'easeOut' as const }}
