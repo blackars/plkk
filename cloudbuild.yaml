@@ -6,18 +6,6 @@ steps:
     args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/palenkke-repo/palenkke:$COMMIT_SHA', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/palenkke-repo/palenkke:$COMMIT_SHA']
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args:
-      - 'run'
-      - 'deploy'
-      - 'palenkke'
-      - '--image=us-central1-docker.pkg.dev/$PROJECT_ID/palenkke-repo/palenkke:$COMMIT_SHA'
-      - '--port=8080'
-      - '--region=us-central1'
-      - '--project=$PROJECT_ID'
-      - '--quiet'
-      - '--allow-unauthenticated'
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/palenkke-repo/palenkke:$COMMIT_SHA'
