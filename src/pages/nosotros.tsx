@@ -507,7 +507,7 @@ export default function NosotrosPage() {
               <motion.div variants={fadeUp}
               className="group bg-[#F7F9FC] border border-[#D4DCE8] rounded-sm p-7 hover:border-[#1B3A6B]/30 hover:bg-white hover:shadow-[0_8px_32px_rgba(27,58,107,0.10)] transition-all duration-300">
                 <div className="w-14 h-14 bg-[#1B3A6B] rounded-sm flex items-center justify-center mb-5 shadow-[0_4px_16px_rgba(27,58,107,0.20)] group-hover:shadow-[0_0_28px_rgba(27,58,107,0.35)] transition-shadow duration-300">
-                  <span className="text-white font-heading font-bold text-xl tracking-wider select-none">JF</span>
+                  <span className="text-white font-heading font-bold text-xl tracking-wider select-none">EG</span>
                 </div>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-2xl" role="img" aria-label="México">🇲🇽</span>
