@@ -597,8 +597,8 @@ export default function ProductosPage() {
               <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-white leading-tight mb-8">
                 Del Agave a la Botella
               </motion.h2>
-              <motion.div variants={fadeUp} className="font-heading text-[clamp(14px,2.0vw,28px)] font-light text-white leading-tight mb-8">
-                <p>Elaborar un buen mezcal es un arte que requiere tiempo, paciencia y experiencia. Nuestros Maestros Mezcaleros siguen un proceso cuidado y tradicional:</p>
+              <motion.div variants={fadeUp} className="font-heading text-clamp(14px,2.0vw,28px)] font-light text-white leading-tight mb-8">
+                    <p>Elaborar un buen mezcal es un arte que requiere tiempo, paciencia y experiencia. Nuestros Maestros Mezcaleros siguen un proceso cuidado y tradicional:</p>
               </motion.div>
               <motion.div variants={stagger} className="space-y-5">
                 {[
