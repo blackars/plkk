@@ -53,7 +53,7 @@ const variants = [
   tagBg: 'bg-[#EEF2F8] text-[#1B3A6B]',
   imgSlot: '/assets/mezcaljoven.jpeg',
   abv: '40% Alc. Vol.',
-  agave: 'Agave Espadín',
+  agave: 'Cupreata Silvestre',
   region: 'Michoacán, México',
   process: 'Destilación artesanal en alambique de cobre',
   tasting: 'Notas de agave fresco, cítricos suaves y un final ahumado elegante.',
@@ -71,8 +71,8 @@ const variants = [
   tagBg: 'bg-[#C9A84C]/15 text-[#8B6914]',
   imgSlot: '/assets/mezcalanejo.jpeg',
   abv: '42% Alc. Vol.',
-  agave: 'Agave Tobalá',
-  region: 'Michoacán, México',
+  agave: 'Cupreata Silvestre',
+  region: ' Turicato, Michoacán, México',
   process: 'Reposado en barricas de roble americano',
   tasting: 'Notas de vainilla, caramelo, madera tostada y agave maduro con final largo.',
   sizes: ['750 ml', 'Edición Especial 1L'],
@@ -89,8 +89,8 @@ const variants = [
   tagBg: 'bg-pink-50 text-pink-700',
   imgSlot: '/assets/mezcalrose.jpeg',
   abv: '38% Alc. Vol.',
-  agave: 'Agave Espadín & Tobalá',
-  region: 'Michoacán, México',
+  agave: ' Cupreata Silvestre',
+  region: ' Turicato, Michoacán, México',
   process: 'Maceración con frutos rojos seleccionados',
   tasting: 'Notas florales, frutos rojos, agave suave y un final fresco y elegante.',
   sizes: ['375 ml', '750 ml'],
@@ -107,7 +107,7 @@ const variants = [
   tagBg: 'bg-pink-50 text-pink-700',
   imgSlot: '/assets/mezcalcoco.jpeg',
   abv: '38% Alc. Vol.',
-  agave: 'Agave Espadín & Tobalá',
+  agave: 'Cupreata Silvestre',
   region: 'Michoacán, México',
   process: 'Maceración con frutos rojos seleccionados',
   tasting: 'Notas florales, frutos rojos, agave suave y un final fresco y elegante.',
@@ -597,13 +597,16 @@ export default function ProductosPage() {
               <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-white leading-tight mb-8">
                 Del Agave a la Botella
               </motion.h2>
+              <motion.h3 variants={fadeUp} className="font-heading text-[clamp(20px,2.5vw,32px)] font-light text-white leading-tight mb-8">
+              Elaborar un buen mezcal es un arte que requiere tiempo, paciencia y experiencia. Nuestros Maestros Mezcaleros siguen un proceso cuidado y tradicional:
+              </motion.h3>
 
               <motion.div variants={stagger} className="space-y-5">
                 {[
-                { num: '01', title: 'Selección del Agave', desc: 'Agaves maduros seleccionados a mano en los campos de Michoacán, respetando los tiempos naturales de la planta.' },
-                { num: '02', title: 'Cocción Tradicional', desc: 'Las piñas se cuecen en hornos de tierra con leña de encino, proceso que define el carácter ahumado único.' },
-                { num: '03', title: 'Molienda y Fermentación', desc: 'Molienda en tahona de piedra y fermentación natural en tinas de madera con levaduras silvestres.' },
-                { num: '04', title: 'Destilación en Cobre', desc: 'Doble destilación en alambiques de cobre artesanales para obtener un mezcal limpio y expresivo.' }].
+                { num: '01', title: 'Cocción', desc: 'Las piñas del agave se cuecen en hornos de piedra.' },
+                { num: '02', title: 'Molienda', desc: ' Se trituran artesanalmente para extraer los jugos.' },
+                { num: '03', title: 'Fermentación ', desc: 'Se deja que la naturaleza transforme el mosto.' },
+                { num: '04', title: 'Destilación', desc: 'El mezcal toma forma en alambiques de cobre.' }].
                 map(({ num, title, desc }) =>
                 <motion.div
                   key={num}
@@ -617,6 +620,9 @@ export default function ProductosPage() {
                     </div>
                   </motion.div>
                 )}
+              <motion.h3 variants={fadeUp} className="font-heading text-[clamp(20px,2.5vw,32px)] font-light text-white leading-tight mb-8">
+                    Cada maestro imprime su sello único en cada lote, logrando un equilibrio perfecto entre sabor, aroma y carácter.
+              </motion.h3>
               </motion.div>
             </InView>
           </div>
