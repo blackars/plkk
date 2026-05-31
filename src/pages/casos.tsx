@@ -94,19 +94,45 @@ function CompanyLogo({ name, logoId }: { name: string; logoId?: string }) {
 
   if (logoImg && !imgFailed) {
     return (
-      <img
+      <motion.img
         src={logoImg}
         alt={`${name} logo`}
-        className="max-h-44 max-w-full w-auto h-auto object-contain"
+        className="max-h-56 max-w-full w-auto h-auto object-contain"
         onError={() => setImgFailed(true)}
+        animate={{
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        whileHover={{
+          scale: 1,
+          transition: { duration: 0.3 }
+        }}
       />
     );
   }
 
   return (
-    <span className="font-heading font-bold text-[clamp(2.5rem,8vw,4.5rem)] tracking-wider select-none text-[#1B3A6B]/25">
+    <motion.span
+      className="font-heading font-bold text-[clamp(2.5rem,8vw,4.5rem)] tracking-wider select-none text-[#1B3A6B]/25"
+      animate={{
+        scale: [1, 1.1, 1],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      whileHover={{
+        scale: 1,
+        transition: { duration: 0.3 }
+      }}
+    >
       {initials}
-    </span>
+    </motion.span>
   );
 }
 

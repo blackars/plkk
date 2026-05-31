@@ -48,3 +48,16 @@ jobs:
             --platform=managed \
             --allow-unauthenticated \
             --port=8080
+
+      - name: Clean old images (keep last 3)
+        run: |
+          IMAGES_TO_DELETE=$(gcloud artifacts docker images list \
+            us-central1-docker.pkg.dev/$PROJECT_ID/$AR_REPO/$IMAGE \
+            --format="value(image)" \
+            --sort-by="~CREATE_TIME" \
+            | head -n -3)
+
+          for img in $IMAGES_TO_DELETE; do
+            echo "Deleting image: $img"
+            gcloud artifacts docker images delete "$img" --quiet --delete-tags || true
+          done
