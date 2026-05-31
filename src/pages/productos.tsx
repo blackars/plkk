@@ -592,7 +592,7 @@ export default function ProductosPage() {
             <InView>
               <motion.div variants={fadeUp} className="flex items-center gap-3 mb-5">
                 <div className="h-px w-8 bg-[#C9A84C]" />
-                <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">Proceso Artesanal</span>
+                <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">Proceso 100% Artesanal</span>
               </motion.div>
               <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-white leading-tight mb-8">
                 Del Agave a la Botella
@@ -675,9 +675,7 @@ export default function ProductosPage() {
               Presencia Internacional
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
-              Elixír del Alma Mezcal está disponible en mercados clave a través de canales especializados.
-              El mezcal está protegido bajo la Denominación de Origen (DO), reconocida por la Organización Mundial del Comercio como una Indicación Geográfica.
-              En México, 13 estados y más de 200 municipios cuentan con esta certificación, entre ellos Michoacán, donde el agave tiene una doble denominación: mezcal y tequila.
+              Elixír del Alma Mezcal está disponible en mercados clave a través de canales especializados
             </motion.p>
           </InView>
 
