@@ -294,54 +294,16 @@ export default function CasosPage() {
                     variants={fadeUp}
                     whileHover={{
                       y: -8,
-                      boxShadow: '0 28px 72px rgba(27,58,107,0.20)',
+                      scale: 1.05,
                     }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className={`group relative flex flex-col min-h-[300px] overflow-hidden rounded-sm border border-[#D4DCE8] bg-white transition-all duration-300 ${
+                    className={`group relative flex items-center justify-center p-8 transition-all duration-300 ${
                       hasWebsite || isComingSoon
-                        ? 'cursor-pointer hover:border-[#1B3A6B]/40'
+                        ? 'cursor-pointer'
                         : 'cursor-default'
                     }`}
                   >
-                    <div
-                      className="absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                      style={{ boxShadow: 'inset 0 0 0 1.5px rgba(27,58,107,0.18), 0 0 48px rgba(27,58,107,0.10)' }}
-                    />
-
-                    <div className="flex-[2] min-h-[160px] flex items-center justify-center px-5 pt-5 pb-2">
-                      <CompanyLogo name={co.name} logoId={co.logo} />
-                    </div>
-
-                    <div className="flex-[1] flex flex-col px-5 pb-5 pt-1 min-h-0">
-                      <span className={`inline-block self-start px-2.5 py-0.5 text-[10px] font-semibold tracking-wider uppercase rounded-sm mb-2 ${tagColor}`}>
-                        {co.tag}
-                      </span>
-
-                      <h3 className="font-heading font-bold text-base leading-snug mb-1.5 text-[#0D1B2E] group-hover:text-[#1B3A6B] transition-colors duration-300">
-                        {co.name}
-                      </h3>
-
-                      <p className="text-xs leading-relaxed flex-1 text-[#5A7099] line-clamp-3">
-                        {co.desc}
-                      </p>
-
-                      {(hasWebsite || isComingSoon) && (
-                        <div className={`mt-3 flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase transition-all duration-300 ${
-                          hasWebsite ? 'text-[#1B3A6B] group-hover:text-[#C9A84C]' : 'text-[#9AAAC0]'
-                        }`}>
-                          <Globe size={10} />
-                          <span className="truncate max-w-[160px]">{co.websiteLabel}</span>
-                          {hasWebsite && <ArrowRight size={9} className="shrink-0 group-hover:translate-x-1 transition-transform duration-300" />}
-                        </div>
-                      )}
-
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileHover={{ width: '100%' }}
-                        transition={{ duration: 0.4, ease: 'easeOut' }}
-                        className="mt-3 h-px bg-[#1B3A6B]/20"
-                      />
-                    </div>
+                    <CompanyLogo name={co.name} logoId={co.logo} />
                   </motion.div>
                 );
 

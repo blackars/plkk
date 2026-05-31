@@ -77,8 +77,8 @@
       { "name": "KANAN", "logo": "kanan", "tag": "México", "desc": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea, con tres variedades: joven, rosé y añejo.", "website": "https://kananmezcal.com", "websiteLabel": "kananmezcal.com" },
       { "name": "PALENKKE MEZCAL", "logo": "palenkke-mezcal", "tag": "México", "desc": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional, con tres variedades: Rosé, Joven y Añejo.", "website": "https://palenkkemezcal.com", "websiteLabel": "palenkkemezcal.com" },
       { "name": "SAN ROJO", "logo": "san-rojo", "tag": "México", "desc": "Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo. Un homenaje a nuestras costumbres y tradiciones, capturando en cada botella la esencia de México.", "website": "https://sanrojo.com", "websiteLabel": "sanrojo.com" },
-      { "name": "KOLDVOLT", "logo": "koldvolt", "tag": "Asia", "desc": "Socio integral para vehículos refrigerados de reparto y soluciones de alto rendimiento para furgonetas y camiones frigoríficos de hasta 28 pies.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
-      { "name": "RITEVOLT", "logo": "ritevolt", "tag": "Asia", "desc": "Empresa dedicada a la investigación, desarrollo, producción, venta, servicio e integración de equipos de energía solar.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
+      { "name": "KOLDVOLT", "logo": "koldvolt", "tag": "Asia", "desc": "Innovador en Cadena de Frío, es tu socio integral para todas las necesidades de vehículos de reparto refrigerados. Desde sistemas desmontables Slide-in ColdBox y ColdContainer para furgonetas de carga seca, hasta kits de carrocería de alta resistencia junto con soluciones de alto rendimiento ReeferVan y ReeferTruck para furgonetas de carga y camiones rectos de hasta 28 pies.", "website": "https://koldvolt.com", "websiteLabel": "koldvolt.com" },
+      { "name": "RITEVOLT", "logo": "ritevolt", "tag": "Asia", "desc": "Empresa dedicada a la investigación, desarrollo, producción, venta, servicio e integración de equipos de energía solar.", "website": "https://koldvolt.com", "websiteLabel": "koldvolt.com" },
       { "name": "HEARTFULCRAFT", "logo": "heartfulcraft", "tag": "India", "desc": "Marca que empodera a más de 350 artesanos en la India rural, preservando técnicas artesanales centenarias y creando piezas únicas hechas a mano que llegan a compradores de todo el mundo.", "website": "https://heartfulcraft.com", "websiteLabel": "heartfulcraft.com" }
     ]
   },
@@ -163,7 +163,7 @@
     "meta_desc": "Desarrollo de marcas, incubación, comercialización y expansión internacional. Servicios integrales para impulsar tu negocio.",
     "hero_eyebrow": "Servicios Estratégicos",
     "hero_heading": "Servicios Estratégicos",
-    "hero_sub": "Desde la concepción hasta la expansión internacional, acompañamos cada etapa de tu proyecto.",
+    "hero_sub": "Desde un sueño hasta la expansión internacional, acompañamos cada etapa de tu proyecto.",
     "methodology_eyebrow": "Metodología",
     "methodology_heading": "Nuestro Proceso de Trabajo",
     "methodology_sub": "Un enfoque estructurado y probado para garantizar resultados.",

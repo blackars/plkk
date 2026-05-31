@@ -55,9 +55,11 @@ const milestones = [
 { year: '2008', titleKey: 'Fundación', descKey: 'Grupo Palenkke nace en México con la visión de conectar marcas locales con mercados internacionales.' },
 { year: '2012', titleKey: 'Expansión Regional', descKey: 'Consolidamos presencia en Latinoamérica y establecemos alianzas estratégicas en EE.UU.' },
 { year: '2016', titleKey: 'Portafolio Diversificado', descKey: 'Ampliamos nuestro portafolio a tecnología, bebidas premium, artesanías y soluciones comerciales.' },
-{ year: '2020', titleKey: 'Visión Global', descKey: 'Lanzamos Palenkke Mezcal y consolidamos operaciones en mercados internacionales exigentes.' },
-{ year: '2024', titleKey: 'Ecosistema Premium', descKey: 'Más de 7 marcas desarrolladas, presencia en 7 regiones nacionales e internacionales y 17 años de resultados comprobados.' }];
-
+{ year: "2020", 
+  titleKey: "Visión Global", 
+  descKey: "Grupo Palenkke no solo identifica marcas y productos, sino que trabaja en su solidificación, construye identidad, impulsa la expansión y garantiza la permanencia en mercados internacionales exigentes."},
+{ year: '2024', titleKey: 'Ecosistema Premium', descKey: 'Más de 7 marcas desarrolladas, con presencia en mercadosnacionales e internacionales.' }];
+  
 
 const valueIcons = [Shield, Lightbulb, Handshake, Globe, Target, TrendingUp];
 
