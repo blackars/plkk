@@ -597,10 +597,9 @@ export default function ProductosPage() {
               <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-white leading-tight mb-8">
                 Del Agave a la Botella
               </motion.h2>
-              <motion.h3 variants={fadeUp} className="font-heading text-[clamp(20px,2.5vw,32px)] font-light text-white leading-tight mb-8">
-              Elaborar un buen mezcal es un arte que requiere tiempo, paciencia y experiencia. Nuestros Maestros Mezcaleros siguen un proceso cuidado y tradicional:
-              </motion.h3>
-
+              <motion.div variants={fadeUp} className="font-heading text-[clamp(20px,2.5vw,32px)] font-light text-white leading-tight mb-8">
+                <p>Elaborar un buen mezcal es un arte que requiere tiempo, paciencia y experiencia. Nuestros Maestros Mezcaleros siguen un proceso cuidado y tradicional:</p>
+              </motion.div>
               <motion.div variants={stagger} className="space-y-5">
                 {[
                 { num: '01', title: 'Cocción', desc: 'Las piñas del agave se cuecen en hornos de piedra.' },
@@ -620,9 +619,9 @@ export default function ProductosPage() {
                     </div>
                   </motion.div>
                 )}
-              <motion.h3 variants={fadeUp} className="font-heading text-[clamp(20px,2.5vw,32px)] font-light text-white leading-tight mb-8">
-                    Cada maestro imprime su sello único en cada lote, logrando un equilibrio perfecto entre sabor, aroma y carácter.
-              </motion.h3>
+              <motion.div variants={fadeUp} className="font-heading text-[clamp(20px,2.5vw,32px)] font-light text-white leading-tight mb-8">
+                    <p>Cada maestro imprime su sello único en cada lote, logrando un equilibrio perfecto entre sabor, aroma y carácter.</p>
+              </motion.div>
               </motion.div>
             </InView>
           </div>
