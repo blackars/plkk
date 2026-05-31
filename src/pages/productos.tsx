@@ -59,7 +59,7 @@ const variants = [
   tasting: 'Notas de agave fresco, cítricos suaves y un final ahumado elegante.',
   sizes: ['375 ml', '750 ml'],
   featured: false,
-  description: 'Expresión pura del agave Espadín oaxaqueño. Transparente, fresco y con un ahumado sutil que refleja la tradición mezcalera de México.',
+  description: ' IXU Nahual Joven es la esencia desnuda del agave, un destilado que transmite la fuerza de la tierra y la frescura del momento. Cada sorbo es un canto ancestral, un recordatorio de que en la pureza reside la grandeza.',
   color: '#EEF2F8',
   accentColor: '#1B3A6B'
 },
@@ -77,7 +77,7 @@ const variants = [
   tasting: 'Notas de vainilla, caramelo, madera tostada y agave maduro con final largo.',
   sizes: ['750 ml', 'Edición Especial 1L'],
   featured: true,
-  description: 'Envejecido en barricas de roble americano, el Añejo desarrolla una complejidad excepcional. Ideal para conocedores que buscan profundidad y elegancia.',
+  description: ' El mezcal afiejo IXU Nahual es una expresion sofisticada, resultado de un proceso de maduracion en barricas de roble durante al menos 12 meses. Este reposo aporta complejidad, suavidad y un perfil aromatico unico, convirtiéndolo en un destilado de caracter elegante y profundo.',
   color: '#FDF6E3',
   accentColor: '#C9A84C'
 },
@@ -95,7 +95,7 @@ const variants = [
   tasting: 'Notas florales, frutos rojos, agave suave y un final fresco y elegante.',
   sizes: ['375 ml', '750 ml'],
   featured: false,
-  description: 'Una expresión contemporánea y sofisticada del mezcal artesanal. La maceración con frutos rojos crea un perfil único, moderno y visualmente impactante.',
+  description: ' En cada gota de IXU Nahual Rosé habita la fuerza y la dulzura de la mujer. Es un mezcal que nace del agave Cupreata Silvestre de Michoacan, cocido en hornos de piedra y destilado en cobre, pero que recibe un delicado toque de frutos rojos y pétalos de rosa, logrando un tono rosado sutil que ilumina la copa como un atardecer eterno.',
   color: '#FFF0F3',
   accentColor: '#C9A84C'
 },
@@ -113,7 +113,7 @@ const variants = [
   tasting: 'Notas florales, frutos rojos, agave suave y un final fresco y elegante.',
   sizes: ['375 ml', '750 ml'],
   featured: false,
-  description: 'Una expresión contemporánea y sofisticada del mezcal artesanal. La maceración con frutos rojos crea un perfil único, moderno y visualmente impactante.',
+  description: 'En el corazon de Michoacan, donde el fuego acaricia la tierra y el viento danza con los agaves, nace una joya unica: IXU Nahual Mezcal Joven - Coco Blend. Este elixir se forja en hornos de piedra, donde las pifas del agave Cupreata Silvestre se cuecen entamente junto con la magia del coco, impregnando cada fibra de su esencia tropical y ancestral.',
   color: '#FFF0F3',
   accentColor: '#C9A84C'
 
@@ -249,7 +249,7 @@ export default function ProductosPage() {
             description: t('productos.meta_desc'),
             brand: {
               '@type': 'Brand',
-              name: 'Mezcal Elixír del Alma'
+              name: 'Elixír del Alma'
             },
             manufacturer: {
               '@type': 'Organization',
@@ -580,8 +580,6 @@ export default function ProductosPage() {
                 muted
                 loop
                 playsInline
-                preload="auto"
-                poster="/assets/mezcal-process-poster.jpg"
                 className="w-full h-[420px] object-cover">
                 
                 <source src="/assets/mezcal-process.mp4" type="video/mp4" />
