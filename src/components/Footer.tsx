@@ -90,7 +90,7 @@ export default function Footer() {
                 <Phone size={13} className="text-[#C9A84C] shrink-0 mt-0.5" />
                 <div className="space-y-2">
                   <a href="tel:+17039812991" className="block text-white/40 text-sm hover:text-[#C9A84C] transition-colors">
-                    <span className="text-white/55">USA:</span> +1 (703) 981-2991
+                    <span className="text-white/55">USA:</span> +1 (703) 981-2909
                   </a>
                   <a href="tel:+522281447372" className="block text-white/40 text-sm hover:text-[#C9A84C] transition-colors">
                     <span className="text-white/55">México:</span> +52 228 144 7372
