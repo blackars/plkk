@@ -77,7 +77,7 @@ const variants = [
   tasting: 'Notas de vainilla, caramelo, madera tostada y agave maduro con final largo.',
   sizes: ['750 ml', 'Edición Especial 1L'],
   featured: true,
-  description: ' El mezcal afiejo IXU Nahual es una expresion sofisticada, resultado de un proceso de maduracion en barricas de roble durante al menos 12 meses. Este reposo aporta complejidad, suavidad y un perfil aromatico unico, convirtiéndolo en un destilado de caracter elegante y profundo.',
+  description: ' El mezcal añejo IXU Nahual es una expresion sofisticada, resultado de un proceso de maduracion en barricas de roble durante al menos 12 meses. Este reposo aporta complejidad, suavidad y un perfil aromatico unico, convirtiéndolo en un destilado de caracter elegante y profundo.',
   color: '#FDF6E3',
   accentColor: '#C9A84C'
 },
@@ -598,7 +598,7 @@ export default function ProductosPage() {
               <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-white leading-tight mb-8">
                 Del Agave a la Botella
               </motion.h2>
-              <motion.div variants={fadeUp} className="font-heading text-[clamp(20px,2.5vw,32px)] font-light text-white leading-tight mb-8">
+              <motion.div variants={fadeUp} className="font-heading text-[clamp(14px,2.0vw,28px)] font-light text-white leading-tight mb-8">
                 <p>Elaborar un buen mezcal es un arte que requiere tiempo, paciencia y experiencia. Nuestros Maestros Mezcaleros siguen un proceso cuidado y tradicional:</p>
               </motion.div>
               <motion.div variants={stagger} className="space-y-5">
@@ -620,7 +620,7 @@ export default function ProductosPage() {
                     </div>
                   </motion.div>
                 )}
-              <motion.div variants={fadeUp} className="font-heading text-[clamp(20px,2.5vw,32px)] font-light text-white leading-tight mb-8">
+              <motion.div variants={fadeUp} className="font-heading text-clamp(14px,2.0vw,28px)] font-light text-white leading-tight mb-8">
                     <p>Cada maestro imprime su sello único en cada lote, logrando un equilibrio perfecto entre sabor, aroma y carácter.</p>
               </motion.div>
               </motion.div>
