@@ -416,9 +416,10 @@ export default function ProductosPage() {
 
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
-              Selecciona una variante para explorar sus características, notas de cata y presentaciones disponibles.
-            </motion.p>
-          </InView>
+              Denominación de Origen (DO)
+              El mezcal está protegido bajo la Denominación de Origen (DO), reconocida por la Organización Mundial del Comercio como una Indicación Geográfica.
+              En México, 13 estados y más de 200 municipios cuentan con esta certificación, entre ellos Michoacán, donde el agave tiene una doble denominación: mezcal y tequila.            </motion.p>
+            </InView>
 
           <InView>
             <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6">
