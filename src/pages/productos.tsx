@@ -416,9 +416,8 @@ export default function ProductosPage() {
 
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
-              Denominación de Origen (DO)
-              El mezcal está protegido bajo la Denominación de Origen (DO), reconocida por la Organización Mundial del Comercio como una Indicación Geográfica.
-              En México, 13 estados y más de 200 municipios cuentan con esta certificación, entre ellos Michoacán, donde el agave tiene una doble denominación: mezcal y tequila.            </motion.p>
+             Seleccione la variante que desea conocer más detalles 
+            </motion.p>
             </InView>
 
           <InView>
@@ -677,6 +676,8 @@ export default function ProductosPage() {
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
               Elixír del Alma Mezcal está disponible en mercados clave a través de canales especializados.
+              El mezcal está protegido bajo la Denominación de Origen (DO), reconocida por la Organización Mundial del Comercio como una Indicación Geográfica.
+              En México, 13 estados y más de 200 municipios cuentan con esta certificación, entre ellos Michoacán, donde el agave tiene una doble denominación: mezcal y tequila.
             </motion.p>
           </InView>
 
