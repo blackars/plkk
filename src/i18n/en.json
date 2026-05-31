@@ -78,7 +78,7 @@
       { "name": "PALENKKE MEZCAL", "logo": "palenkke-mezcal", "tag": "Mexico", "desc": "Representation of artisanal tradition, Mexican identity and international commercial expansion, with three varieties: Rosé, Joven and Añejo.", "website": "https://palenkkemezcal.com", "websiteLabel": "palenkkemezcal.com" },
       { "name": "SAN ROJO", "logo": "san-rojo", "tag": "Mexico", "desc": "Chili liqueur crafted in Querétaro entirely by hand, unique in the world. A tribute to our customs and traditions, capturing the essence of Mexico in every bottle.", "website": "https://sanrojo.com", "websiteLabel": "sanrojo.com" },
       { "name": "KOLDVOLT", "logo": "koldvolt", "tag": "Asia", "desc": "Your integral partner for refrigerated delivery vehicles and high-performance solutions for vans and refrigerated trucks up to 28 feet.", "website": "https://koldvolt.com", "websiteLabel": "koldvolt.com" },
-      { "name": "RITEVOLT", "logo": "ritevolt", "tag": "Asia", "desc": "Company dedicated to research, development, production, sales, service and integration of solar energy equipment.", "website": "https://koldvolt.com", "websiteLabel": "koldvolt.com" },
+      { "name": "RITEVOLT", "logo": "ritevolt", "tag": "Asia", "desc": "Company dedicated to research, development, production, sales, service and integration of solar energy equipment.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
       { "name": "HEARTFULCRAFT", "logo": "heartfulcraft", "tag": "India", "desc": "Brand empowering over 350 artisans in rural India, preserving centuries-old artisanal techniques and creating unique handmade pieces that reach buyers worldwide.", "website": "https://heartfulcraft.com", "websiteLabel": "heartfulcraft.com" }
     ]
   },
