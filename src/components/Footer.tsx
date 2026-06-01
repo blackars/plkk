@@ -84,7 +84,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin size={13} className="text-[#C9A84C] shrink-0 mt-0.5" />
-                <span className="text-white/40 text-sm">México · USA · Centroamérica</span>
+                <span className="text-white/40 text-sm">México · USA</span>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone size={13} className="text-[#C9A84C] shrink-0 mt-0.5" />
