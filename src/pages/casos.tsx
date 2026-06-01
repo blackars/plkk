@@ -330,10 +330,8 @@ export default function CasosPage() {
                         whileHover={{
                           y: -8,
                           scale: 1.05,
-                          boxShadow: '0 28px 72px rgba(27,58,107,0.20)',
                         }}
                         transition={{ duration: 0.3, ease: 'easeOut' }}
-                        className="rounded-sm"
                       >
                         <CompanyLogo name={co.name} logoId={co.logo} />
                       </motion.div>
