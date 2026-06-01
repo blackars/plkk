@@ -7,6 +7,13 @@ import NosotrosPage from '@/pages/nosotros'
 import ServiciosPage from '@/pages/servicios'
 import CasosPage from '@/pages/casos'
 import ProductosPage from '@/pages/productos'
+import ProductoElixirPage from '@/pages/productos/producto-elixir'
+import ProductoKananPage from '@/pages/productos/producto-kanan'
+import ProductoPalenkkePage from '@/pages/productos/producto-palenkke'
+import ProductoSanRojoPage from '@/pages/productos/producto-san-rojo'
+import ProductoKoldvoltPage from '@/pages/productos/producto-koldvolt'
+import ProductoRitevoltPage from '@/pages/productos/producto-ritevolt'
+import ProductoHeartfulcraftPage from '@/pages/productos/producto-heartfulcraft'
 import GaleriasPage from '@/pages/galerias'
 import ContactoPage from '@/pages/contacto'
 import LegalPage from '@/pages/legal'
@@ -23,6 +30,13 @@ export default function App() {
           <Route path="/servicios" element={<ServiciosPage />} />
           <Route path="/casos" element={<CasosPage />} />
           <Route path="/productos" element={<ProductosPage />} />
+          <Route path="/productos/elixir" element={<ProductoElixirPage />} />
+          <Route path="/productos/kanan" element={<ProductoKananPage />} />
+          <Route path="/productos/palenkke" element={<ProductoPalenkkePage />} />
+          <Route path="/productos/san-rojo" element={<ProductoSanRojoPage />} />
+          <Route path="/productos/koldvolt" element={<ProductoKoldvoltPage />} />
+          <Route path="/productos/ritevolt" element={<ProductoRitevoltPage />} />
+          <Route path="/productos/heartfulcraft" element={<ProductoHeartfulcraftPage />} />
           <Route path="/galerias" element={<GaleriasPage />} />
           <Route path="/contacto" element={<ContactoPage />} />
           <Route path="/asociaciones" element={<LegalPage />} />

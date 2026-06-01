@@ -135,7 +135,7 @@ const services = [
     number: '04',
     title: 'Expansión Internacional',
     subtitle: 'Global Market Entry',
-    desc: 'Llevamos marcas mexicanas a los mercados más exigentes del mundo. Estrategia, regulación, distribución y posicionamiento en EE.UU., Sudamérica y Europa.',
+    desc: 'Llevamos marcas mexicanas a los mercados más exigentes del mundo. Estrategia, regulación, distribución y posicionamiento en México, USA, Centroamérica, Sudamérica, Asia, España e India',
     features: [
       'Análisis de mercados objetivo',
       'Cumplimiento regulatorio y legal',

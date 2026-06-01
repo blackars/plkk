@@ -73,13 +73,13 @@
     "heading": "Marcas y Proyectos",
     "sub": "Grupo PALENKKE participa en el desarrollo, posicionamiento y expansión de marcas enfocadas en identidad, innovación y crecimiento nacional e internacional.\n\nCada proyecto representa una visión estratégica construida sobre autenticidad, calidad y proyección global.\n\nNuestro ecosistema integra marcas orientadas a bebidas premium, desarrollo creativo, identidad comercial y nuevas oportunidades de mercado.",
     "items": [
-      { "name": "MEZCAL ELIXIR DEL ALMA", "logo": "elixir-del-alma", "tag": "México", "desc": "Descubre el sabor auténtico de un mezcal hecho a mano con cupeatra silvestre, elaborado en las tierras de Turicato, Michoacán. Cada botella guarda siglos de tradición, pasión y respeto por la naturaleza.", "website": "https://mezcalelixirdelalma.com", "websiteLabel": "elixirdelalma.com" },
-      { "name": "KANAN", "logo": "kanan", "tag": "México", "desc": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea, con tres variedades: joven, rosé y añejo.", "website": "https://kananmezcal.com", "websiteLabel": "kananmezcal.com" },
-      { "name": "PALENKKE MEZCAL", "logo": "palenkke-mezcal", "tag": "México", "desc": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional, con tres variedades: Rosé, Joven y Añejo.", "website": "https://palenkkemezcal.com", "websiteLabel": "palenkkemezcal.com" },
-      { "name": "SAN ROJO", "logo": "san-rojo", "tag": "México", "desc": "Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo. Un homenaje a nuestras costumbres y tradiciones, capturando en cada botella la esencia de México.", "website": "https://sanrojo.com", "websiteLabel": "sanrojo.com" },
-      { "name": "KOLDVOLT", "logo": "koldvolt", "tag": "Asia", "desc": "Innovador en Cadena de Frío, es tu socio integral para todas las necesidades de vehículos de reparto refrigerados. Desde sistemas desmontables Slide-in ColdBox y ColdContainer para furgonetas de carga seca, hasta kits de carrocería de alta resistencia junto con soluciones de alto rendimiento ReeferVan y ReeferTruck para furgonetas de carga y camiones rectos de hasta 28 pies.", "website": "https://koldvolt.com", "websiteLabel": "koldvolt.com" },
-      { "name": "RITEVOLT", "logo": "ritevolt", "tag": "Asia", "desc": "Empresa dedicada a la investigación, desarrollo, producción, venta, servicio e integración de equipos de energía solar.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
-      { "name": "HEARTFULCRAFT", "logo": "heartfulcraft", "tag": "India", "desc": "Marca que empodera a más de 350 artesanos en la India rural, preservando técnicas artesanales centenarias y creando piezas únicas hechas a mano que llegan a compradores de todo el mundo.", "website": "https://heartfulcraft.com", "websiteLabel": "heartfulcraft.com" }
+      { "name": "MEZCAL ELIXIR DEL ALMA", "logo": "elixir-del-alma", "route": "elixir", "tag": "México", "desc": "Descubre el sabor auténtico de un mezcal hecho a mano con cupeatra silvestre, elaborado en las tierras de Turicato, Michoacán. Cada botella guarda siglos de tradición, pasión y respeto por la naturaleza.", "website": "https://mezcalelixirdelalma.com", "websiteLabel": "elixirdelalma.com" },
+      { "name": "KANAN", "logo": "kanan", "route": "kanan", "tag": "México", "desc": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea, con tres variedades: joven, rosé y añejo.", "website": "https://kananmezcal.com", "websiteLabel": "kananmezcal.com" },
+      { "name": "PALENKKE MEZCAL", "logo": "palenkke-mezcal", "route": "palenkke", "tag": "México", "desc": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional, con tres variedades: Rosé, Joven y Añejo.", "website": "https://palenkkemezcal.com", "websiteLabel": "palenkkemezcal.com" },
+      { "name": "SAN ROJO", "logo": "san-rojo", "route": "san-rojo", "tag": "México", "desc": "Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo. Un homenaje a nuestras costumbres y tradiciones, capturando en cada botella la esencia de México.", "website": "https://sanrojo.com", "websiteLabel": "sanrojo.com" },
+      { "name": "KOLDVOLT", "logo": "koldvolt", "route": "koldvolt", "tag": "Asia", "desc": "Innovador en Cadena de Frío, es tu socio integral para todas las necesidades de vehículos de reparto refrigerados. Desde sistemas desmontables Slide-in ColdBox y ColdContainer para furgonetas de carga seca, hasta kits de carrocería de alta resistencia junto con soluciones de alto rendimiento ReeferVan y ReeferTruck para furgonetas de carga y camiones rectos de hasta 28 pies.", "website": "https://koldvolt.com", "websiteLabel": "koldvolt.com" },
+      { "name": "RITEVOLT", "logo": "ritevolt", "route": "ritevolt", "tag": "Asia", "desc": "Empresa dedicada a la investigación, desarrollo, producción, venta, servicio e integración de equipos de energía solar.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
+      { "name": "HEARTFULCRAFT", "logo": "heartfulcraft", "route": "heartfulcraft", "tag": "India", "desc": "Marca que empodera a más de 350 artesanos en la India rural, preservando técnicas artesanales centenarias y creando piezas únicas hechas a mano que llegan a compradores de todo el mundo.", "website": "https://heartfulcraft.com", "websiteLabel": "heartfulcraft.com" }
     ]
   },
   "mezcal": {
@@ -189,6 +189,53 @@
     "about_heading": "La Historia detrás de Mezcal Elixír del Alma",
     "about_p1": "El nombre Ixu Nahual nace de la fusión de la identidad michoacana y el misticismo del nahual: guardián del espíritu y la tradición. Desde hace generaciones, familias mezcaleras han perfeccionado el arte de transformar el agave silvestre en una bebida que conecta la tierra con el alma.",
     "about_p2": "El mezcal es más que una bebida: es un ritual que invita a compartir momentos, cultura y raíces.Entre las variedades más representativas encontramos Espadín, Cuishe, Tobalá, Cupreata, Papalote, entre otras, de donde se obtiene la esencia que caracteriza a esta bebida ancestral. Su aroma intenso y su sabor profundo reflejan la tierra que lo vio nacer y las manos que lo produjeron."
+  },
+  "productos_landing": {
+    "meta_title": "Productos — Grupo Palenkke",
+    "meta_desc": "Explora los productos de las marcas Grupo Palenkke: mezcales artesanales, licor de chiles, soluciones de cadena de frío, energía solar y artesanías.",
+    "hero_eyebrow": "Nuestros Productos",
+    "hero_heading": "Explora los Productos<br/>de Nuestras <span class=\"text-[#C9A84C]\">Marcas</span>",
+    "hero_sub": "Cada marca representa una historia de calidad, identidad y visión. Conoce los productos que integran nuestro portafolio global.",
+    "section_eyebrow": "Marcas del Grupo",
+    "section_heading": "Productos por Marca",
+    "section_sub": "Selecciona una marca para conocer sus productos y descubrir la calidad, tradición e innovación que representan."
+  },
+  "brand_pages": {
+    "elixir": {
+      "short_name": "Elixir del Alma",
+      "hero_heading": "Mezcal Elixír<br/>del Alma",
+      "hero_sub": "Mezcal artesanal elaborado en México bajo procesos tradicionales que respetan el origen y la calidad del agave."
+    },
+    "kanan": {
+      "short_name": "KANAN",
+      "hero_heading": "KANAN<br/>Mezcal",
+      "hero_sub": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea."
+    },
+    "palenkke": {
+      "short_name": "Palenkke Mezcal",
+      "hero_heading": "PALENKKE<br/>Mezcal",
+      "hero_sub": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional."
+    },
+    "san-rojo": {
+      "short_name": "San Rojo",
+      "hero_heading": "SAN ROJO<br/>Licor de Chiles",
+      "hero_sub": "Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo."
+    },
+    "koldvolt": {
+      "short_name": "Koldvolt",
+      "hero_heading": "KOLDVOLT<br/>Cadena de Frío",
+      "hero_sub": "Tu socio integral para todas las necesidades de vehículos de reparto refrigerados."
+    },
+    "ritevolt": {
+      "short_name": "Ritevolt",
+      "hero_heading": "RITEVOLT<br/>Energía Solar",
+      "hero_sub": "Empresa dedicada a la investigación, desarrollo e integración de equipos de energía solar."
+    },
+    "heartfulcraft": {
+      "short_name": "HeartfulCraft",
+      "hero_heading": "HEARTFULCRAFT<br/>Artesanías",
+      "hero_sub": "Marca que empodera a más de 350 artesanos preservando técnicas artesanales centenarias."
+    }
   },
   "contacto": {
     "meta_title": "Contacto — Grupo Palenkke",
