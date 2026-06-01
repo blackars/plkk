@@ -42,7 +42,7 @@ app.post('/api/contact', async (req, res) => {
       },
       body: JSON.stringify({
         from: 'Contacto Web <onboarding@resend.dev>',
-        to: 'palenkke.mkt@gmail.com',
+        to: 'contact@palenkke.org',
         subject: `Nuevo contacto: ${name} — ${interest || 'General'}`,
         html,
         reply_to: email,

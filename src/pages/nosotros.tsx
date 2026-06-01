@@ -59,7 +59,7 @@ const milestones = [
   titleKey: "Visión Global", 
   descKey: "Grupo Palenkke no solo identifica marcas y productos, sino que trabaja en su solidificación, construye identidad, impulsa la expansión y garantiza la permanencia en mercados internacionales exigentes."},
 { year: '2024', titleKey: 'Ecosistema Premium', descKey: 'Más de 7 marcas desarrolladas, con presencia en mercadosnacionales e internacionales.' }];
-  
+
 
 const valueIcons = [Shield, Lightbulb, Handshake, Globe, Target, TrendingUp];
 
@@ -530,7 +530,7 @@ export default function NosotrosPage() {
                   <span className="text-2xl" role="img" aria-label="EE.UU">🇺🇸</span>
                 </div>
                 <p className="text-[#C9A84C] text-xs font-semibold tracking-wide uppercase mb-3">Desarrollo Comercial · EE.UU</p>
-                <a href="tel:+17039812991" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+1 (703) 981-2991</a>
+                <a href="tel:+17039812991" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+1 (703) 981-2909</a>
                 <p className="text-[#5A7099] text-sm leading-relaxed mt-3">Expansión de mercados en Norteamérica, apertura de canales y negociación con distribuidores en el mercado estadounidense.</p>
                 <div className="mt-5 h-0.5 bg-[#1B3A6B]/0 group-hover:bg-[#1B3A6B]/20 transition-all duration-500 w-0 group-hover:w-full" />
               </motion.div>

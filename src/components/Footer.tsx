@@ -76,7 +76,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2.5">
                 <Mail size={13} className="text-[#C9A84C] shrink-0" />
-                <a href="mailto:palenkke.mkt@gmail.com" className="text-white/40 text-sm hover:text-[#C9A84C] transition-colors">palenkke.mkt@gmail.com</a>
+                <a href="mailto:contact@palenkke.org" className="text-white/40 text-sm hover:text-[#C9A84C] transition-colors">contact@palenkke.org</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Globe size={13} className="text-[#C9A84C] shrink-0" />

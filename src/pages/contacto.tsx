@@ -76,8 +76,8 @@ const contactInfo = [
   {
     Icon: Mail,
     label: 'Correo Electrónico',
-    value: 'palenkke.mkt@gmail.com',
-    href: 'mailto:palenkke.mkt@gmail.com',
+    value: 'contact@palenkke.org',
+    href: 'mailto:contact@palenkke.org',
     flag: null,
   },
   {
@@ -353,7 +353,7 @@ export default function ContactoPage() {
             '@type': 'Organization',
             name: 'Grupo Palenkke',
             url: 'https://www.palenkke.org',
-            email: 'palenkke.mkt@gmail.com',
+            email: 'contact@palenkke.org',
           },
         })}</script>
       </Helmet>
