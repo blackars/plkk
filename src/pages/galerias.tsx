@@ -31,7 +31,33 @@ function InView({ children, className = '' }: { children: React.ReactNode; class
 }
 
 // ─── Build-time file scanner ──────────────────────────────────────────────────
-const GALLERY_FILES = import.meta.glob('/src/assets/gallery/**/*', { eager: true });
+interface GalleryItem {
+  url: string;
+  company: string;
+  type: string;
+  name: string;
+}
+
+function scanGallery(): GalleryItem[] {
+  try {
+    const modules = import.meta.glob('/src/assets/gallery/**/*.{png,jpg,jpeg,gif,webp,svg,mp4,webm,mov,avi,pdf,doc,docx,xls,xlsx,ppt,pptx,txt,csv}', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+    return Object.entries(modules)
+      .map(([key, url]) => {
+        if (!url) return null;
+        const k = key.replace(/\\/g, '/');
+        const m = k.match(/\/gallery\/([^/]+)\/([^/]+)\/([^/]+)$/);
+        if (!m) return null;
+        const name = m[3].toLowerCase();
+        if (name.startsWith('.')) return null;
+        return { url, company: m[1], type: m[2], name };
+      })
+      .filter((f): f is GalleryItem => f !== null);
+  } catch {
+    return [];
+  }
+}
+
+const GALLERY_ITEMS = scanGallery();
 
 type MediaType = 'images' | 'videos' | 'documents';
 
@@ -247,15 +273,9 @@ function GalleryModal({
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const files = useMemo(() => {
-    return Object.entries(GALLERY_FILES)
-      .filter(([key]) => {
-        const name = key.split('/').pop() ?? '';
-        if (name.startsWith('.')) return false;
-        const normalized = key.replace(/\\/g, '/');
-        return normalized.includes(`/src/assets/gallery/${company.id}/${mediaType}/`);
-      })
-      .map(([, mod]) => (mod as { default: string }).default)
-      .filter((v): v is string => typeof v === 'string');
+    return GALLERY_ITEMS
+      .filter((f) => f.company === company.id && f.type === mediaType)
+      .map((f) => f.url);
   }, [company.id, mediaType]);
 
   useEffect(() => {
@@ -466,6 +486,15 @@ export default function GaleriasPage() {
           </InView>
         </div>
       </section>
+
+      {/* ── Modal ── */}
+      {modal && (
+        <GalleryModal
+          company={modal.company}
+          mediaType={modal.mediaType}
+          onClose={() => setModal(null)}
+        />
+      )}
     </>
   );
 }
