@@ -78,39 +78,61 @@ const MARKET_COLORS: Record<string, string> = {
   'Spain': 'bg-[#FEF2F2] text-[#991B1B]'
 };
 
-const COMPANY_LOGO_IMAGES: Record<string, string> = {
-  'ELIXIR DEL ALMA': '/assets/images/logos/elixir-del-alma.png',
-  'SAN ROJO': '/assets/images/logos/san-rojo.png',
-  'KANAN': '/assets/images/logos/kanan.png',
-  'PALENKKE MEZCAL': '/assets/images/logos/palenkke-mezcal.png',
-  'KOLDVOLT': '/assets/images/logos/koldvolt.png',
-  'RITEVOLT': '/assets/images/logos/ritevolt.png',
-  'HEARTFULCRAFT': '/assets/images/logos/heartfulcraft.png'
-};
+const LOGOS_BASE = '/assets/images/logos';
+
+function resolveCompanyLogoSrc(name: string, logoId?: string): string | null {
+  if (logoId) return `${LOGOS_BASE}/${logoId}.png`;
+  return null;
+}
 
 // ─── CompanyLogo ─────────────────────────────────────────────────────────
-function CompanyLogo({ name }: { name: string }) {
-  const key = name.toUpperCase();
-  const logoImg = COMPANY_LOGO_IMAGES[key] ?? null;
+function CompanyLogo({ name, logoId }: { name: string; logoId?: string }) {
+  const logoImg = resolveCompanyLogoSrc(name, logoId);
   const [imgFailed, setImgFailed] = useState(false);
 
   const initials = name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase();
 
   if (logoImg && !imgFailed) {
     return (
-      <img
+      <motion.img
         src={logoImg}
         alt={`${name} logo`}
-        className="w-full h-full object-contain"
+        className="max-h-56 max-w-full w-auto h-auto object-contain"
         onError={() => setImgFailed(true)}
+        animate={{
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        whileHover={{
+          scale: 1,
+          transition: { duration: 0.3 }
+        }}
       />
     );
   }
 
   return (
-    <span className="font-heading font-bold text-[clamp(2.5rem,8vw,4.5rem)] tracking-wider select-none text-[#1B3A6B]/25">
+    <motion.span
+      className="font-heading font-bold text-[clamp(2.5rem,8vw,4.5rem)] tracking-wider select-none text-[#1B3A6B]/25"
+      animate={{
+        scale: [1, 1.1, 1],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      whileHover={{
+        scale: 1,
+        transition: { duration: 0.3 }
+      }}
+    >
       {initials}
-    </span>
+    </motion.span>
   );
 }
 
@@ -162,8 +184,8 @@ const projects = [
 export default function CasosPage() {
   const { t } = useTranslation();
 
-  const companyItems: Array<{ name: string; tag: string; desc: string; website?: string | null; websiteLabel?: string | null; }> =
-    t('companies.items', { returnObjects: true }) as Array<{ name: string; tag: string; desc: string; website?: string | null; websiteLabel?: string | null; }>;
+  const companyItems: Array<{ name: string; logo?: string; tag: string; desc: string; website?: string | null; websiteLabel?: string | null; }> =
+    t('companies.items', { returnObjects: true }) as Array<{ name: string; logo?: string; tag: string; desc: string; website?: string | null; websiteLabel?: string | null; }>;
 
   return (
     <>
@@ -296,24 +318,23 @@ export default function CasosPage() {
                   <motion.div
                     key={co.name}
                     variants={fadeUp}
-                    whileHover={{
-                      y: -8,
-                      boxShadow: '0 28px 72px rgba(27,58,107,0.20)',
-                    }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className={`group relative flex flex-col min-h-[300px] overflow-hidden rounded-sm border border-[#D4DCE8] bg-white transition-all duration-300 ${
+                    className={`group relative flex flex-col min-h-[300px] overflow-hidden rounded-sm bg-white transition-all duration-300 ${
                       hasWebsite || isComingSoon
-                        ? 'cursor-pointer hover:border-[#1B3A6B]/40'
+                        ? 'cursor-pointer'
                         : 'cursor-default'
                     }`}
                   >
-                    <div
-                      className="absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                      style={{ boxShadow: 'inset 0 0 0 1.5px rgba(27,58,107,0.18), 0 0 48px rgba(27,58,107,0.10)' }}
-                    />
-
-                    <div className="flex-[2] min-h-0 flex items-center justify-center px-5 pt-5 pb-2">
-                      <CompanyLogo name={co.name} />
+                    <div className="flex-[2] min-h-[160px] flex items-center justify-center px-5 pt-5 pb-2">
+                      <motion.div
+                        whileHover={{
+                          y: -8,
+                          scale: 1.05,
+                        }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                      >
+                        <CompanyLogo name={co.name} logoId={co.logo} />
+                      </motion.div>
                     </div>
 
                     <div className="flex-[1] flex flex-col px-5 pb-5 pt-1 min-h-0">
@@ -453,14 +474,13 @@ export default function CasosPage() {
 
         <div className="relative container mx-auto px-6 lg:px-10">
           <InView>
-            <motion.div variants={stagger} className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center max-w-3xl mx-auto justify-items-center">
               {[
                 { value: '7', label: 'Marcas en Portafolio' },
-                { value: '4', label: 'Proyectos Activos' },
-                { value: '7', label: 'Mercados Internacionales' },
                 { value: '17+', label: 'Años de Experiencia' },
+                { value: '7', label: 'Mercados Internacionales' },
               ].map(({ value, label }) => (
-                <motion.div key={label} variants={fadeUp} className="p-6">
+                <motion.div key={label} variants={fadeUp} className="p-6 w-full max-w-[220px]">
                   <span className="block font-heading text-5xl font-bold text-[#C9A84C] mb-2">{value}</span>
                   <span className="block text-white/50 text-xs tracking-[0.2em] uppercase">{label}</span>
                 </motion.div>

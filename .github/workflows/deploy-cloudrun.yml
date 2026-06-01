@@ -1,0 +1,63 @@
+name: Deploy to Cloud Run
+
+on:
+  push:
+    branches: [docker]
+
+env:
+  PROJECT_ID: palenkke-website
+  SERVICE: palenkke
+  REGION: us-central1
+  AR_REPO: palenkke-repo
+  IMAGE: palenkke
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Auth to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/709351522149/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+          service_account: github-actions@palenkke-website.iam.gserviceaccount.com
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker us-central1-docker.pkg.dev
+
+      - name: Build and Push Image
+        run: |
+          IMAGE_TAG=us-central1-docker.pkg.dev/$PROJECT_ID/$AR_REPO/$IMAGE:$GITHUB_SHA
+          docker build -t $IMAGE_TAG .
+          docker push $IMAGE_TAG
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy $SERVICE \
+            --image=us-central1-docker.pkg.dev/$PROJECT_ID/$AR_REPO/$IMAGE:$GITHUB_SHA \
+            --region=$REGION \
+            --platform=managed \
+            --allow-unauthenticated \
+            --port=8080
+
+      - name: Clean old images (keep last 3)
+        run: |
+          IMAGES_TO_DELETE=$(gcloud artifacts docker images list \
+            us-central1-docker.pkg.dev/$PROJECT_ID/$AR_REPO/$IMAGE \
+            --format="value(image)" \
+            --sort-by="~CREATE_TIME" \
+            | head -n -3)
+
+          for img in $IMAGES_TO_DELETE; do
+            echo "Deleting image: $img"
+            gcloud artifacts docker images delete "$img" --quiet --delete-tags || true
+          done

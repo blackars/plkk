@@ -53,13 +53,13 @@ const variants = [
   tagBg: 'bg-[#EEF2F8] text-[#1B3A6B]',
   imgSlot: '/assets/mezcaljoven.jpeg',
   abv: '40% Alc. Vol.',
-  agave: 'Agave Espadín',
+  agave: 'Cupreata Silvestre',
   region: 'Michoacán, México',
   process: 'Destilación artesanal en alambique de cobre',
   tasting: 'Notas de agave fresco, cítricos suaves y un final ahumado elegante.',
   sizes: ['375 ml', '750 ml'],
   featured: false,
-  description: 'Expresión pura del agave Espadín oaxaqueño. Transparente, fresco y con un ahumado sutil que refleja la tradición mezcalera de México.',
+  description: ' IXU Nahual Joven es la esencia desnuda del agave, un destilado que transmite la fuerza de la tierra y la frescura del momento. Cada sorbo es un canto ancestral, un recordatorio de que en la pureza reside la grandeza.',
   color: '#EEF2F8',
   accentColor: '#1B3A6B'
 },
@@ -71,13 +71,13 @@ const variants = [
   tagBg: 'bg-[#C9A84C]/15 text-[#8B6914]',
   imgSlot: '/assets/mezcalanejo.jpeg',
   abv: '42% Alc. Vol.',
-  agave: 'Agave Tobalá',
-  region: 'Michoacán, México',
+  agave: 'Cupreata Silvestre',
+  region: ' Turicato, Michoacán, México',
   process: 'Reposado en barricas de roble americano',
   tasting: 'Notas de vainilla, caramelo, madera tostada y agave maduro con final largo.',
   sizes: ['750 ml', 'Edición Especial 1L'],
   featured: true,
-  description: 'Envejecido en barricas de roble americano, el Añejo desarrolla una complejidad excepcional. Ideal para conocedores que buscan profundidad y elegancia.',
+  description: ' El mezcal añejo IXU Nahual es una expresion sofisticada, resultado de un proceso de maduracion en barricas de roble durante al menos 12 meses. Este reposo aporta complejidad, suavidad y un perfil aromatico unico, convirtiéndolo en un destilado de caracter elegante y profundo.',
   color: '#FDF6E3',
   accentColor: '#C9A84C'
 },
@@ -89,13 +89,13 @@ const variants = [
   tagBg: 'bg-pink-50 text-pink-700',
   imgSlot: '/assets/mezcalrose.jpeg',
   abv: '38% Alc. Vol.',
-  agave: 'Agave Espadín & Tobalá',
-  region: 'Michoacán, México',
+  agave: ' Cupreata Silvestre',
+  region: ' Turicato, Michoacán, México',
   process: 'Maceración con frutos rojos seleccionados',
   tasting: 'Notas florales, frutos rojos, agave suave y un final fresco y elegante.',
   sizes: ['375 ml', '750 ml'],
   featured: false,
-  description: 'Una expresión contemporánea y sofisticada del mezcal artesanal. La maceración con frutos rojos crea un perfil único, moderno y visualmente impactante.',
+  description: ' En cada gota de IXU Nahual Rosé habita la fuerza y la dulzura de la mujer. Es un mezcal que nace del agave Cupreata Silvestre de Michoacan, cocido en hornos de piedra y destilado en cobre, pero que recibe un delicado toque de frutos rojos y pétalos de rosa, logrando un tono rosado sutil que ilumina la copa como un atardecer eterno.',
   color: '#FFF0F3',
   accentColor: '#C9A84C'
 },
@@ -107,13 +107,13 @@ const variants = [
   tagBg: 'bg-pink-50 text-pink-700',
   imgSlot: '/assets/mezcalcoco.jpeg',
   abv: '38% Alc. Vol.',
-  agave: 'Agave Espadín & Tobalá',
+  agave: 'Cupreata Silvestre',
   region: 'Michoacán, México',
   process: 'Maceración con frutos rojos seleccionados',
   tasting: 'Notas florales, frutos rojos, agave suave y un final fresco y elegante.',
   sizes: ['375 ml', '750 ml'],
   featured: false,
-  description: 'Una expresión contemporánea y sofisticada del mezcal artesanal. La maceración con frutos rojos crea un perfil único, moderno y visualmente impactante.',
+  description: 'En el corazon de Michoacan, donde el fuego acaricia la tierra y el viento danza con los agaves, nace una joya unica: IXU Nahual Mezcal Joven - Coco Blend. Este elixir se forja en hornos de piedra, donde las pifas del agave Cupreata Silvestre se cuecen entamente junto con la magia del coco, impregnando cada fibra de su esencia tropical y ancestral.',
   color: '#FFF0F3',
   accentColor: '#C9A84C'
 
@@ -249,7 +249,7 @@ export default function ProductosPage() {
             description: t('productos.meta_desc'),
             brand: {
               '@type': 'Brand',
-              name: 'Mezcal Elixír del Alma'
+              name: 'Elixír del Alma'
             },
             manufacturer: {
               '@type': 'Organization',
@@ -416,9 +416,9 @@ export default function ProductosPage() {
 
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
-              Selecciona una variante para explorar sus características, notas de cata y presentaciones disponibles.
+             Seleccione la variante que desea conocer más detalles 
             </motion.p>
-          </InView>
+            </InView>
 
           <InView>
             <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -592,18 +592,20 @@ export default function ProductosPage() {
             <InView>
               <motion.div variants={fadeUp} className="flex items-center gap-3 mb-5">
                 <div className="h-px w-8 bg-[#C9A84C]" />
-                <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">Proceso Artesanal</span>
+                <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">Proceso 100% Artesanal</span>
               </motion.div>
               <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-white leading-tight mb-8">
                 Del Agave a la Botella
               </motion.h2>
-
+              <motion.div variants={fadeUp} className="font-heading text-clamp(14px,2.0vw,28px)] font-light text-white leading-tight mb-8">
+                    <p>Elaborar un buen mezcal es un arte que requiere tiempo, paciencia y experiencia. Nuestros Maestros Mezcaleros siguen un proceso cuidado y tradicional:</p>
+              </motion.div>
               <motion.div variants={stagger} className="space-y-5">
                 {[
-                { num: '01', title: 'Selección del Agave', desc: 'Agaves maduros seleccionados a mano en los campos de Michoacán, respetando los tiempos naturales de la planta.' },
-                { num: '02', title: 'Cocción Tradicional', desc: 'Las piñas se cuecen en hornos de tierra con leña de encino, proceso que define el carácter ahumado único.' },
-                { num: '03', title: 'Molienda y Fermentación', desc: 'Molienda en tahona de piedra y fermentación natural en tinas de madera con levaduras silvestres.' },
-                { num: '04', title: 'Destilación en Cobre', desc: 'Doble destilación en alambiques de cobre artesanales para obtener un mezcal limpio y expresivo.' }].
+                { num: '01', title: 'Cocción', desc: 'Las piñas del agave se cuecen en hornos de piedra.' },
+                { num: '02', title: 'Molienda', desc: ' Se trituran artesanalmente para extraer los jugos.' },
+                { num: '03', title: 'Fermentación ', desc: 'Se deja que la naturaleza transforme el mosto.' },
+                { num: '04', title: 'Destilación', desc: 'El mezcal toma forma en alambiques de cobre.' }].
                 map(({ num, title, desc }) =>
                 <motion.div
                   key={num}
@@ -617,6 +619,9 @@ export default function ProductosPage() {
                     </div>
                   </motion.div>
                 )}
+              <motion.div variants={fadeUp} className="font-heading text-clamp(14px,2.0vw,28px)] font-light text-white leading-tight mb-8">
+                    <p>Cada maestro imprime su sello único en cada lote, logrando un equilibrio perfecto entre sabor, aroma y carácter.</p>
+              </motion.div>
               </motion.div>
             </InView>
           </div>
@@ -670,7 +675,7 @@ export default function ProductosPage() {
               Presencia Internacional
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
-              Elixír del Alma Mezcal está disponible en mercados clave a través de canales especializados.
+              Elixír del Alma Mezcal está disponible en mercados clave a través de canales especializados
             </motion.p>
           </InView>
 

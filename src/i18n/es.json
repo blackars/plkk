@@ -20,7 +20,7 @@
     "headline": ["Grupo", "PALENKKE", "Global"],
     "slogan": "Estrategias que trascienden fronteras",
     "description": "Grupo PALENKKE es una plataforma internacional enfocada en el desarrollo de marcas, expansión comercial y posicionamiento estratégico en mercados nacionales e internacionales. Con más de 17 años de experiencia en retail internacional y desarrollo comercial, conectamos productos, productores y oportunidades con canales reales de crecimiento y distribución. Nuestra visión combina tradición, estrategia y expansión global para construir proyectos sólidos con identidad y proyección internacional.",
-    "geo": "México • USA • Centroamérica • Sudamérica • Asia • España",
+    "geo": "México • USA • Centroamérica • Sudamérica • Asia • España • India",
     "cta_primary": "Conoce Nuestro Modelo",
     "cta_opportunities": "Contáctanos",
     "cta_brand": "Lleva tu Marca al Siguiente Nivel",
@@ -73,13 +73,13 @@
     "heading": "Marcas y Proyectos",
     "sub": "Grupo PALENKKE participa en el desarrollo, posicionamiento y expansión de marcas enfocadas en identidad, innovación y crecimiento nacional e internacional.\n\nCada proyecto representa una visión estratégica construida sobre autenticidad, calidad y proyección global.\n\nNuestro ecosistema integra marcas orientadas a bebidas premium, desarrollo creativo, identidad comercial y nuevas oportunidades de mercado.",
     "items": [
-      { "name": "MEZCAL ELIXIR DEL ALMA", "tag": "México", "desc": "Descubre el sabor auténtico de un mezcal hecho a mano con cupeatra silvestre, elaborado en las tierras de Turicato, Michoacán. Cada botella guarda siglos de tradición, pasión y respeto por la naturaleza.", "website": "https://mezcalelixirdelalma.com", "websiteLabel": "elixirdelalma.com" },
-      { "name": "KANAN", "tag": "México", "desc": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea, con tres variedades: joven, rosé y añejo.", "website": "https://kananmezcal.com", "websiteLabel": "kananmezcal.com" },
-      { "name": "PALENKKE MEZCAL", "tag": "México", "desc": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional, con tres variedades: Rosé, Joven y Añejo.", "website": "https://palenkkemezcal.com", "websiteLabel": "palenkkemezcal.com" },
-      { "name": "SAN ROJO", "tag": "México", "desc": "Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo. Un homenaje a nuestras costumbres y tradiciones, capturando en cada botella la esencia de México.", "website": "https://sanrojo.com", "websiteLabel": "sanrojo.com" },
-      { "name": "KOLDVOLT", "tag": "Asia", "desc": "Socio integral para vehículos refrigerados de reparto y soluciones de alto rendimiento para furgonetas y camiones frigoríficos de hasta 28 pies.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
-      { "name": "RITEVOLT", "tag": "Asia", "desc": "Empresa dedicada a la investigación, desarrollo, producción, venta, servicio e integración de equipos de energía solar.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
-      { "name": "HEARTFULCRAFT", "tag": "India", "desc": "Marca que empodera a más de 350 artesanos en la India rural, preservando técnicas artesanales centenarias y creando piezas únicas hechas a mano que llegan a compradores de todo el mundo.", "website": "https://heartfulcraft.com", "websiteLabel": "heartfulcraft.com" }
+      { "name": "MEZCAL ELIXIR DEL ALMA", "logo": "elixir-del-alma", "tag": "México", "desc": "Descubre el sabor auténtico de un mezcal hecho a mano con cupeatra silvestre, elaborado en las tierras de Turicato, Michoacán. Cada botella guarda siglos de tradición, pasión y respeto por la naturaleza.", "website": "https://mezcalelixirdelalma.com", "websiteLabel": "elixirdelalma.com" },
+      { "name": "KANAN", "logo": "kanan", "tag": "México", "desc": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea, con tres variedades: joven, rosé y añejo.", "website": "https://kananmezcal.com", "websiteLabel": "kananmezcal.com" },
+      { "name": "PALENKKE MEZCAL", "logo": "palenkke-mezcal", "tag": "México", "desc": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional, con tres variedades: Rosé, Joven y Añejo.", "website": "https://palenkkemezcal.com", "websiteLabel": "palenkkemezcal.com" },
+      { "name": "SAN ROJO", "logo": "san-rojo", "tag": "México", "desc": "Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo. Un homenaje a nuestras costumbres y tradiciones, capturando en cada botella la esencia de México.", "website": "https://sanrojo.com", "websiteLabel": "sanrojo.com" },
+      { "name": "KOLDVOLT", "logo": "koldvolt", "tag": "Asia", "desc": "Innovador en Cadena de Frío, es tu socio integral para todas las necesidades de vehículos de reparto refrigerados. Desde sistemas desmontables Slide-in ColdBox y ColdContainer para furgonetas de carga seca, hasta kits de carrocería de alta resistencia junto con soluciones de alto rendimiento ReeferVan y ReeferTruck para furgonetas de carga y camiones rectos de hasta 28 pies.", "website": "https://koldvolt.com", "websiteLabel": "koldvolt.com" },
+      { "name": "RITEVOLT", "logo": "ritevolt", "tag": "Asia", "desc": "Empresa dedicada a la investigación, desarrollo, producción, venta, servicio e integración de equipos de energía solar.", "website": "https://koldvolt.net", "websiteLabel": "koldvolt.net" },
+      { "name": "HEARTFULCRAFT", "logo": "heartfulcraft", "tag": "India", "desc": "Marca que empodera a más de 350 artesanos en la India rural, preservando técnicas artesanales centenarias y creando piezas únicas hechas a mano que llegan a compradores de todo el mundo.", "website": "https://heartfulcraft.com", "websiteLabel": "heartfulcraft.com" }
     ]
   },
   "mezcal": {
@@ -163,7 +163,7 @@
     "meta_desc": "Desarrollo de marcas, incubación, comercialización y expansión internacional. Servicios integrales para impulsar tu negocio.",
     "hero_eyebrow": "Servicios Estratégicos",
     "hero_heading": "Servicios Estratégicos",
-    "hero_sub": "Desde la concepción hasta la expansión internacional, acompañamos cada etapa de tu proyecto.",
+    "hero_sub": "Desde un sueño hasta la expansión internacional, acompañamos cada etapa de tu proyecto.",
     "methodology_eyebrow": "Metodología",
     "methodology_heading": "Nuestro Proceso de Trabajo",
     "methodology_sub": "Un enfoque estructurado y probado para garantizar resultados.",
@@ -187,8 +187,8 @@
     "hero_heading_line2": "del Alma",
     "hero_sub": "Mezcal artesanal elaborado en México bajo procesos tradicionales que respetan el origen y la calidad del agave.",
     "about_heading": "La Historia detrás de Mezcal Elixír del Alma",
-    "about_p1": "Palenkke Mezcal nace de la pasión por la artesanía tradicional mexicana y el respeto por el agave como patrimonio cultural.",
-    "about_p2": "Cada botella representa horas de trabajo artesanal, desde la selección del agave hasta la destilación final en alambiques de cobre."
+    "about_p1": "El nombre Ixu Nahual nace de la fusión de la identidad michoacana y el misticismo del nahual: guardián del espíritu y la tradición. Desde hace generaciones, familias mezcaleras han perfeccionado el arte de transformar el agave silvestre en una bebida que conecta la tierra con el alma.",
+    "about_p2": "El mezcal es más que una bebida: es un ritual que invita a compartir momentos, cultura y raíces.Entre las variedades más representativas encontramos Espadín, Cuishe, Tobalá, Cupreata, Papalote, entre otras, de donde se obtiene la esencia que caracteriza a esta bebida ancestral. Su aroma intenso y su sabor profundo reflejan la tierra que lo vio nacer y las manos que lo produjeron."
   },
   "contacto": {
     "meta_title": "Contacto — Grupo Palenkke",

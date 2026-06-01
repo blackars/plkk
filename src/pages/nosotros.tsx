@@ -55,8 +55,10 @@ const milestones = [
 { year: '2008', titleKey: 'Fundación', descKey: 'Grupo Palenkke nace en México con la visión de conectar marcas locales con mercados internacionales.' },
 { year: '2012', titleKey: 'Expansión Regional', descKey: 'Consolidamos presencia en Latinoamérica y establecemos alianzas estratégicas en EE.UU.' },
 { year: '2016', titleKey: 'Portafolio Diversificado', descKey: 'Ampliamos nuestro portafolio a tecnología, bebidas premium, artesanías y soluciones comerciales.' },
-{ year: '2020', titleKey: 'Visión Global', descKey: 'Lanzamos Palenkke Mezcal y consolidamos operaciones en mercados internacionales exigentes.' },
-{ year: '2024', titleKey: 'Ecosistema Premium', descKey: 'Más de 7 marcas desarrolladas, presencia en 7 regiones nacionales e internacionales y 17 años de resultados comprobados.' }];
+{ year: "2020", 
+  titleKey: "Visión Global", 
+  descKey: "Grupo Palenkke no solo identifica marcas y productos, sino que trabaja en su solidificación, construye identidad, impulsa la expansión y garantiza la permanencia en mercados internacionales exigentes."},
+{ year: '2024', titleKey: 'Ecosistema Premium', descKey: 'Más de 7 marcas desarrolladas, con presencia en mercadosnacionales e internacionales.' }];
 
 
 const valueIcons = [Shield, Lightbulb, Handshake, Globe, Target, TrendingUp];
@@ -507,7 +509,7 @@ export default function NosotrosPage() {
               <motion.div variants={fadeUp}
               className="group bg-[#F7F9FC] border border-[#D4DCE8] rounded-sm p-7 hover:border-[#1B3A6B]/30 hover:bg-white hover:shadow-[0_8px_32px_rgba(27,58,107,0.10)] transition-all duration-300">
                 <div className="w-14 h-14 bg-[#1B3A6B] rounded-sm flex items-center justify-center mb-5 shadow-[0_4px_16px_rgba(27,58,107,0.20)] group-hover:shadow-[0_0_28px_rgba(27,58,107,0.35)] transition-shadow duration-300">
-                  <span className="text-white font-heading font-bold text-xl tracking-wider select-none">JF</span>
+                  <span className="text-white font-heading font-bold text-xl tracking-wider select-none">EG</span>
                 </div>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-2xl" role="img" aria-label="México">🇲🇽</span>
@@ -528,7 +530,7 @@ export default function NosotrosPage() {
                   <span className="text-2xl" role="img" aria-label="EE.UU">🇺🇸</span>
                 </div>
                 <p className="text-[#C9A84C] text-xs font-semibold tracking-wide uppercase mb-3">Desarrollo Comercial · EE.UU</p>
-                <a href="tel:+17039812991" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+1 (703) 981-2991</a>
+                <a href="tel:+17039812991" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+1 (703) 981-2909</a>
                 <p className="text-[#5A7099] text-sm leading-relaxed mt-3">Expansión de mercados en Norteamérica, apertura de canales y negociación con distribuidores en el mercado estadounidense.</p>
                 <div className="mt-5 h-0.5 bg-[#1B3A6B]/0 group-hover:bg-[#1B3A6B]/20 transition-all duration-500 w-0 group-hover:w-full" />
               </motion.div>

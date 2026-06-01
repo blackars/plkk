@@ -260,15 +260,15 @@ export default function HomePage() {
 
 
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
-              <div className="h-px w-8 bg-[#C9A84C]" />
-              <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">
-                {t('hero.geo')}
+              <div className="h-px w-8 bg-[#C9A84C] shrink-0" />
+              <span className="text-[#C9A84C] text-lg font-large semibold md:text-xl leading-relaxed">
+                {t('hero.slogan')}
               </span>
             </motion.div>
 
             <motion.h1
               variants={stagger}
-              className="font-heading text-[clamp(44px,7.5vw,108px)] font-bold leading-[0.93] tracking-tight text-white mb-8">
+              className="font-heading text-[clamp(44px,7.5vw,108px)] font-bold leading-[0.93] tracking-tight text-white mb-4">
               
               {headlineWords.map((word, i) =>
               <motion.span
@@ -281,9 +281,12 @@ export default function HomePage() {
               )}
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-white/55 text-lg md:text-xl leading-relaxed max-w-lg mb-4">
-              {t('hero.slogan')}
-            </motion.p>
+            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-4 min-w-0 overflow-x-auto">
+              <div className="h-px w-8 bg-[#FFFFFF] shrink-0" />
+              <span className="text-[#FFFFFF] text-xs font-semibold tracking-[0.3em] uppercase whitespace-nowrap">
+                {t('hero.geo')}
+              </span>
+            </motion.div>
             <motion.div
               variants={fadeUp}
               className="text-white/35 text-base md:text-lg leading-relaxed max-w-2xl mb-10 flex flex-col gap-5"
@@ -540,15 +543,6 @@ export default function HomePage() {
         <div className="container mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <InView>
-              <AccentLine />
-              <Eyebrow>{t('contact_section.eyebrow')}</Eyebrow>
-              <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-[#0D1B2E] leading-tight mb-6">
-                {t('contact_section.heading')}
-              </motion.h2>
-              <motion.p variants={fadeUp} className="text-[#5A7099] text-base leading-relaxed mb-10">
-                {t('contact_section.sub')}
-              </motion.p>
-
               <motion.div variants={stagger} className="space-y-5 mb-10">
                 {[
                 { Icon: Mail, labelKey: 'email_label', value: 'contact@palenkke.org', href: 'mailto:contact@palenkke.org' },
@@ -585,7 +579,8 @@ export default function HomePage() {
                         alt="USA"
                         className="rounded-[2px] shadow-[0_0_0_1px_rgba(0,0,0,0.08)] object-cover shrink-0" />
                       
-                      <span>+1 (703) 981-2991</span>
+                      
+                      <span>+1 (703) 981-2909</span>
                     </a>
                     <a href="tel:+522281447372" className="flex items-center gap-2.5 text-[#0D1B2E] text-sm font-medium hover:text-[#1B3A6B] transition-colors">
                       <img
