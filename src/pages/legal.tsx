@@ -102,7 +102,7 @@ function ContactForm() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, subject: `Oportunidad de Asociación: ${form.interest || 'General'}` }),
+        body: JSON.stringify({ ...form, subject: t('legal.form.subject', { interest: form.interest || t('legal.form.subject_default') }) }),
       });
       setStatus(res.ok ? 'success' : 'error');
     } catch {
@@ -315,7 +315,7 @@ export default function LegalPage() {
               variants={fadeIn}
               className="mt-6 text-center text-sm text-[#0D1B2E]/50"
             >
-              O escríbenos directamente a{' '}
+              {t('legal.email_direct')}{' '}
               <a href="mailto:contact@palenkke.org" className="text-[#1B3A6B] font-medium hover:text-[#C9A84C] transition-colors duration-200">
                 contact@palenkke.org
               </a>

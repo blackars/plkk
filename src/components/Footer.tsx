@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-5">
               <img
-                src="/assets/images/logos/palenkke-logo.png"
+                src="/assets/images/logos/GPalenkke.webp"
                 alt="Grupo Palenkke"
                 className="h-9 w-9 object-contain shrink-0"
               />
@@ -84,11 +84,18 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin size={13} className="text-[#C9A84C] shrink-0 mt-0.5" />
-                <span className="text-white/40 text-sm">México · USA · Centroamérica</span>
+                <span className="text-white/40 text-sm">{t('footer.regions')}</span>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Phone size={13} className="text-[#C9A84C] shrink-0" />
-                <a href="tel:+522281447372" className="text-white/40 text-sm hover:text-[#C9A84C] transition-colors">+52 228 144 7372</a>
+              <li className="flex items-start gap-2.5">
+                <Phone size={13} className="text-[#C9A84C] shrink-0 mt-0.5" />
+                <div className="space-y-2">
+                  <a href="tel:+522281447372" className="block text-white/40 text-sm hover:text-[#C9A84C] transition-colors">
+                    <span className="text-white/55">{t('footer.phone_mexico')}</span> +52 228 144 7377
+                  </a>
+                  <a href="tel:+17039812991" className="block text-white/40 text-sm hover:text-[#C9A84C] transition-colors">
+                    <span className="text-white/55">{t('footer.phone_usa')}</span> +1 (703) 981-2909
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -100,8 +107,8 @@ export default function Footer() {
             &copy; {year} Grupo Palenkke. {t('footer.rights')}
           </p>
           <div className="flex gap-4">
-            <Link to="/legal" className="text-white/25 text-xs hover:text-white/50 transition-colors">Política de Privacidad</Link>
-            <Link to="/legal" className="text-white/25 text-xs hover:text-white/50 transition-colors">Términos</Link>
+            <Link to="/legal" className="text-white/25 text-xs hover:text-white/50 transition-colors">{t('footer.privacy')}</Link>
+            <Link to="/legal" className="text-white/25 text-xs hover:text-white/50 transition-colors">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>
