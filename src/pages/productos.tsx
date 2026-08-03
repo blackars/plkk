@@ -53,6 +53,8 @@ const MARKET_COLORS: Record<string, string> = {
 
 const LOGOS_BASE = '/assets/images/logos';
 
+const BRAND_CARDS_CLICKABLE = false;
+
 function CompanyLogo({ name, logoId }: { name: string; logoId?: string }) {
   const logoImg = logoId ? `${LOGOS_BASE}/${logoId}.png` : null;
   const [imgFailed, setImgFailed] = useState(false);
@@ -197,7 +199,13 @@ export default function ProductosPage() {
                 const route = co.route ?? co.name.toLowerCase().replace(/\s+/g, '-');
 
                 return (
-                  <Link key={co.name} to={`/productos/${route}`} className="block no-underline group">
+                  <Link
+                    key={co.name}
+                    to={`/productos/${route}`}
+                    className="block no-underline group"
+                    onClick={BRAND_CARDS_CLICKABLE ? undefined : (e) => e.preventDefault()}
+                    aria-disabled={!BRAND_CARDS_CLICKABLE}
+                  >
                     <motion.div
                       variants={fadeUp}
                       transition={{ duration: 0.3, ease: 'easeOut' }}
