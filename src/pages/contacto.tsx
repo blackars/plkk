@@ -60,66 +60,20 @@ function InViewSingle({ children, variant = fadeUp, className = '' }: {
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
-const interests = [
-  'Desarrollo de Marca',
-  'Incubación de Producto',
-  'Comercialización',
-  'Expansión Internacional',
-  'Alianza Estratégica',
-  'Inversión',
-  'Distribución',
-  'Consultoría',
-  'Otro',
-];
-
-const contactInfo = [
-  {
-    Icon: Mail,
-    label: 'Correo Electrónico',
-    value: 'contact@palenkke.org',
-    href: 'mailto:contact@palenkke.org',
-    flag: null,
-  },
-  {
-    Icon: Phone,
-    label: '🇺🇸 +1 (703) 981-2909',
-    value: '+1 (703) 981-2909',
-    href: 'tel:+17039812909',
-    flag: '🇺🇸',
-  },
-  {
-    Icon: Phone,
-    label: '🇲🇽 +52 228 144 7372',
-    value: '+52 228 144 7372',
-    href: 'tel:+522281447372',
-    flag: '🇲🇽',
-  },
-  {
-    Icon: MapPin,
-    label: 'Oficinas',
-    value: 'Estados Unidos · México',
-    href: null,
-    flag: null,
-  },
-];
 
 const socialLinks = SOCIAL_LINKS;
 
-const profiles = [
-  { Icon: Users, title: 'Inversionistas', desc: 'Oportunidades de inversión en marcas con alto potencial.' },
-  { Icon: Globe, title: 'Distribuidores', desc: 'Acceso a portafolio premium para distribución nacional e internacional.' },
-  { Icon: CheckCircle2, title: 'Socios', desc: 'Alianzas estratégicas para co-desarrollar y co-distribuir.' },
-  { Icon: ArrowRight, title: 'Productores', desc: 'Incubación y comercialización de productos con visión global.' },
-];
-
 // ─── Contact Form ─────────────────────────────────────────────────────────────
 function ContactForm() {
+  const { t } = useTranslation();
   const [form, setForm] = useState({
     name: '', email: '', phone: '', company: '', interest: '', message: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const trackEvent = usePlausible();
+
+  const interests: string[] = t('contacto.form.interests', { returnObjects: true }) as string[];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -139,7 +93,7 @@ function ContactForm() {
       const data = await res.json() as { success?: boolean; error?: string };
 
       if (!res.ok) {
-        setErrorMsg(data.error ?? 'Error al enviar. Por favor intenta de nuevo.');
+        setErrorMsg(data.error ?? t('contacto.form.error_default'));
         setStatus('error');
         trackEvent('Contact Form Error', { props: { reason: data.error ?? 'unknown' } });
       } else {
@@ -148,7 +102,7 @@ function ContactForm() {
         setForm({ name: '', email: '', phone: '', company: '', interest: '', message: '' });
       }
     } catch {
-      setErrorMsg('Error de conexión. Por favor intenta de nuevo.');
+      setErrorMsg(t('contacto.form.error_network'));
       setStatus('error');
       trackEvent('Contact Form Error', { props: { reason: 'network' } });
     }
@@ -165,15 +119,15 @@ function ContactForm() {
         <div className="w-16 h-16 bg-[#EEF2F8] rounded-full flex items-center justify-center mb-6">
           <CheckCircle2 size={28} className="text-[#1B3A6B]" />
         </div>
-        <h3 className="font-heading text-2xl font-bold text-[#0D1B2E] mb-3">¡Mensaje Enviado!</h3>
+        <h3 className="font-heading text-2xl font-bold text-[#0D1B2E] mb-3">{t('contacto.form.success_title')}</h3>
         <p className="text-[#5A7099] text-base leading-relaxed mb-8 max-w-sm">
-          Gracias por contactarnos. Nuestro equipo revisará tu mensaje y se pondrá en contacto contigo en menos de 24 horas.
+          {t('contacto.form.success_msg')}
         </p>
         <button
           onClick={() => setStatus('idle')}
           className="text-sm font-semibold text-[#1B3A6B] hover:underline transition-all"
         >
-          Enviar otro mensaje
+          {t('contacto.form.send_another')}
         </button>
       </motion.div>
     );
@@ -187,7 +141,7 @@ function ContactForm() {
       {/* Name + Email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className={labelClass}>Nombre completo *</label>
+          <label htmlFor="name" className={labelClass}>{t('contacto.form.name')}</label>
           <input
             id="name"
             name="name"
@@ -195,12 +149,12 @@ function ContactForm() {
             required
             value={form.name}
             onChange={handleChange}
-            placeholder="Tu nombre"
+            placeholder={t('contacto.form.name_placeholder')}
             className={inputClass}
           />
         </div>
         <div>
-          <label htmlFor="email" className={labelClass}>Correo electrónico *</label>
+          <label htmlFor="email" className={labelClass}>{t('contacto.form.email')}</label>
           <input
             id="email"
             name="email"
@@ -208,7 +162,7 @@ function ContactForm() {
             required
             value={form.email}
             onChange={handleChange}
-            placeholder="tu@correo.com"
+            placeholder={t('contacto.form.email_placeholder')}
             className={inputClass}
           />
         </div>
@@ -217,26 +171,26 @@ function ContactForm() {
       {/* Phone + Company */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="phone" className={labelClass}>Teléfono / WhatsApp</label>
+          <label htmlFor="phone" className={labelClass}>{t('contacto.form.phone')}</label>
           <input
             id="phone"
             name="phone"
             type="tel"
             value={form.phone}
             onChange={handleChange}
-            placeholder="+52 55 0000 0000"
+            placeholder={t('contacto.form.phone_placeholder')}
             className={inputClass}
           />
         </div>
         <div>
-          <label htmlFor="company" className={labelClass}>Empresa / Marca</label>
+          <label htmlFor="company" className={labelClass}>{t('contacto.form.company')}</label>
           <input
             id="company"
             name="company"
             type="text"
             value={form.company}
             onChange={handleChange}
-            placeholder="Nombre de tu empresa"
+            placeholder={t('contacto.form.company_placeholder')}
             className={inputClass}
           />
         </div>
@@ -244,7 +198,7 @@ function ContactForm() {
 
       {/* Interest */}
       <div>
-        <label htmlFor="interest" className={labelClass}>¿En qué podemos ayudarte?</label>
+        <label htmlFor="interest" className={labelClass}>{t('contacto.form.help')}</label>
         <select
           id="interest"
           name="interest"
@@ -252,7 +206,7 @@ function ContactForm() {
           onChange={handleChange}
           className={`${inputClass} cursor-pointer`}
         >
-          <option value="">Selecciona una opción</option>
+          <option value="">{t('contacto.form.select_default')}</option>
           {interests.map(i => (
             <option key={i} value={i}>{i}</option>
           ))}
@@ -261,7 +215,7 @@ function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className={labelClass}>Mensaje *</label>
+        <label htmlFor="message" className={labelClass}>{t('contacto.form.message')}</label>
         <textarea
           id="message"
           name="message"
@@ -269,7 +223,7 @@ function ContactForm() {
           rows={5}
           value={form.message}
           onChange={handleChange}
-          placeholder="Cuéntanos sobre tu proyecto, marca o idea. ¿Qué quieres lograr?"
+          placeholder={t('contacto.form.message_placeholder')}
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -296,18 +250,18 @@ function ContactForm() {
         {status === 'loading' ? (
           <>
             <Loader2 size={16} className="animate-spin" />
-            Enviando...
+            {t('contacto.form.sending')}
           </>
         ) : (
           <>
-            Enviar Mensaje
+            {t('contacto.form.submit')}
             <Send size={15} />
           </>
         )}
       </motion.button>
 
       <p className="text-[#9AAAC0] text-xs text-center">
-        Al enviar este formulario aceptas que nos pongamos en contacto contigo.
+        {t('contacto.form.consent')}
       </p>
     </form>
   );
@@ -318,6 +272,36 @@ export default function ContactoPage() {
   const { t } = useTranslation();
   const { hash } = useLocation();
   const formSectionRef = useRef<HTMLDivElement>(null);
+
+  const contactInfo = [
+    {
+      Icon: Mail,
+      label: t('contacto.email_label'),
+      value: 'contact@palenkke.org',
+      href: 'mailto:contact@palenkke.org',
+    },
+    {
+      Icon: Phone,
+      label: '🇺🇸 +1 (703) 981-2909',
+      value: '+1 (703) 981-2909',
+      href: 'tel:+17039812909',
+    },
+    {
+      Icon: Phone,
+      label: '🇲🇽 +52 228 144 7377',
+      value: '+52 228 144 7377',
+      href: 'tel:+522281447372',
+    },
+    {
+      Icon: MapPin,
+      label: t('contacto.offices_label'),
+      value: t('contacto.offices_value'),
+      href: null,
+    },
+  ];
+
+  const profileIcons = [Users, Globe, CheckCircle2, ArrowRight];
+  const profiles: Array<{ title: string; desc: string }> = t('contacto.audiences', { returnObjects: true }) as Array<{ title: string; desc: string }>;
 
   useEffect(() => {
     if (hash === '#form' && formSectionRef.current) {
@@ -331,7 +315,7 @@ export default function ContactoPage() {
       <Helmet>
         <title>{t('contacto.meta_title')}</title>
         <meta name="description" content={t('contacto.meta_desc')} />
-        <meta name="keywords" content="contacto Grupo Palenkke, inversión marcas México, distribución productos, alianzas estratégicas, socios comerciales, contact Palenkke" />
+        <meta name="keywords" content={t('contacto.meta_keywords')} />
         <link rel="canonical" href="https://www.palenkke.org/contacto" />
         <meta property="og:title" content={t('contacto.meta_title')} />
         <meta property="og:description" content={t('contacto.meta_desc')} />
@@ -442,11 +426,11 @@ export default function ContactoPage() {
                   <div className="relative">
                     <div className="flex items-center gap-3 mb-5">
                       <div className="h-px w-8 bg-[#C9A84C]" />
-                      <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.25em] uppercase">Información</span>
+                      <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.25em] uppercase">{t('contacto.info_label')}</span>
                     </div>
-                    <h2 className="font-heading text-xl font-bold text-white mb-3">Información de Contacto</h2>
+                    <h2 className="font-heading text-xl font-bold text-white mb-3">{t('contacto.info_heading')}</h2>
                     <p className="text-white/45 text-sm leading-relaxed">
-                      Estamos disponibles para atender tu consulta. Nuestro equipo responde en menos de 24 horas hábiles.
+                      {t('contacto.info_sub')}
                     </p>
                   </div>
                 </div>
@@ -481,14 +465,14 @@ export default function ContactoPage() {
                     <Clock size={14} className="text-[#1B3A6B]" />
                   </div>
                   <div>
-                    <p className="text-[#0D1B2E] text-sm font-semibold">Tiempo de respuesta</p>
-                    <p className="text-[#5A7099] text-xs">Menos de 24 horas hábiles</p>
+                    <p className="text-[#0D1B2E] text-sm font-semibold">{t('contacto.response_label')}</p>
+                    <p className="text-[#5A7099] text-xs">{t('contacto.response_value')}</p>
                   </div>
                 </div>
 
                 {/* Social links */}
                 <div className="bg-white border border-[#D4DCE8] rounded-sm p-6">
-                  <p className="text-[#9AAAC0] text-xs font-semibold tracking-[0.2em] uppercase mb-4">Síguenos</p>
+                  <p className="text-[#9AAAC0] text-xs font-semibold tracking-[0.2em] uppercase mb-4">{t('contacto.follow_label')}</p>
                   <div className="flex gap-3">
                     {socialLinks.map(({ platform, label, href }) => {
                       const Icon = PLATFORM_ICONS[platform];
@@ -519,8 +503,8 @@ export default function ContactoPage() {
               <div id="form" ref={formSectionRef} className="bg-white border border-[#D4DCE8] rounded-sm shadow-[0_4px_32px_rgba(27,58,107,0.08)] overflow-hidden">
                 {/* Form header */}
                 <div className="px-8 pt-8 pb-6 border-b border-[#D4DCE8]">
-                  <h2 className="font-heading text-2xl font-bold text-[#0D1B2E] mb-1">Envíanos un Mensaje</h2>
-                  <p className="text-[#5A7099] text-sm">Cuéntanos sobre tu proyecto y nos pondremos en contacto contigo.</p>
+                  <h2 className="font-heading text-2xl font-bold text-[#0D1B2E] mb-1">{t('contacto.form.heading')}</h2>
+                  <p className="text-[#5A7099] text-sm">{t('contacto.form.sub')}</p>
                 </div>
                 <div className="p-8">
                   <ContactForm />
@@ -540,19 +524,21 @@ export default function ContactoPage() {
               <div className="h-0.5 w-12 bg-[#1B3A6B]" />
             </motion.div>
             <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">
-              Audiencias
+              {t('contacto.audiences_eyebrow')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(24px,3vw,40px)] font-bold text-[#0D1B2E] leading-tight">
-              ¿Quién Puede Contactarnos?
+              {t('contacto.audiences_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-base mt-3 max-w-lg mx-auto">
-              Trabajamos con cuatro perfiles estratégicos. Si encajas en alguno, hay una oportunidad esperándote.
+              {t('contacto.audiences_sub')}
             </motion.p>
           </InView>
 
           <InView>
             <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {profiles.map(({ Icon, title, desc }) => (
+              {profiles.map(({ title, desc }, i) => {
+                const Icon = profileIcons[i] ?? Users;
+                return (
                 <motion.div
                   key={title}
                   variants={fadeUp}
@@ -566,7 +552,8 @@ export default function ContactoPage() {
                   <h3 className="font-heading font-bold text-[#0D1B2E] text-base mb-2 group-hover:text-[#1B3A6B] transition-colors duration-300">{title}</h3>
                   <p className="text-[#5A7099] text-sm leading-relaxed">{desc}</p>
                 </motion.div>
-              ))}
+                );
+              })}
             </motion.div>
           </InView>
         </div>
@@ -592,10 +579,10 @@ export default function ContactoPage() {
               <div className="h-0.5 w-12 bg-[#C9A84C]" />
             </motion.div>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(24px,3.5vw,44px)] font-bold text-white leading-tight mb-4 max-w-2xl mx-auto">
-              ¿Prefieres conocer más antes de escribirnos?
+              {t('contacto.cta_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-white/50 text-base mb-10 max-w-lg mx-auto">
-              Explora nuestros casos de éxito, servicios y productos para entender cómo trabajamos.
+              {t('contacto.cta_sub')}
             </motion.p>
             <motion.div variants={stagger} className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div variants={fadeUp}>
@@ -603,7 +590,7 @@ export default function ContactoPage() {
                   to="/casos"
                   className="group inline-flex items-center gap-3 px-8 py-3.5 bg-white text-[#1B3A6B] font-semibold text-sm tracking-wider uppercase hover:bg-[#EEF2F8] transition-all duration-300 rounded-sm shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:-translate-y-0.5"
                 >
-                  Casos de Éxito
+                  {t('contacto.cta_cases')}
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
@@ -612,7 +599,7 @@ export default function ContactoPage() {
                   to="/servicios"
                   className="inline-flex items-center gap-3 px-8 py-3.5 border border-white/30 text-white font-semibold text-sm tracking-wider uppercase hover:border-white/60 hover:bg-white/10 transition-all duration-300 rounded-sm"
                 >
-                  Nuestros Servicios
+                  {t('contacto.cta_services')}
                 </Link>
               </motion.div>
               <motion.div variants={fadeUp}>
@@ -620,7 +607,7 @@ export default function ContactoPage() {
                   to="/productos"
                   className="inline-flex items-center gap-3 px-8 py-3.5 border border-white/30 text-white font-semibold text-sm tracking-wider uppercase hover:border-white/60 hover:bg-white/10 transition-all duration-300 rounded-sm"
                 >
-                  Productos
+                  {t('contacto.cta_products')}
                 </Link>
               </motion.div>
             </motion.div>

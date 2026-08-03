@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'motion/react';
 import { Helmet } from '@dr.pogodin/react-helmet';
@@ -42,69 +42,65 @@ function AccentLine() {
   );
 }
 
-const products = [
-{
-  id: 'joven',
-  name: 'PALENKKE Mezcal Joven',
-  subtitle: 'Mezcal Artesanal',
-  tag: 'Joven',
-  tagBg: 'bg-[#EEF2F8] text-[#1B3A6B]',
-  imgSlot: '/assets/mezcaljoven.jpeg',
-  abv: '40% Alc. Vol.',
-  agave: 'Cupreata Silvestre',
-  region: 'Michoacán, México',
-  process: 'Destilación artesanal en alambique de cobre',
-  tasting: 'Notas de agave fresco, cítricos suaves y un final ahumado elegante.',
-  sizes: ['375 ml', '750 ml'],
-  featured: false,
-  description: 'PALENKKE Mezcal Joven es la esencia más pura del agave, un destilado que transmite la fuerza de la tierra.',
-  color: '#EEF2F8',
-  accentColor: '#1B3A6B'
-},
-{
-  id: 'rose',
-  name: 'PALENKKE Mezcal Rosé',
-  subtitle: 'Mezcal Artesanal Premium',
-  tag: 'Rosé',
-  tagBg: 'bg-pink-50 text-pink-700',
-  imgSlot: '/assets/mezcalrose.jpeg',
-  abv: '38% Alc. Vol.',
-  agave: 'Cupreata Silvestre',
-  region: 'Michoacán, México',
-  process: 'Maceración con frutos rojos seleccionados',
-  tasting: 'Notas florales, frutos rojos, agave suave y un final fresco.',
-  sizes: ['375 ml', '750 ml'],
-  featured: true,
-  description: 'PALENKKE Mezcal Rosé combina la tradición del mezcal con un delicado toque de frutos rojos.',
-  color: '#FFF0F3',
-  accentColor: '#C9A84C'
-},
-{
-  id: 'anejo',
-  name: 'PALENKKE Mezcal Añejo',
-  subtitle: 'Mezcal Artesanal Reposado',
-  tag: 'Añejo',
-  tagBg: 'bg-[#C9A84C]/15 text-[#8B6914]',
-  imgSlot: '/assets/mezcalanejo.jpeg',
-  abv: '42% Alc. Vol.',
-  agave: 'Cupreata Silvestre',
-  region: 'Michoacán, México',
-  process: 'Reposado en barricas de roble americano',
-  tasting: 'Notas de vainilla, caramelo y madera tostada.',
-  sizes: ['750 ml'],
-  featured: false,
-  description: 'PALENKKE Mezcal Añejo es una expresión sofisticada con maduración en barricas de roble.',
-  color: '#FDF6E3',
-  accentColor: '#C9A84C'
-}];
+interface VariantData {
+  name: string;
+  subtitle: string;
+  tag: string;
+  abv: string;
+  agave: string;
+  region: string;
+  process: string;
+  tasting: string;
+  sizes: string[];
+  description: string;
+}
+
+interface VariantItem extends VariantData {
+  id: string;
+  imgSlot: string;
+  featured: boolean;
+  tagBg: string;
+  color: string;
+  accentColor: string;
+}
+
+const VARIANT_PRESENTATION: Omit<VariantItem, keyof VariantData>[] = [
+  {
+    id: 'joven',
+    imgSlot: '/assets/mezcaljoven.jpeg',
+    featured: false,
+    tagBg: 'bg-[#EEF2F8] text-[#1B3A6B]',
+    color: '#EEF2F8',
+    accentColor: '#1B3A6B'
+  },
+  {
+    id: 'rose',
+    imgSlot: '/assets/mezcalrose.jpeg',
+    featured: true,
+    tagBg: 'bg-pink-50 text-pink-700',
+    color: '#FFF0F3',
+    accentColor: '#C9A84C'
+  },
+  {
+    id: 'anejo',
+    imgSlot: '/assets/mezcalanejo.jpeg',
+    featured: false,
+    tagBg: 'bg-[#C9A84C]/15 text-[#8B6914]',
+    color: '#FDF6E3',
+    accentColor: '#C9A84C'
+  }
+];
 
 const specs = [
-{ Icon: Leaf, label: 'Tipo de Agave', key: 'agave' },
-{ Icon: MapPin, label: 'Región', key: 'region' },
-{ Icon: Flame, label: 'Proceso', key: 'process' },
-{ Icon: Droplets, label: 'Graduación', key: 'abv' }];
+  { Icon: Leaf, labelKey: 'agave', key: 'agave' },
+  { Icon: MapPin, labelKey: 'region', key: 'region' },
+  { Icon: Flame, labelKey: 'process', key: 'process' },
+  { Icon: Droplets, labelKey: 'abv', key: 'abv' }];
 
-function ProductCard({ p, isActive, onClick }: {p: typeof products[0];isActive: boolean;onClick: () => void;}) {
+const pillIcons = [Leaf, Globe, Flame, Award];
+
+function ProductCard({ p, isActive, onClick }: {p: VariantItem;isActive: boolean;onClick: () => void;}) {
+  const { t } = useTranslation();
   return (
     <motion.div variants={fadeUp}
       whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(27,58,107,0.14)' }}
@@ -119,7 +115,7 @@ function ProductCard({ p, isActive, onClick }: {p: typeof products[0];isActive: 
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2E]/50 via-transparent to-transparent" />
         {p.featured &&
         <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-[#C9A84C] text-[#0D1B2E] px-3 py-1 text-xs font-bold tracking-wide rounded-sm">
-          <Star size={10} /> Premium
+          <Star size={10} /> {t('productPage.premium')}
         </div>}
         <div className="absolute bottom-4 left-4">
           <span className={`inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase rounded-sm ${p.tagBg}`}>{p.tag}</span>
@@ -135,7 +131,7 @@ function ProductCard({ p, isActive, onClick }: {p: typeof products[0];isActive: 
         <div className="flex items-center justify-between">
           <span className="text-[#5A7099] text-xs">{p.abv}</span>
           <span className={`flex items-center gap-1 text-xs font-semibold transition-colors duration-200 ${isActive ? 'text-[#1B3A6B]' : 'text-[#5A7099] group-hover:text-[#1B3A6B]'}`}>
-            Ver detalle <ChevronRight size={12} />
+            {t('productPage.view_detail')} <ChevronRight size={12} />
           </span>
         </div>
         <div className={`mt-4 h-0.5 bg-[#1B3A6B] transition-all duration-400 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
@@ -149,15 +145,23 @@ export default function ProductoPalenkkePage() {
   const [active, setActive] = useState<string | null>(null);
   const detailRef = useRef<HTMLDivElement>(null);
 
+  const products = useMemo(() => {
+    const data = t('brand_pages.palenkke.variants', { returnObjects: true }) as VariantData[];
+    return data.map((d, i) => ({ ...d, ...(VARIANT_PRESENTATION[i] ?? VARIANT_PRESENTATION[0]) }));
+  }, [t]);
+
+  const pills = t('brand_pages.palenkke.pills', { returnObjects: true }) as string[];
+
   const activeProduct = products.find((p) => p.id === active);
 
   return (
     <>
       <Helmet>
-        <title>PALENKKE Mezcal — Productos | Grupo Palenkke</title>
-        <meta name="description" content="PALENKKE Mezcal: tradición artesanal, identidad mexicana y expansión comercial internacional." />
+        <title>{t('brand_pages.palenkke.meta_title')}</title>
+        <meta name="description" content={t('brand_pages.palenkke.meta_desc')} />
+        <meta name="keywords" content={t('brand_pages.palenkke.meta_keywords')} />
         <link rel="canonical" href="https://www.palenkke.org/productos/palenkke" />
-        <meta property="og:title" content="PALENKKE Mezcal — Productos | Grupo Palenkke" />
+        <meta property="og:title" content={t('brand_pages.palenkke.meta_title')} />
         <meta property="og:url" content="https://www.palenkke.org/productos/palenkke" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Grupo Palenkke" />
@@ -193,7 +197,7 @@ export default function ProductoPalenkkePage() {
 
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-[#C9A84C]" />
-              <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">Mezcal Artesanal</span>
+              <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">{t('brand_pages.palenkke.eyebrow')}</span>
             </motion.div>
 
             <motion.h1 variants={fadeUp} className="font-heading text-[clamp(44px,7vw,92px)] font-bold text-white leading-tight mb-6"
@@ -203,11 +207,14 @@ export default function ProductoPalenkkePage() {
             </motion.p>
 
             <motion.div variants={stagger} className="flex flex-wrap gap-4">
-              {[{ Icon: Leaf, label: 'Agave Silvestre' }, { Icon: Globe, label: 'Identidad Mexicana' }, { Icon: Flame, label: 'Proceso Artesanal' }, { Icon: Award, label: 'Expansión Global' }].map(({ Icon, label }) =>
-              <motion.div key={label} variants={fadeUp}
-                className="flex items-center gap-2 px-4 py-2 border border-white/15 text-white/60 text-xs rounded-sm hover:border-white/30 hover:text-white/80 transition-all duration-200">
-                <Icon size={12} className="text-[#C9A84C]" /> {label}
-              </motion.div>)}
+              {pills.map((label, i) => {
+                const Icon = pillIcons[i] ?? Leaf;
+                return (
+                <motion.div key={label} variants={fadeUp}
+                  className="flex items-center gap-2 px-4 py-2 border border-white/15 text-white/60 text-xs rounded-sm hover:border-white/30 hover:text-white/80 transition-all duration-200">
+                  <Icon size={12} className="text-[#C9A84C]" /> {label}
+                </motion.div>);
+              })}
             </motion.div>
           </motion.div>
         </div>
@@ -218,20 +225,20 @@ export default function ProductoPalenkkePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <InView>
               <AccentLine />
-              <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">La Marca</motion.span>
-              <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-[#0D1B2E] leading-tight mb-6">PALENKKE Mezcal</motion.h2>
+              <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">{t('productPage.the_brand')}</motion.span>
+              <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-[#0D1B2E] leading-tight mb-6">{t('brand_pages.palenkke.hero_heading').replace(/<br\/?>/gi, ' ').trim()}</motion.h2>
               <motion.p variants={fadeUp} className="text-[#5A7099] text-base leading-relaxed mb-5">
-                PALENKKE Mezcal representa la tradición artesanal, la identidad mexicana y la expansión comercial internacional. Elaborado con agave Cupreata Silvestre en Michoacán, cada botella captura la esencia de México.
+                {t('brand_pages.palenkke.intro_p1')}
               </motion.p>
               <motion.p variants={fadeUp} className="text-[#5A7099] text-base leading-relaxed mb-8">
-                Con tres variedades —Rosé, Joven y Añejo— PALENKKE Mezcal ofrece una experiencia completa para los paladares más exigentes.
+                {t('brand_pages.palenkke.intro_p2')}
               </motion.p>
             </InView>
 
             <motion.div initial={{ opacity: 0, x: 32 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' as const }} className="relative">
               <div className="overflow-hidden rounded-sm shadow-[0_24px_80px_rgba(27,58,107,0.12)] group">
-                <motion.img src="/assets/agave-fields.jpg" alt="Campos de agave"
+                <motion.img src="/assets/agave-fields.jpg" alt={t('brand_pages.palenkke.img_alt')}
                   whileHover={{ scale: 1.05 }} transition={{ duration: 0.6, ease: 'easeOut' as const }}
                   className="w-full h-[420px] object-cover object-[center_70%]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2E]/40 via-transparent to-transparent pointer-events-none" />
@@ -239,8 +246,8 @@ export default function ProductoPalenkkePage() {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="absolute -bottom-5 -right-5 bg-[#C9A84C] text-[#0D1B2E] p-5 rounded-sm shadow-xl">
-                <span className="block font-heading text-2xl font-bold">Michoacán</span>
-                <span className="block text-[#0D1B2E]/70 text-xs mt-0.5">México · Origen</span>
+                <span className="block font-heading text-2xl font-bold">{t('brand_pages.palenkke.origin_badge')}</span>
+                <span className="block text-[#0D1B2E]/70 text-xs mt-0.5">{t('brand_pages.palenkke.origin_sub')}</span>
               </motion.div>
             </motion.div>
           </div>
@@ -251,9 +258,9 @@ export default function ProductoPalenkkePage() {
         <div className="container mx-auto px-6 lg:px-10">
           <InView className="mb-14">
             <AccentLine />
-            <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">Colección</motion.span>
-            <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-black leading-tight">Variantes</motion.h2>
-            <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">Seleccione la variante que desea conocer más detalles</motion.p>
+            <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">{t('productPage.collection')}</motion.span>
+            <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-black leading-tight">{t('productPage.variants')}</motion.h2>
+            <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">{t('brand_pages.palenkke.variants_sub')}</motion.p>
           </InView>
           <InView>
             <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -282,7 +289,7 @@ export default function ProductoPalenkkePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2E]/30 via-transparent to-transparent pointer-events-none" />
                 </div>
                 <div className="bg-[#EEF2F8] rounded-sm p-6 border-l-4 border-[#1B3A6B]">
-                  <p className="text-[#1B3A6B] text-xs font-semibold tracking-[0.2em] uppercase mb-2">Notas de Cata</p>
+                  <p className="text-[#1B3A6B] text-xs font-semibold tracking-[0.2em] uppercase mb-2">{t('productPage.tasting_notes')}</p>
                   <p className="text-[#0D1B2E] text-sm leading-relaxed italic">"{activeProduct.tasting}"</p>
                 </div>
               </div>
@@ -292,20 +299,20 @@ export default function ProductoPalenkkePage() {
                 <div className="h-px bg-[#D4DCE8] mb-8" />
                 <p className="text-[#5A7099] text-base leading-relaxed mb-8">{activeProduct.description}</p>
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  {specs.map(({ Icon, label, key }) =>
+                  {specs.map(({ Icon, labelKey, key }) =>
                   <div key={key} className="flex items-start gap-3 p-4 bg-[#F7F9FC] rounded-sm border border-[#D4DCE8]">
                     <div className="w-8 h-8 bg-[#EEF2F8] rounded-sm flex items-center justify-center shrink-0">
                       <Icon size={13} className="text-[#1B3A6B]" />
                     </div>
                     <div>
-                      <p className="text-[#5A7099] text-xs tracking-wide mb-0.5">{label}</p>
-                      <p className="text-[#0D1B2E] text-sm font-medium">{activeProduct[key as keyof typeof activeProduct] as string}</p>
+                      <p className="text-[#5A7099] text-xs tracking-wide mb-0.5">{t(`productPage.specs.${labelKey}`)}</p>
+                      <p className="text-[#0D1B2E] text-sm font-medium">{activeProduct[key as keyof VariantItem] as string}</p>
                     </div>
                   </div>)}
                 </div>
                 <Link to="/contacto"
                   className="group inline-flex items-center gap-3 px-7 py-3.5 bg-[#1B3A6B] text-white font-semibold text-sm tracking-wide uppercase hover:bg-[#142d54] transition-all duration-300 rounded-sm shadow-[0_4px_16px_rgba(27,58,107,0.25)] hover:-translate-y-0.5">
-                  Solicitar Información <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+                  {t('productPage.request_info')} <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
@@ -328,22 +335,22 @@ export default function ProductoPalenkkePage() {
           <InView>
             <motion.div variants={fadeUp} className="flex justify-center mb-5"><div className="h-0.5 w-12 bg-[#C9A84C]" /></motion.div>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,52px)] font-bold text-white leading-tight mb-5 max-w-2xl mx-auto">
-              ¿Interesado en PALENKKE Mezcal?
+              {t('brand_pages.palenkke.cta_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-white/55 text-lg mb-10 max-w-lg mx-auto">
-              Contáctanos para conocer las oportunidades de distribución y colaboración.
+              {t('brand_pages.palenkke.cta_sub')}
             </motion.p>
             <motion.div variants={stagger} className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div variants={fadeUp}>
                 <Link to="/contacto"
                   className="group inline-flex items-center gap-3 px-10 py-4 bg-white text-[#1B3A6B] font-semibold text-sm tracking-wider uppercase hover:bg-[#EEF2F8] transition-all duration-300 rounded-sm shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:-translate-y-0.5">
-                  Solicitar Información <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  {t('brand_pages.palenkke.cta_button')} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
               <motion.div variants={fadeUp}>
                 <Link to="/productos"
                   className="inline-flex items-center gap-3 px-10 py-4 border border-white/30 text-white font-semibold text-sm tracking-wider uppercase hover:border-white/60 hover:bg-white/10 transition-all duration-300 rounded-sm">
-                  Ver Todas las Marcas
+                  {t('productPage.see_all_brands')}
                 </Link>
               </motion.div>
             </motion.div>

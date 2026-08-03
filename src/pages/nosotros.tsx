@@ -51,25 +51,10 @@ function InViewSingle({ children, variant = fadeUp, className = ''
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
-const milestones = [
-{ year: '2008', titleKey: 'Fundación', descKey: 'Grupo Palenkke nace en México con la visión de conectar marcas locales con mercados internacionales.' },
-{ year: '2012', titleKey: 'Expansión Regional', descKey: 'Consolidamos presencia en Latinoamérica y establecemos alianzas estratégicas en EE.UU.' },
-{ year: '2016', titleKey: 'Portafolio Diversificado', descKey: 'Ampliamos nuestro portafolio a tecnología, bebidas premium, artesanías y soluciones comerciales.' },
-{ year: "2020", 
-  titleKey: "Visión Global", 
-  descKey: "Grupo Palenkke no solo identifica marcas y productos, sino que trabaja en su solidificación, construye identidad, impulsa la expansión y garantiza la permanencia en mercados internacionales exigentes."},
-{ year: '2024', titleKey: 'Ecosistema Premium', descKey: 'Más de 7 marcas desarrolladas, con presencia en mercadosnacionales e internacionales.' }];
-
 
 const valueIcons = [Shield, Lightbulb, Handshake, Globe, Target, TrendingUp];
 
-
-
-const teamRoles = [
-{ Icon: Users, roleKey: 'Dirección General', subKey: 'Liderazgo Estratégico', descKey: 'Visión de largo plazo, relaciones internacionales y desarrollo de ecosistema de marcas premium.' },
-{ Icon: Globe, roleKey: 'Desarrollo Comercial', subKey: 'Expansión de Mercados', descKey: 'Identificación de oportunidades, apertura de canales y negociación con distribuidores globales.' },
-{ Icon: Award, roleKey: 'Branding & Diseño', subKey: 'Identidad de Marca', descKey: 'Creación de identidades visuales premium con posicionamiento diferenciado en mercados competitivos.' },
-{ Icon: Target, roleKey: 'Operaciones', subKey: 'Ejecución y Logística', descKey: 'Coordinación de cadena de suministro, distribución y operaciones internacionales.' }];
+const teamIcons = [Users, Globe, Award, Target];
 
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -77,6 +62,10 @@ export default function NosotrosPage() {
   const { t } = useTranslation();
 
   const valoresItems: Array<{title: string;desc: string;}> = t('nosotros.valores', { returnObjects: true }) as Array<{title: string;desc: string;}>;
+  const milestones: Array<{year: string;title: string;desc: string;}> = t('nosotros.milestones', { returnObjects: true }) as Array<{year: string;title: string;desc: string;}>;
+  const teamRoles: Array<{role: string;sub: string;desc: string;}> = t('nosotros.team', { returnObjects: true }) as Array<{role: string;sub: string;desc: string;}>;
+  const mapDots: Array<{label: string;sub: string;}> = t('nosotros.map_dots', { returnObjects: true }) as Array<{label: string;sub: string;}>;
+  const mapRegions: Array<{region: string;detail: string;}> = t('nosotros.map_regions', { returnObjects: true }) as Array<{region: string;detail: string;}>;
 
 
   return (
@@ -84,7 +73,7 @@ export default function NosotrosPage() {
       <Helmet>
         <title>{t('nosotros.meta_title')}</title>
         <meta name="description" content={t('nosotros.meta_desc')} />
-        <meta name="keywords" content="Grupo Palenkke historia, equipo Palenkke, empresa mexicana marcas, 17 años experiencia, visión internacional, sobre nosotros" />
+        <meta name="keywords" content={t('nosotros.meta_keywords')} />
         <link rel="canonical" href="https://www.palenkke.org/nosotros" />
         <meta property="og:title" content={t('nosotros.meta_title')} />
         <meta property="og:description" content={t('nosotros.meta_desc')} />
@@ -201,13 +190,13 @@ export default function NosotrosPage() {
           <div className="relative max-w-4xl mx-auto">
             <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#D4DCE8] -translate-x-1/2 hidden md:block" />
             <div className="space-y-12">
-              {milestones.map(({ year, titleKey, descKey }, i) =>
+              {milestones.map(({ year, title, desc }, i) =>
               <InViewSingle key={year} variant={i % 2 === 0 ? fadeLeft : fadeRight}>
                   <div className={`relative flex flex-col md:flex-row items-center gap-8 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                     <motion.div whileHover={{ y: -4, boxShadow: '0 16px 48px rgba(27,58,107,0.12)' }} transition={{ duration: 0.25 }} className="flex-1 bg-white border border-[#D4DCE8] rounded-sm p-7 hover:border-[#1B3A6B]/30 transition-all duration-300 group cursor-default">
                       <span className="block text-[#C9A84C] font-mono text-xs tracking-widest mb-2">{year}</span>
-                      <h3 className="font-heading font-bold text-[#0D1B2E] text-lg mb-2 group-hover:text-[#1B3A6B] transition-colors duration-300">{titleKey}</h3>
-                      <p className="text-[#5A7099] text-sm leading-relaxed">{descKey}</p>
+                      <h3 className="font-heading font-bold text-[#0D1B2E] text-lg mb-2 group-hover:text-[#1B3A6B] transition-colors duration-300">{title}</h3>
+                      <p className="text-[#5A7099] text-sm leading-relaxed">{desc}</p>
                     </motion.div>
                     <div className="hidden md:flex w-10 h-10 rounded-full bg-[#1B3A6B] border-4 border-white shadow-[0_0_0_2px_#D4DCE8] items-center justify-center shrink-0 z-10">
                       <div className="w-2 h-2 rounded-full bg-[#C9A84C]" />
@@ -316,18 +305,21 @@ export default function NosotrosPage() {
               <motion.p variants={fadeUp} className="text-[#5A7099] text-base leading-relaxed mb-8">{t('nosotros.equipo_sub')}</motion.p>
 
               <motion.div variants={stagger} className="space-y-4">
-                {teamRoles.map(({ Icon, roleKey, subKey, descKey }) =>
-                <motion.div key={roleKey} variants={fadeUp} className="flex gap-4 p-5 bg-white border border-[#D4DCE8] rounded-sm hover:border-[#1B3A6B]/30 hover:shadow-[0_4px_20px_rgba(27,58,107,0.08)] transition-all duration-300 group cursor-default">
+                {teamRoles.map(({ role, sub, desc }, i) => {
+                  const Icon = teamIcons[i] ?? Users;
+                  return (
+                <motion.div key={role} variants={fadeUp} className="flex gap-4 p-5 bg-white border border-[#D4DCE8] rounded-sm hover:border-[#1B3A6B]/30 hover:shadow-[0_4px_20px_rgba(27,58,107,0.08)] transition-all duration-300 group cursor-default">
                     <div className="w-10 h-10 bg-[#EEF2F8] rounded-sm flex items-center justify-center shrink-0 group-hover:bg-[#1B3A6B] transition-colors duration-300">
                       <Icon size={14} className="text-[#1B3A6B] group-hover:text-white transition-colors duration-300" />
                     </div>
                     <div>
-                      <p className="font-semibold text-[#0D1B2E] text-sm group-hover:text-[#1B3A6B] transition-colors duration-300">{roleKey}</p>
-                      <p className="text-[#C9A84C] text-xs tracking-wide mb-1">{subKey}</p>
-                      <p className="text-[#5A7099] text-xs leading-relaxed">{descKey}</p>
+                      <p className="font-semibold text-[#0D1B2E] text-sm group-hover:text-[#1B3A6B] transition-colors duration-300">{role}</p>
+                      <p className="text-[#C9A84C] text-xs tracking-wide mb-1">{sub}</p>
+                      <p className="text-[#5A7099] text-xs leading-relaxed">{desc}</p>
                     </div>
                   </motion.div>
-                )}
+                  );
+                })}
               </motion.div>
             </InView>
 
@@ -372,12 +364,12 @@ export default function NosotrosPage() {
         <div className="relative container mx-auto px-6 lg:px-10">
           <InView className="mb-16 text-center">
             <motion.div variants={fadeUp} className="flex justify-center mb-5"><div className="h-0.5 w-12 bg-[#C9A84C]" /></motion.div>
-            <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#C9A84C]">Expansión Global</motion.span>
+            <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#C9A84C]">{t('nosotros.map_eyebrow')}</motion.span>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-white leading-tight">
-              Presencia Internacional
+              {t('nosotros.map_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-white/50 text-base mt-4 max-w-xl mx-auto">
-              7 regiones nacionales e internacionales con compromiso 100% en cada mercado.
+              {t('nosotros.map_sub')}
             </motion.p>
           </InView>
 
@@ -407,11 +399,11 @@ export default function NosotrosPage() {
 
               {/* Location dots with glow */}
               {[
-              { cx: '18%', cy: '38%', label: 'México', sub: 'Sede Principal', color: '#C9A84C', size: 'lg' },
-              { cx: '14%', cy: '36%', label: 'EE.UU', sub: 'Norteamérica', color: '#C9A84C', size: 'lg' },
-              { cx: '68%', cy: '30%', label: 'Asia', sub: 'Mercados Asiáticos', color: '#C9A84C', size: 'lg' },
-              { cx: '57%', cy: '42%', label: 'India', sub: 'Asia del Sur', color: '#C9A84C', size: 'md' },
-              { cx: '47%', cy: '22%', label: 'España', sub: 'Europa', color: '#2E5FA3', size: 'md' },
+              { cx: '18%', cy: '38%', label: mapDots[0]?.label ?? 'México', sub: mapDots[0]?.sub ?? '', color: '#C9A84C', size: 'lg' },
+              { cx: '14%', cy: '36%', label: mapDots[1]?.label ?? 'EE.UU', sub: mapDots[1]?.sub ?? '', color: '#C9A84C', size: 'lg' },
+              { cx: '68%', cy: '30%', label: mapDots[2]?.label ?? 'Asia', sub: mapDots[2]?.sub ?? '', color: '#C9A84C', size: 'lg' },
+              { cx: '57%', cy: '42%', label: mapDots[3]?.label ?? 'India', sub: mapDots[3]?.sub ?? '', color: '#C9A84C', size: 'md' },
+              { cx: '47%', cy: '22%', label: mapDots[4]?.label ?? 'España', sub: mapDots[4]?.sub ?? '', color: '#2E5FA3', size: 'md' },
               ].map(({ cx, cy, label, sub, color, size }) =>
               <motion.div
                 key={label}
@@ -472,17 +464,10 @@ export default function NosotrosPage() {
           {/* Region cards */}
           <InView className="mt-16">
             <motion.div variants={stagger} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 max-w-4xl mx-auto">
-              {[
-              { region: 'México', detail: 'Sede Principal', flag: '🇲🇽', color: 'border-[#C9A84C]/40' },
-              { region: 'EE.UU', detail: 'Norteamérica', flag: '🇺🇸', color: 'border-[#C9A84C]/40' },
-              { region: 'Centroamérica', detail: 'C. América', flag: '◉', color: 'border-[#2E5FA3]/40' },
-              { region: 'Asia', detail: 'Mercados Asiáticos', flag: '◉', color: 'border-[#C9A84C]/40' },
-              { region: 'India', detail: 'Asia del Sur', flag: '🇮🇳', color: 'border-[#C9A84C]/40' },
-              { region: 'España', detail: 'Europa', flag: '🇪🇸', color: 'border-[#2E5FA3]/40' },
-              ].map(({ region, detail, flag, color }) => (
+              {mapRegions.map(({ region, detail }, i) => (
                 <motion.div key={region} variants={fadeUp}
-                className={`bg-white/5 border ${color} rounded-sm p-4 text-center hover:bg-white/10 transition-colors duration-300`}>
-                  <span className="text-2xl mb-2 block">{flag}</span>
+                className={`bg-white/5 border ${['border-[#C9A84C]/40', 'border-[#C9A84C]/40', 'border-[#2E5FA3]/40', 'border-[#C9A84C]/40', 'border-[#C9A84C]/40', 'border-[#2E5FA3]/40'][i] ?? 'border-[#C9A84C]/40'} rounded-sm p-4 text-center hover:bg-white/10 transition-colors duration-300`}>
+                  <span className="text-2xl mb-2 block">{['🇲🇽', '🇺🇸', '◉', '◉', '🇮🇳', '🇪🇸'][i] ?? '◉'}</span>
                   <p className="text-white font-semibold text-xs">{region}</p>
                   <p className="text-white/40 text-[9px] mt-0.5">{detail}</p>
                 </motion.div>
@@ -497,9 +482,9 @@ export default function NosotrosPage() {
         <div className="container mx-auto px-6 lg:px-10">
           <InView className="mb-14 max-w-2xl">
             <motion.div variants={fadeUp} className="h-0.5 w-12 bg-[#1B3A6B] mb-5" />
-            <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">Equipo Global</motion.span>
+            <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">{t('nosotros.global_eyebrow')}</motion.span>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-[#0D1B2E] leading-tight">
-              Liderazgo Internacional
+              {t('nosotros.global_heading')}
             </motion.h2>
           </InView>
 
@@ -514,9 +499,9 @@ export default function NosotrosPage() {
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-2xl" role="img" aria-label="México">🇲🇽</span>
                 </div>
-                <p className="text-[#C9A84C] text-xs font-semibold tracking-wide uppercase mb-3">Dirección General · México</p>
-                <a href="tel:+522281447372" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+52 228 144 7372</a>
-                <p className="text-[#5A7099] text-sm leading-relaxed mt-3">Liderazgo estratégico, relaciones internacionales y desarrollo del ecosistema de marcas premium de Grupo Palenkke.</p>
+                <p className="text-[#C9A84C] text-xs font-semibold tracking-wide uppercase mb-3">{t('nosotros.global_mx_role')}</p>
+                <a href="tel:+522281447372" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+52 228 144 7377</a>
+                <p className="text-[#5A7099] text-sm leading-relaxed mt-3">{t('nosotros.global_mx_desc')}</p>
                 <div className="mt-5 h-0.5 bg-[#1B3A6B]/0 group-hover:bg-[#1B3A6B]/20 transition-all duration-500 w-0 group-hover:w-full" />
               </motion.div>
 
@@ -529,9 +514,9 @@ export default function NosotrosPage() {
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-2xl" role="img" aria-label="EE.UU">🇺🇸</span>
                 </div>
-                <p className="text-[#C9A84C] text-xs font-semibold tracking-wide uppercase mb-3">Desarrollo Comercial · EE.UU</p>
+                <p className="text-[#C9A84C] text-xs font-semibold tracking-wide uppercase mb-3">{t('nosotros.global_us_role')}</p>
                 <a href="tel:+17039812991" className="text-[#1B3A6B] text-sm font-medium hover:text-[#C9A84C] transition-colors duration-300">+1 (703) 981-2909</a>
-                <p className="text-[#5A7099] text-sm leading-relaxed mt-3">Expansión de mercados en Norteamérica, apertura de canales y negociación con distribuidores en el mercado estadounidense.</p>
+                <p className="text-[#5A7099] text-sm leading-relaxed mt-3">{t('nosotros.global_us_desc')}</p>
                 <div className="mt-5 h-0.5 bg-[#1B3A6B]/0 group-hover:bg-[#1B3A6B]/20 transition-all duration-500 w-0 group-hover:w-full" />
               </motion.div>
 
@@ -542,10 +527,10 @@ export default function NosotrosPage() {
                   <span className="text-[#9AAAC0] text-2xl" role="img" aria-label="Asia">🌏</span>
                 </div>
                 <div className="flex items-center gap-2 mb-1">
-                  <h3 className="font-heading font-bold text-[#9AAAC0] text-base italic">Próximamente</h3>
+                  <h3 className="font-heading font-bold text-[#9AAAC0] text-base italic">{t('nosotros.global_coming_soon')}</h3>
                 </div>
-                <p className="text-[#C9A84C]/60 text-xs font-semibold tracking-wide uppercase mb-3">Representación Asia</p>
-                <p className="text-[#9AAAC0] text-sm leading-relaxed">Espacio reservado para el representante de Grupo Palenkke en los mercados asiáticos.</p>
+                <p className="text-[#C9A84C]/60 text-xs font-semibold tracking-wide uppercase mb-3">{t('nosotros.global_asia_role')}</p>
+                <p className="text-[#9AAAC0] text-sm leading-relaxed">{t('nosotros.global_asia_desc')}</p>
               </motion.div>
             </motion.div>
           </InView>

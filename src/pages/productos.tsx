@@ -86,12 +86,15 @@ export default function ProductosPage() {
   const companyItems: Array<{ name: string; logo?: string; route?: string; tag: string; desc: string; }> =
     t('companies.items', { returnObjects: true }) as Array<{ name: string; logo?: string; route?: string; tag: string; desc: string; }>;
 
+  const heroPills: string[] = t('productos_landing.pills', { returnObjects: true }) as string[];
+  const pillIcons = [Award, Globe, Package, Star];
+
   return (
     <>
       <Helmet>
         <title>{t('productos_landing.meta_title')}</title>
         <meta name="description" content={t('productos_landing.meta_desc')} />
-        <meta name="keywords" content="Grupo Palenkke, productos, marcas, mezcal, Koldvolt, Ritevolt, Heartfulcraft, San Rojo, Kanan" />
+        <meta name="keywords" content={t('productos_landing.meta_keywords')} />
         <link rel="canonical" href="https://www.palenkke.org/productos" />
         <meta property="og:title" content={t('productos_landing.meta_title')} />
         <meta property="og:description" content={t('productos_landing.meta_desc')} />
@@ -153,12 +156,9 @@ export default function ProductosPage() {
             </motion.p>
 
             <motion.div variants={stagger} className="flex flex-wrap gap-4">
-              {[
-                { Icon: Award, label: 'Marcas Premium' },
-                { Icon: Globe, label: 'Presencia Global' },
-                { Icon: Package, label: 'Productos Únicos' },
-                { Icon: Star, label: 'Calidad Artesanal' },
-              ].map(({ Icon, label }) => (
+              {heroPills.map((label, i) => {
+                const Icon = pillIcons[i] ?? Award;
+                return (
                 <motion.div
                   key={label}
                   variants={fadeUp}
@@ -167,7 +167,8 @@ export default function ProductosPage() {
                   <Icon size={12} className="text-[#C9A84C]" />
                   {label}
                 </motion.div>
-              ))}
+                );
+              })}
             </motion.div>
           </motion.div>
         </div>
@@ -226,7 +227,7 @@ export default function ProductosPage() {
 
                         <div className="mt-3 flex items-center gap-1.5 text-[10px] font-semibold tracking-wider uppercase text-[#1B3A6B] group-hover:text-[#C9A84C] transition-all duration-300">
                           <Package size={10} />
-                          <span>Ver Productos</span>
+                          <span>{t('productos_landing.view_products')}</span>
                           <ArrowRight size={9} className="shrink-0 group-hover:translate-x-1 transition-transform duration-300" />
                         </div>
 
@@ -265,10 +266,10 @@ export default function ProductosPage() {
               <div className="h-0.5 w-12 bg-[#C9A84C]" />
             </motion.div>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,52px)] font-bold text-white leading-tight mb-5 max-w-2xl mx-auto">
-              ¿Interesado en Comercializar Nuestros Productos?
+              {t('productos_landing.cta_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-white/55 text-lg mb-10 max-w-lg mx-auto">
-              Contáctanos para conocer las oportunidades de distribución y colaboración disponibles para cada marca.
+              {t('productos_landing.cta_sub')}
             </motion.p>
             <motion.div variants={stagger} className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div variants={fadeUp}>
@@ -276,7 +277,7 @@ export default function ProductosPage() {
                   to="/contacto"
                   className="group inline-flex items-center gap-3 px-10 py-4 bg-white text-[#1B3A6B] font-semibold text-sm tracking-wider uppercase hover:bg-[#EEF2F8] transition-all duration-300 rounded-sm shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:-translate-y-0.5"
                 >
-                  Solicitar Información
+                  {t('productos_landing.cta_button')}
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
@@ -286,7 +287,7 @@ export default function ProductosPage() {
                   className="inline-flex items-center gap-3 px-10 py-4 border border-white/30 text-white font-semibold text-sm tracking-wider uppercase hover:border-white/60 hover:bg-white/10 transition-all duration-300 rounded-sm"
                 >
                   <Sparkles size={15} />
-                  Ver Casos de Éxito
+                  {t('productos_landing.cta_secondary')}
                 </Link>
               </motion.div>
             </motion.div>

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'motion/react';
 import { Helmet } from '@dr.pogodin/react-helmet';
@@ -42,66 +42,62 @@ function AccentLine() {
   );
 }
 
-const products = [
-{
-  id: 'clasico',
-  name: 'SAN ROJO Clásico',
-  subtitle: 'Licor de Chiles Artesanal',
-  tag: 'Original',
-  tagBg: 'bg-[#FEF2F2] text-[#991B1B]',
-  imgSlot: '/assets/mezcaljoven.jpeg',
-  abv: '30% Alc. Vol.',
-  chiles: 'Chile de Árbol, Chile Serrano',
-  region: 'Querétaro, México',
-  process: 'Maceración artesanal en frío',
-  tasting: 'Notas de chile asado, especias mexicanas y un final cálido y persistente.',
-  sizes: ['375 ml', '750 ml'],
-  featured: true,
-  description: 'SAN ROJO Clásico captura la esencia de los chiles mexicanos en un licor único en el mundo, elaborado completamente a mano en Querétaro.'
-},
-{
-  id: 'ahumado',
-  name: 'SAN ROJO Ahumado',
-  subtitle: 'Licor de Chiles Premium',
-  tag: 'Ahumado',
-  tagBg: 'bg-[#FFF3E0] text-[#92400E]',
-  imgSlot: '/assets/mezcalanejo.jpeg',
-  abv: '32% Alc. Vol.',
-  chiles: 'Chile Chipotle, Chile Morita',
-  region: 'Querétaro, México',
-  process: 'Maceración con chiles ahumados',
-  tasting: 'Notas ahumadas profundas, chocolate amargo y un final especiado.',
-  sizes: ['375 ml', '750 ml'],
-  featured: false,
-  description: 'SAN ROJO Ahumado ofrece una experiencia intensa con chiles cuidadosamente ahumados para un perfil de sabor único.'
-},
-{
-  id: 'edicion',
-  name: 'SAN ROJO Edición Limitada',
-  subtitle: 'Licor de Chiles de Autor',
-  tag: 'Edición Limitada',
-  tagBg: 'bg-[#1B3A6B]/10 text-[#1B3A6B]',
-  imgSlot: '/assets/mezcalrose.jpeg',
-  abv: '35% Alc. Vol.',
-  chiles: 'Selección de chiles mexicanos',
-  region: 'Querétaro, México',
-  process: 'Receta de autor en lotes pequeños',
-  tasting: 'Notas complejas de chiles silvestres, agave y especias exóticas.',
-  sizes: ['750 ml'],
-  featured: true,
-  description: 'Edición Limitada SAN ROJO es una creación exclusiva en lotes pequeños para conocedores y coleccionistas.'
-}];
+interface VariantData {
+  name: string;
+  subtitle: string;
+  tag: string;
+  sizes: string[];
+  description: string;
+}
+
+interface VariantItem extends VariantData {
+  id: string;
+  imgSlot: string;
+  featured: boolean;
+  tagBg: string;
+}
+
+const VARIANT_PRESENTATION: Omit<VariantItem, keyof VariantData>[] = [
+  {
+    id: 'clasico',
+    imgSlot: '/assets/mezcaljoven.jpeg',
+    featured: true,
+    tagBg: 'bg-[#FEF2F2] text-[#991B1B]'
+  },
+  {
+    id: 'ahumado',
+    imgSlot: '/assets/mezcalanejo.jpeg',
+    featured: false,
+    tagBg: 'bg-[#FFF3E0] text-[#92400E]'
+  },
+  {
+    id: 'edicion',
+    imgSlot: '/assets/mezcalrose.jpeg',
+    featured: true,
+    tagBg: 'bg-[#1B3A6B]/10 text-[#1B3A6B]'
+  }
+];
+
+const pillIcons = [Flame, Globe, Star, Droplets];
 
 export default function ProductoSanRojoPage() {
   const { t } = useTranslation();
 
+  const products = useMemo(() => {
+    const data = t('brand_pages.san-rojo.variants', { returnObjects: true }) as VariantData[];
+    return data.map((d, i) => ({ ...d, ...(VARIANT_PRESENTATION[i] ?? VARIANT_PRESENTATION[0]) }));
+  }, [t]);
+
+  const pills = t('brand_pages.san-rojo.pills', { returnObjects: true }) as string[];
+
   return (
     <>
       <Helmet>
-        <title>San Rojo — Productos | Grupo Palenkke</title>
-        <meta name="description" content="SAN ROJO: Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo." />
+        <title>{t('brand_pages.san-rojo.meta_title')}</title>
+        <meta name="description" content={t('brand_pages.san-rojo.meta_desc')} />
+        <meta name="keywords" content={t('brand_pages.san-rojo.meta_keywords')} />
         <link rel="canonical" href="https://www.palenkke.org/productos/san-rojo" />
-        <meta property="og:title" content="San Rojo — Productos | Grupo Palenkke" />
+        <meta property="og:title" content={t('brand_pages.san-rojo.meta_title')} />
         <meta property="og:url" content="https://www.palenkke.org/productos/san-rojo" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Grupo Palenkke" />
@@ -136,7 +132,7 @@ export default function ProductoSanRojoPage() {
 
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-[#DC2626]" />
-              <span className="text-[#DC2626] text-xs font-semibold tracking-[0.3em] uppercase">Licor Artesanal</span>
+              <span className="text-[#DC2626] text-xs font-semibold tracking-[0.3em] uppercase">{t('brand_pages.san-rojo.eyebrow')}</span>
             </motion.div>
 
             <motion.h1 variants={fadeUp} className="font-heading text-[clamp(44px,7vw,92px)] font-bold text-white leading-tight mb-6"
@@ -146,11 +142,14 @@ export default function ProductoSanRojoPage() {
             </motion.p>
 
             <motion.div variants={stagger} className="flex flex-wrap gap-4">
-              {[{ Icon: Flame, label: '100% Artesanal' }, { Icon: Globe, label: 'Hecho en Querétaro' }, { Icon: Star, label: 'Único en el Mundo' }, { Icon: Droplets, label: 'Receta Tradicional' }].map(({ Icon, label }) =>
-              <motion.div key={label} variants={fadeUp}
-                className="flex items-center gap-2 px-4 py-2 border border-white/15 text-white/60 text-xs rounded-sm hover:border-white/30 hover:text-white/80 transition-all duration-200">
-                <Icon size={12} className="text-[#DC2626]" /> {label}
-              </motion.div>)}
+              {pills.map((label, i) => {
+                const Icon = pillIcons[i] ?? Flame;
+                return (
+                <motion.div key={label} variants={fadeUp}
+                  className="flex items-center gap-2 px-4 py-2 border border-white/15 text-white/60 text-xs rounded-sm hover:border-white/30 hover:text-white/80 transition-all duration-200">
+                  <Icon size={12} className="text-[#DC2626]" /> {label}
+                </motion.div>);
+              })}
             </motion.div>
           </motion.div>
         </div>
@@ -161,20 +160,20 @@ export default function ProductoSanRojoPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <InView>
               <AccentLine />
-              <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">La Marca</motion.span>
-              <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-[#0D1B2E] leading-tight mb-6">SAN ROJO</motion.h2>
+              <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">{t('productPage.the_brand')}</motion.span>
+              <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-[#0D1B2E] leading-tight mb-6">{t('brand_pages.san-rojo.hero_heading').replace(/<br\/?>/gi, ' ').trim()}</motion.h2>
               <motion.p variants={fadeUp} className="text-[#5A7099] text-base leading-relaxed mb-5">
-                SAN ROJO es un licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo. Un homenaje a nuestras costumbres y tradiciones, capturando en cada botella la esencia de México.
+                {t('brand_pages.san-rojo.intro_p1')}
               </motion.p>
               <motion.p variants={fadeUp} className="text-[#5A7099] text-base leading-relaxed mb-8">
-                Cada botella de SAN ROJO representa horas de trabajo artesanal, desde la selección de chiles hasta el envasado final, todo hecho a mano con pasión y dedicación.
+                {t('brand_pages.san-rojo.intro_p2')}
               </motion.p>
             </InView>
 
             <motion.div initial={{ opacity: 0, x: 32 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               transition={{ duration: 0.8, ease: 'easeOut' as const }} className="relative">
               <div className="overflow-hidden rounded-sm shadow-[0_24px_80px_rgba(27,58,107,0.12)] group">
-                <motion.img src="/assets/agave-fields.jpg" alt="Querétaro, México"
+                <motion.img src="/assets/agave-fields.jpg" alt={t('brand_pages.san-rojo.img_alt')}
                   whileHover={{ scale: 1.05 }} transition={{ duration: 0.6, ease: 'easeOut' as const }}
                   className="w-full h-[420px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2E]/40 via-transparent to-transparent pointer-events-none" />
@@ -182,8 +181,8 @@ export default function ProductoSanRojoPage() {
               <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="absolute -bottom-5 -right-5 bg-[#DC2626] text-white p-5 rounded-sm shadow-xl">
-                <span className="block font-heading text-2xl font-bold">Querétaro</span>
-                <span className="block text-white/70 text-xs mt-0.5">México · Origen</span>
+                <span className="block font-heading text-2xl font-bold">{t('brand_pages.san-rojo.origin_badge')}</span>
+                <span className="block text-white/70 text-xs mt-0.5">{t('brand_pages.san-rojo.origin_sub')}</span>
               </motion.div>
             </motion.div>
           </div>
@@ -194,9 +193,9 @@ export default function ProductoSanRojoPage() {
         <div className="container mx-auto px-6 lg:px-10">
           <InView className="mb-14">
             <AccentLine />
-            <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">Colección</motion.span>
-            <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-black leading-tight">Variantes</motion.h2>
-            <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">Descubra nuestras variantes de licor de chiles</motion.p>
+            <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">{t('productPage.collection')}</motion.span>
+            <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-black leading-tight">{t('productPage.variants')}</motion.h2>
+            <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">{t('brand_pages.san-rojo.variants_sub')}</motion.p>
           </InView>
           <InView>
             <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -212,7 +211,7 @@ export default function ProductoSanRojoPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2E]/50 via-transparent to-transparent" />
                     {p.featured &&
                     <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-[#DC2626] text-white px-3 py-1 text-xs font-bold tracking-wide rounded-sm">
-                      <Star size={10} /> Premium
+                      <Star size={10} /> {t('productPage.premium')}
                     </div>}
                     <div className="absolute bottom-4 left-4">
                       <span className={`inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase rounded-sm ${p.tagBg}`}>{p.tag}</span>
@@ -247,22 +246,22 @@ export default function ProductoSanRojoPage() {
           <InView>
             <motion.div variants={fadeUp} className="flex justify-center mb-5"><div className="h-0.5 w-12 bg-[#DC2626]" /></motion.div>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,52px)] font-bold text-white leading-tight mb-5 max-w-2xl mx-auto">
-              ¿Interesado en SAN ROJO?
+              {t('brand_pages.san-rojo.cta_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-white/55 text-lg mb-10 max-w-lg mx-auto">
-              Contáctanos para conocer las oportunidades de distribución de este licor único.
+              {t('brand_pages.san-rojo.cta_sub')}
             </motion.p>
             <motion.div variants={stagger} className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div variants={fadeUp}>
                 <Link to="/contacto"
                   className="group inline-flex items-center gap-3 px-10 py-4 bg-white text-[#1B0A0A] font-semibold text-sm tracking-wider uppercase hover:bg-[#EEF2F8] transition-all duration-300 rounded-sm shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:-translate-y-0.5">
-                  Solicitar Información <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  {t('brand_pages.san-rojo.cta_button')} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
               <motion.div variants={fadeUp}>
                 <Link to="/productos"
                   className="inline-flex items-center gap-3 px-10 py-4 border border-white/30 text-white font-semibold text-sm tracking-wider uppercase hover:border-white/60 hover:bg-white/10 transition-all duration-300 rounded-sm">
-                  Ver Todas las Marcas
+                  {t('productPage.see_all_brands')}
                 </Link>
               </motion.div>
             </motion.div>

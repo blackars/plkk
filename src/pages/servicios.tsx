@@ -68,145 +68,38 @@ function AccentLine() {
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
-const services = [
-  {
-    id: 'desarrollo-marcas',
-    Icon: Sparkles,
-    number: '01',
-    title: 'Desarrollo de Marcas',
-    subtitle: 'Brand Building Premium',
-    desc: 'Creamos y posicionamos marcas con identidad sólida, diferenciación estratégica y presencia premium en mercados nacionales e internacionales.',
-    features: [
-      'Diagnóstico y estrategia de marca',
-      'Identidad visual y naming',
-      'Posicionamiento competitivo',
-      'Arquitectura de marca',
-      'Guías de estilo y manuales',
-      'Lanzamiento y activación',
-    ],
-    imgSlot: '/assets/desarrollodemarca.png',
-    color: '#EEF2F8',
-    accent: '#1B3A6B',
-    tag: 'Estrategia',
-  },
-  {
-    id: 'incubacion',
-    Icon: Rocket,
-    number: '02',
-    title: 'Incubación de Productos',
-    subtitle: 'Product Incubation',
-    desc: 'Acompañamos el ciclo completo de un producto: desde la idea hasta el mercado. Validamos, desarrollamos y lanzamos con metodología probada.',
-    features: [
-      'Validación de concepto y mercado',
-      'Desarrollo de producto mínimo viable',
-      'Prototipado y pruebas piloto',
-      'Estrategia de go-to-market',
-      'Financiamiento y estructura',
-      'Escalamiento y crecimiento',
-    ],
-    imgSlot: '/assets/incubaciondeproducto.jpeg',
-    color: '#FDF6E3',
-    accent: '#C9A84C',
-    tag: 'Innovación',
-  },
-  {
-    id: 'comercializacion',
-    Icon: TrendingUp,
-    number: '03',
-    title: 'Comercialización',
-    subtitle: 'Sales & Market Access',
-    desc: 'Abrimos canales de venta nacionales e internacionales. Conectamos marcas con distribuidores, retailers y plataformas de alto impacto.',
-    features: [
-      'Estrategia comercial multicanal',
-      'Apertura de canales de distribución',
-      'Negociación con retailers premium',
-      'E-commerce y marketplaces',
-      'Fuerza de ventas especializada',
-      'Métricas y optimización continua',
-    ],
-    imgSlot: '/assets/comercializacion.jpeg',
-    color: '#EEF2F8',
-    accent: '#1B3A6B',
-    tag: 'Ventas',
-  },
-  {
-    id: 'expansion-internacional',
-    Icon: Globe,
-    number: '04',
-    title: 'Expansión Internacional',
-    subtitle: 'Global Market Entry',
-    desc: 'Llevamos marcas mexicanas a los mercados más exigentes del mundo. Estrategia, regulación, distribución y posicionamiento en México, USA, Centroamérica, Sudamérica, Asia, España e India',
-    features: [
-      'Análisis de mercados objetivo',
-      'Cumplimiento regulatorio y legal',
-      'Red de distribuidores internacionales',
-      'Adaptación cultural y de producto',
-      'Estrategia de precios internacionales',
-      'Representación y alianzas locales',
-    ],
-    imgSlot: '/assets/expansion itnernacional.png',
-    color: '#F0F0F8',
-    accent: '#241b6b',
-    tag: 'Global',
-  },
-  {
-    id: 'alianzas-estrategicas',
-    Icon: Handshake,
-    number: '05',
-    title: 'Alianzas Estratégicas',
-    subtitle: 'Strategic Partnerships',
-    desc: 'Conectamos empresas, inversionistas, productores y distribuidores para crear sinergias que generan valor sostenible y crecimiento compartido.',
-    features: [
-      'Identificación de socios estratégicos',
-      'Estructuración de alianzas',
-      'Negociación y acuerdos comerciales',
-      'Joint ventures y co-inversiones',
-      'Red de inversionistas calificados',
-      'Gestión de relaciones de largo plazo',
-    ],
-    imgSlot: '/assets/mision.webp',
-    color: '#FDF6E3',
-    accent: '#C9A84C',
-    tag: 'Alianzas',
-  },
-  {
-    id: 'consultoria',
-    Icon: BarChart3,
-    number: '06',
-    title: 'Consultoría Empresarial',
-    subtitle: 'Business Consulting',
-    desc: 'Diagnóstico profundo, estrategia personalizada y acompañamiento ejecutivo para empresas que buscan crecer, transformarse o internacionalizarse.',
-    features: [
-      'Diagnóstico organizacional',
-      'Planeación estratégica',
-      'Reestructura comercial',
-      'Modelos de negocio y monetización',
-      'Gestión del cambio',
-      'Mentoría ejecutiva',
-    ],
-    imgSlot: '/assets/consultoria empresarial.jpeg',
-    color: '#EEF2F8',
-    accent: '#1B3A6B',
-    tag: 'Consultoría',
-  },
+type ServiceItem = {
+  id: string;
+  Icon: React.ElementType;
+  number: string;
+  title: string;
+  subtitle: string;
+  desc: string;
+  features: string[];
+  imgSlot: string;
+  color: string;
+  accent: string;
+  tag: string;
+};
+
+const servicePresentation = [
+  { id: 'desarrollo-marcas', number: '01', imgSlot: '/assets/desarrollodemarca.png', color: '#EEF2F8', accent: '#1B3A6B' },
+  { id: 'incubacion', number: '02', imgSlot: '/assets/incubaciondeproducto.jpeg', color: '#FDF6E3', accent: '#C9A84C' },
+  { id: 'comercializacion', number: '03', imgSlot: '/assets/comercializacion.jpeg', color: '#EEF2F8', accent: '#1B3A6B' },
+  { id: 'expansion-internacional', number: '04', imgSlot: '/assets/expansion itnernacional.png', color: '#F0F0F8', accent: '#241b6b' },
+  { id: 'alianzas-estrategicas', number: '05', imgSlot: '/assets/mision.webp', color: '#FDF6E3', accent: '#C9A84C' },
+  { id: 'consultoria', number: '06', imgSlot: '/assets/consultoria empresarial.jpeg', color: '#EEF2F8', accent: '#1B3A6B' },
 ];
 
-const process = [
-  { num: '01', Icon: Target, title: 'Diagnóstico', desc: 'Análisis profundo de la marca, producto o empresa: mercado, competencia, fortalezas y oportunidades.' },
-  { num: '02', Icon: Layers, title: 'Estrategia', desc: 'Diseño de un plan personalizado con objetivos claros, métricas definidas y hoja de ruta ejecutable.' },
-  { num: '03', Icon: Users, title: 'Ejecución', desc: 'Implementación con equipo especializado, seguimiento continuo y ajustes ágiles según resultados.' },
-  { num: '04', Icon: TrendingUp, title: 'Escalamiento', desc: 'Consolidación de resultados, expansión de canales y crecimiento sostenible a largo plazo.' },
-];
+const serviceIcons = [Sparkles, Rocket, TrendingUp, Globe, Handshake, BarChart3];
 
-const audiences = [
-  { title: 'Inversionistas', desc: 'Oportunidades de inversión en marcas con alto potencial de crecimiento y retorno comprobado.', Icon: BarChart3 },
-  { title: 'Socios Estratégicos', desc: 'Alianzas para co-desarrollar, co-distribuir o co-invertir en proyectos de alto impacto.', Icon: Handshake },
-  { title: 'Distribuidores', desc: 'Acceso a un portafolio de marcas premium listas para distribución nacional e internacional.', Icon: Package },
-  { title: 'Productores', desc: 'Incubación, desarrollo y comercialización de productos con visión global desde el origen.', Icon: Rocket },
-];
+const processIcons = [Target, Layers, Users, TrendingUp];
+
+const audienceIcons = [BarChart3, Handshake, Package, Rocket];
 
 // ─── Service Card ─────────────────────────────────────────────────────────────
-function ServiceCard({ s, reverse }: { s: typeof services[0]; reverse: boolean }) {
+function ServiceCard({ s, reverse }: { s: ServiceItem; reverse: boolean }) {
+  const { t } = useTranslation();
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-sm border border-[#D4DCE8] shadow-[0_4px_24px_rgba(27,58,107,0.07)] hover:shadow-[0_12px_48px_rgba(27,58,107,0.13)] transition-shadow duration-400 group`}>
       {/* Image side */}
@@ -265,7 +158,7 @@ function ServiceCard({ s, reverse }: { s: typeof services[0]; reverse: boolean }
             className="group/btn inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase transition-colors duration-200"
             style={{ color: s.accent }}
           >
-            Solicitar este servicio
+            {t('servicios.request_service')}
             <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -277,12 +170,26 @@ function ServiceCard({ s, reverse }: { s: typeof services[0]; reverse: boolean }
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function ServiciosPage() {
   const { t } = useTranslation();
+
+  const services: ServiceItem[] = (t('servicios.services', { returnObjects: true }) as Array<{ title: string; subtitle: string; desc: string; features: string[]; tag: string }>)
+    .map((s, i) => ({ ...s, ...servicePresentation[i], Icon: serviceIcons[i] }));
+
+  const process: Array<{ num: string; Icon: React.ElementType; title: string; desc: string }> = (t('servicios.process', { returnObjects: true }) as Array<{ num: string; title: string; desc: string }>)
+    .map((p, i) => ({ ...p, Icon: processIcons[i] }));
+
+  const audiences: Array<{ title: string; desc: string; Icon: React.ElementType }> = (t('servicios.audiences', { returnObjects: true }) as Array<{ title: string; desc: string }>)
+    .map((a, i) => ({ ...a, Icon: audienceIcons[i] }));
+
+  const pills: string[] = t('servicios.pills', { returnObjects: true }) as string[];
+
+  const checklist: string[] = t('servicios.checklist', { returnObjects: true }) as string[];
+
   return (
     <>
       <Helmet>
         <title>{t('servicios.meta_title')}</title>
         <meta name="description" content={t('servicios.meta_desc')} />
-        <meta name="keywords" content="servicios Grupo Palenkke, desarrollo de marcas México, incubación productos, comercialización nacional, expansión internacional, estrategia de retail, marcas privadas" />
+        <meta name="keywords" content={t('servicios.meta_keywords')} />
         <link rel="canonical" href="https://www.palenkke.org/servicios" />
         <meta property="og:title" content={t('servicios.meta_title')} />
         <meta property="og:description" content={t('servicios.meta_desc')} />
@@ -297,7 +204,7 @@ export default function ServiciosPage() {
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Service',
-          name: 'Servicios de Desarrollo de Marcas',
+          name: t('servicios.services.0.title'),
           provider: {
             '@type': 'Organization',
             name: 'Grupo Palenkke',
@@ -369,7 +276,7 @@ export default function ServiciosPage() {
 
             {/* Service pills */}
             <motion.div variants={stagger} className="flex flex-wrap gap-3">
-              {['Desarrollo de Marcas', 'Incubación', 'Comercialización', 'Expansión Global', 'Alianzas', 'Consultoría'].map(label => (
+              {pills.map(label => (
                 <motion.span
                   key={label}
                   variants={fadeUp}
@@ -391,13 +298,13 @@ export default function ServiciosPage() {
           <InView className="mb-16">
             <AccentLine />
             <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">
-              Portafolio de Servicios
+              {t('servicios.portfolio_eyebrow')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,52px)] font-bold text-[#0D1B2E] leading-tight">
-              Soluciones para Cada Etapa
+              {t('servicios.portfolio_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
-              Trabajamos con marcas, productos y empresas en cualquier etapa de su desarrollo — desde la idea hasta la expansión global.
+              {t('servicios.portfolio_sub')}
             </motion.p>
           </InView>
 
@@ -544,16 +451,9 @@ export default function ServiciosPage() {
             {/* Right: Checklist */}
             <InView>
               <motion.div variants={fadeUp} className="bg-white border border-[#D4DCE8] rounded-sm p-8 shadow-[0_4px_24px_rgba(27,58,107,0.07)]">
-                <p className="text-[#1B3A6B] text-xs font-semibold tracking-[0.2em] uppercase mb-6">Lo que incluye nuestra consulta inicial</p>
+                <p className="text-[#1B3A6B] text-xs font-semibold tracking-[0.2em] uppercase mb-6">{t('servicios.checklist_title')}</p>
                 <ul className="space-y-4">
-                  {[
-                    'Diagnóstico rápido de tu marca o producto',
-                    'Identificación de oportunidades de mercado',
-                    'Revisión de canales de distribución actuales',
-                    'Análisis de posicionamiento competitivo',
-                    'Propuesta de servicios personalizada',
-                    'Hoja de ruta preliminar sin costo',
-                  ].map(item => (
+                  {checklist.map(item => (
                     <motion.li key={item} variants={fadeUp} className="flex items-start gap-3 text-sm text-[#5A7099]">
                       <CheckCircle2 size={15} className="text-[#1B3A6B] mt-0.5 shrink-0" />
                       {item}
@@ -562,7 +462,7 @@ export default function ServiciosPage() {
                 </ul>
                 <div className="mt-8 pt-6 border-t border-[#D4DCE8]">
                   <p className="text-[#5A7099] text-xs italic">
-                    "La consulta inicial es completamente gratuita y sin compromiso. Nuestro objetivo es entender tu situación antes de proponer cualquier solución."
+                    {t('servicios.checklist_quote')}
                   </p>
                 </div>
               </motion.div>

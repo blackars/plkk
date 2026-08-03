@@ -137,47 +137,11 @@ function CompanyLogo({ name, logoId }: { name: string; logoId?: string }) {
 }
 
 // ─── Projects data ────────────────────────────────────────────────────────────
-const projects = [
-  {
-    id: 'incubacion',
-    Icon: Rocket,
-    number: '01',
-    title: 'Incubación de Productos Premium',
-    subtitle: 'De la idea al mercado global',
-    desc: 'Acompañamos productos desde la validación hasta su lanzamiento en mercados nacionales e internacionales, con metodología probada y red de distribución activa.',
-    tag: 'Activo',
-    imgSlot: '/assets/incubacionproductospremium.png',
-  },
-  {
-    id: 'expansion',
-    Icon: Globe,
-    number: '02',
-    title: 'Expansión Comercial Internacional',
-    subtitle: 'Marcas mexicanas en el mundo',
-    desc: 'Llevamos marcas a mercados estratégicos: EE.UU., Sudamérica, Europa y Asia. Gestión regulatoria, distribución y posicionamiento local.',
-    tag: 'Activo',
-    imgSlot: '/assets/expansioncomercialinternacional.png',
-  },
-  {
-    id: 'branding',
-    Icon: Sparkles,
-    number: '03',
-    title: 'Desarrollo de Marcas Premium',
-    subtitle: 'Identidad y posicionamiento',
-    desc: 'Construimos marcas con identidad sólida, diferenciación estratégica y presencia premium. Desde el naming hasta la activación comercial.',
-    tag: 'Activo',
-    imgSlot: '/assets/desarrollodemarcaspremium.png',
-  },
-  {
-    id: 'alianzas',
-    Icon: Handshake,
-    number: '04',
-    title: 'Alianzas Estratégicas',
-    subtitle: 'Sinergias de alto impacto',
-    desc: 'Conectamos productores, inversionistas y distribuidores para crear ecosistemas de negocio sostenibles con proyección internacional.',
-    tag: 'En Desarrollo',
-    imgSlot: '/assets/alianzasestrategicas.png',
-  },
+const projectPresentation = [
+  { id: 'incubacion', Icon: Rocket, number: '01', imgSlot: '/assets/incubacionproductospremium.png' },
+  { id: 'expansion', Icon: Globe, number: '02', imgSlot: '/assets/expansioncomercialinternacional.png' },
+  { id: 'branding', Icon: Sparkles, number: '03', imgSlot: '/assets/desarrollodemarcaspremium.png' },
+  { id: 'alianzas', Icon: Handshake, number: '04', imgSlot: '/assets/alianzasestrategicas.png' },
 ];
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
@@ -187,28 +151,37 @@ export default function CasosPage() {
   const companyItems: Array<{ name: string; logo?: string; tag: string; desc: string; website?: string | null; websiteLabel?: string | null; }> =
     t('companies.items', { returnObjects: true }) as Array<{ name: string; logo?: string; tag: string; desc: string; website?: string | null; websiteLabel?: string | null; }>;
 
+  const projects: Array<{ id: string; Icon: React.ElementType; number: string; title: string; subtitle: string; desc: string; tag: string; active: boolean; imgSlot: string }> =
+    (t('casos.projects', { returnObjects: true }) as Array<{ title: string; subtitle: string; desc: string; tag: string; active: boolean }>)
+      .map((p, i) => ({ ...p, ...projectPresentation[i] }));
+
+  const heroPills: string[] = t('casos.pills', { returnObjects: true }) as string[];
+  const pillIcons = [Award, Globe, Rocket, Users];
+
+  const stats: Array<{ value: string; label: string }> = t('casos.stats', { returnObjects: true }) as Array<{ value: string; label: string }>;
+
   return (
     <>
       <Helmet>
         <title>{t('casos.meta_title', 'Marcas y Proyectos — Grupo Palenkke')}</title>
         <meta name="description" content={t('casos.meta_desc', 'Conoce las marcas y proyectos de Grupo Palenkke: Elixír del Alma, San Rojo, Kanan, Palenkke Mezcal y más. Desarrollo, incubación y expansión internacional.')} />
-        <meta name="keywords" content="Grupo Palenkke, marcas, proyectos, Elixír del Alma, San Rojo, Kanan, Palenkke Mezcal, Koldvolt, Ritevolt, Heartfulcraft, incubación, expansión internacional" />
+        <meta name="keywords" content={t('casos.meta_keywords')} />
         <link rel="canonical" href="https://www.palenkke.org/casos" />
-        <meta property="og:title" content="Marcas y Proyectos — Grupo Palenkke" />
-        <meta property="og:description" content="Conoce las marcas y proyectos de Grupo Palenkke." />
+        <meta property="og:title" content={t('casos.meta_title')} />
+        <meta property="og:description" content={t('casos.meta_desc')} />
         <meta property="og:image" content="https://www.palenkke.org/airo-assets/images/pages/home/hero" />
         <meta property="og:url" content="https://www.palenkke.org/casos" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Grupo Palenkke" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Marcas y Proyectos — Grupo Palenkke" />
-        <meta name="twitter:description" content="Conoce las marcas y proyectos de Grupo Palenkke." />
+        <meta name="twitter:title" content={t('casos.meta_title')} />
+        <meta name="twitter:description" content={t('casos.meta_desc')} />
         <meta name="twitter:image" content="https://www.palenkke.org/airo-assets/images/pages/home/hero" />
         <script type="application/ld+json">{JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
-          name: 'Marcas y Proyectos — Grupo Palenkke',
-          description: 'Portafolio de marcas y proyectos incubados, desarrollados y distribuidos por Grupo Palenkke.',
+          name: t('casos.meta_title'),
+          description: t('casos.meta_desc'),
           url: 'https://www.palenkke.org/casos',
           publisher: {
             '@type': 'Organization',
@@ -254,7 +227,7 @@ export default function CasosPage() {
             <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6">
               <div className="h-px w-8 bg-[#C9A84C]" />
               <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">
-                Portafolio
+                {t('casos.hero_eyebrow')}
               </span>
             </motion.div>
 
@@ -262,21 +235,18 @@ export default function CasosPage() {
               variants={fadeUp}
               className="font-heading text-[clamp(44px,7vw,92px)] font-bold text-white leading-tight mb-6"
             >
-              Nuestras Marcas<br />
-              <span className="text-[#C9A84C]">y Proyectos</span>
+              {t('casos.hero_heading_1')}<br />
+              <span className="text-[#C9A84C]">{t('casos.hero_heading_2')}</span>
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-white/55 text-lg leading-relaxed max-w-xl mb-10">
-              Conoce el portafolio de marcas y proyectos que forman parte de Grupo Palenkke. Innovación, tradición y expansión global.
+              {t('casos.hero_sub')}
             </motion.p>
 
             <motion.div variants={stagger} className="flex flex-wrap gap-4">
-              {[
-                { Icon: Award, label: 'Marcas Premium' },
-                { Icon: Globe, label: 'Proyección Global' },
-                { Icon: Rocket, label: 'Incubación Activa' },
-                { Icon: Users, label: 'Equipo Estratégico' },
-              ].map(({ Icon, label }) => (
+              {heroPills.map((label, i) => {
+                const Icon = pillIcons[i] ?? Award;
+                return (
                 <motion.div
                   key={label}
                   variants={fadeUp}
@@ -285,7 +255,8 @@ export default function CasosPage() {
                   <Icon size={12} className="text-[#C9A84C]" />
                   {label}
                 </motion.div>
-              ))}
+                );
+              })}
             </motion.div>
           </motion.div>
         </div>
@@ -297,13 +268,13 @@ export default function CasosPage() {
           <InView className="mb-16 max-w-2xl">
             <AccentLine />
             <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">
-              Marcas Integradas
+              {t('casos.brands_eyebrow')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(32px,4.5vw,56px)] font-bold text-[#0D1B2E] leading-tight">
               {t('companies.heading', 'Compañías del Grupo')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-base mt-4 leading-relaxed">
-              Cada marca representa una historia de calidad, identidad y visión. Conoce las empresas que integran nuestro portafolio.
+              {t('casos.brands_sub')}
             </motion.p>
           </InView>
 
@@ -389,13 +360,13 @@ export default function CasosPage() {
           <InView className="mb-16">
             <AccentLine />
             <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">
-              Iniciativas
+              {t('casos.projects_eyebrow')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-[#0D1B2E] leading-tight">
-              Proyectos Destacados
+              {t('casos.projects_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
-              Proyectos estratégicos en desarrollo, incubación y expansión internacional.
+              {t('casos.projects_sub')}
             </motion.p>
           </InView>
 
@@ -420,7 +391,7 @@ export default function CasosPage() {
                         </div>
                         <div className="absolute bottom-5 left-5">
                           <span className={`inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase rounded-sm border border-white/20 ${
-                            p.tag === 'Activo'
+                            p.active
                               ? 'bg-[#2D6A4F]/80 text-white backdrop-blur-sm'
                               : 'bg-[#C9A84C]/80 text-[#0D1B2E] backdrop-blur-sm'
                           }`}>
@@ -475,11 +446,7 @@ export default function CasosPage() {
         <div className="relative container mx-auto px-6 lg:px-10">
           <InView>
             <motion.div variants={stagger} className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center max-w-3xl mx-auto justify-items-center">
-              {[
-                { value: '7', label: 'Marcas en Portafolio' },
-                { value: '17+', label: 'Años de Experiencia' },
-                { value: '7', label: 'Mercados Internacionales' },
-              ].map(({ value, label }) => (
+              {stats.map(({ value, label }) => (
                 <motion.div key={label} variants={fadeUp} className="p-6 w-full max-w-[220px]">
                   <span className="block font-heading text-5xl font-bold text-[#C9A84C] mb-2">{value}</span>
                   <span className="block text-white/50 text-xs tracking-[0.2em] uppercase">{label}</span>
@@ -509,10 +476,10 @@ export default function CasosPage() {
               <div className="h-0.5 w-12 bg-[#C9A84C]" />
             </motion.div>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,52px)] font-bold text-white leading-tight mb-5 max-w-2xl mx-auto">
-              ¿Tienes una Marca o Proyecto que Quieras Impulsar?
+              {t('casos.cta_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-white/55 text-lg mb-10 max-w-lg mx-auto">
-              En Grupo Palenkke convertimos ideas en negocios globales. Contáctanos para explorar cómo podemos colaborar.
+              {t('casos.cta_sub')}
             </motion.p>
             <motion.div variants={stagger} className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div variants={fadeUp}>
@@ -520,7 +487,7 @@ export default function CasosPage() {
                   to="/contacto"
                   className="group inline-flex items-center gap-3 px-10 py-4 bg-white text-[#1B3A6B] font-semibold text-sm tracking-wider uppercase hover:bg-[#EEF2F8] transition-all duration-300 rounded-sm shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:-translate-y-0.5"
                 >
-                  Impulsar Proyecto
+                  {t('casos.cta_button')}
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
@@ -529,7 +496,7 @@ export default function CasosPage() {
                   to="/servicios"
                   className="inline-flex items-center gap-3 px-10 py-4 border border-white/30 text-white font-semibold text-sm tracking-wider uppercase hover:border-white/60 hover:bg-white/10 transition-all duration-300 rounded-sm"
                 >
-                  Ver Servicios
+                  {t('casos.cta_secondary')}
                 </Link>
               </motion.div>
             </motion.div>

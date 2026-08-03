@@ -139,7 +139,7 @@ function HoverImage({ src, alt, className = '' }: {src: string;alt: string;class
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function HomePage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const trackEvent = usePlausible();
 
 
@@ -185,7 +185,7 @@ export default function HomePage() {
       <Helmet>
         <title>{homeTitle}</title>
         <meta name="description" content={homeDesc} />
-        <meta name="keywords" content="Grupo Palenkke, desarrollo de marcas, comercialización, incubación de productos, expansión internacional, mezcal, distribución México, brand development Mexico" />
+        <meta name="keywords" content={t('hero.keywords')} />
         <link rel="canonical" href={`${siteUrl}/`} />
         <meta property="og:title" content={homeTitle} />
         <meta property="og:description" content={homeDesc} />
@@ -193,7 +193,7 @@ export default function HomePage() {
         <meta property="og:url" content={`${siteUrl}/`} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Grupo Palenkke" />
-        <meta property="og:locale" content="es_MX" />
+        <meta property="og:locale" content={i18n.language === 'es' ? 'es_MX' : 'en_US'} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={homeTitle} />
         <meta name="twitter:description" content={homeDesc} />
@@ -291,23 +291,7 @@ export default function HomePage() {
               variants={fadeUp}
               className="text-white/35 text-base md:text-lg leading-relaxed max-w-2xl mb-10 flex flex-col gap-5"
             >
-              <p>
-                Grupo PALENKKE es una plataforma nacional e internacional enfocada
-                en el desarrollo de marcas, expansión comercial y posicionamiento
-                estratégico en mercados nacionales e internacionales.
-              </p>
-
-              <p>
-                Con más de 17 años de experiencia en retail nacional e internacional
-                y desarrollo comercial, conectamos productos, productores y
-                oportunidades con canales reales de crecimiento y distribución.
-              </p>
-
-              <p>
-                Nuestra visión combina tradición, estrategia y expansión global
-                para construir proyectos sólidos con identidad y proyección
-                nacional e internacional.
-              </p>
+              {t('hero.description').split('\n\n').map((para, i) => <p key={i}>{para}</p>)}
             </motion.div>
 
             <motion.div variants={stagger} className="flex flex-col sm:flex-row flex-wrap gap-3 mb-12">
@@ -354,9 +338,9 @@ export default function HomePage() {
             <motion.div variants={fadeUp} className="mt-10 pt-8 border-t border-white/10">
               <ShareBar
                 url="https://www.palenkke.org/"
-                text="Grupo Palenkke — Impulsando marcas hacia el éxito global"
+                text={t('share.text')}
                 theme="dark"
-                label="Compartir" />
+                label={t('share.label')} />
               
             </motion.div>
           </motion.div>
@@ -401,13 +385,13 @@ export default function HomePage() {
               </motion.div>
               <motion.div variants={stagger} className="flex flex-wrap gap-4">
                 {[
-                { label: 'México', Icon: MapPin },
-                { label: 'USA', Icon: Globe },
-                { label: 'Centroamérica', Icon: Globe },
-                { label: 'Sudamérica', Icon: Globe },
-                { label: 'Asia', Icon: TrendingUp },
-                { label: 'España', Icon: TrendingUp },
-                { label: 'India', Icon: TrendingUp }].
+                { label: t('regions.mexico'), Icon: MapPin },
+                { label: t('regions.usa'), Icon: Globe },
+                { label: t('regions.central_america'), Icon: Globe },
+                { label: t('regions.south_america'), Icon: Globe },
+                { label: t('regions.asia'), Icon: TrendingUp },
+                { label: t('regions.spain'), Icon: TrendingUp },
+                { label: t('regions.india'), Icon: TrendingUp }].
                 map(({ label, Icon }) =>
                 <motion.div key={label} variants={fadeUp} className="flex items-center gap-2 px-4 py-2 bg-[#EEF2F8] rounded-sm">
                     <Icon size={13} className="text-[#1B3A6B]" />

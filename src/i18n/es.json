@@ -10,6 +10,31 @@
     "partnerships": "Asociaciones",
     "cta": "Agenda una Reunión"
   },
+  "regions": {
+    "mexico": "México",
+    "usa": "USA",
+    "central_america": "Centroamérica",
+    "south_america": "Sudamérica",
+    "asia": "Asia",
+    "spain": "España",
+    "india": "India"
+  },
+  "share": {
+    "label": "Compartir",
+    "text": "Grupo Palenkke — Impulsando marcas hacia el éxito global"
+  },
+  "notfound": {
+    "title": "Página No Encontrada",
+    "text": "Lo sentimos, la página que buscas no existe o ha sido movida.",
+    "go_home": "Ir al Inicio",
+    "go_back": "← Volver"
+  },
+  "cookie": {
+    "title": "Cookies & Privacidad",
+    "text": "Utilizamos cookies para mejorar tu experiencia y analizar el tráfico del sitio. Al aceptar, cargamos Google Analytics y Plausible para métricas de uso.",
+    "reject": "Rechazar",
+    "accept": "Aceptar"
+  },
   "hero": {
     "phrases": [
       "Desarrollo de Marcas",
@@ -19,7 +44,8 @@
     ],
     "headline": ["Grupo", "PALENKKE", "Global"],
     "slogan": "Estrategias que trascienden fronteras",
-    "description": "Grupo PALENKKE es una plataforma internacional enfocada en el desarrollo de marcas, expansión comercial y posicionamiento estratégico en mercados nacionales e internacionales. Con más de 17 años de experiencia en retail internacional y desarrollo comercial, conectamos productos, productores y oportunidades con canales reales de crecimiento y distribución. Nuestra visión combina tradición, estrategia y expansión global para construir proyectos sólidos con identidad y proyección internacional.",
+    "keywords": "Grupo Palenkke, desarrollo de marcas, comercialización, incubación de productos, expansión internacional, mezcal, distribución México, brand development Mexico",
+    "description": "Grupo PALENKKE es una plataforma internacional enfocada en el desarrollo de marcas, expansión comercial y posicionamiento estratégico en mercados nacionales e internacionales.\n\nCon más de 17 años de experiencia en retail internacional y desarrollo comercial, conectamos productos, productores y oportunidades con canales reales de crecimiento y distribución.\n\nNuestra visión combina tradición, estrategia y expansión global para construir proyectos sólidos con identidad y proyección internacional.",
     "geo": "México • USA • Centroamérica • Sudamérica • Asia • España • India",
     "cta_primary": "Conoce Nuestro Modelo",
     "cta_opportunities": "Contáctanos",
@@ -124,6 +150,7 @@
   "nosotros": {
     "meta_title": "Sobre Nosotros — Grupo Palenkke",
     "meta_desc": "Conoce la historia, misión y equipo de Grupo Palenkke. Más de 17 años impulsando marcas hacia el éxito global.",
+    "meta_keywords": "Grupo Palenkke historia, equipo Palenkke, empresa mexicana marcas, 17 años experiencia, visión internacional, sobre nosotros",
     "hero_eyebrow": "Nuestra Historia",
     "hero_heading": "Más de 17 Años Construyendo Puentes Comerciales",
     "hero_sub": "Desde México hacia el mundo, con experiencia, visión y compromiso en mercados internacionales.",
@@ -153,6 +180,46 @@
     "presencia_eyebrow": "Presencia",
     "presencia_heading": "Presencia Nacional e Internacional",
     "presencia_sub": "Grupo PALENKKE desarrolla operaciones y relaciones comerciales en distintos mercados internacionales.",
+    "milestones": [
+      { "year": "2008", "title": "Fundación", "desc": "Grupo Palenkke nace en México con la visión de conectar marcas locales con mercados internacionales." },
+      { "year": "2012", "title": "Expansión Regional", "desc": "Consolidamos presencia en Latinoamérica y establecemos alianzas estratégicas en EE.UU." },
+      { "year": "2016", "title": "Portafolio Diversificado", "desc": "Ampliamos nuestro portafolio a tecnología, bebidas premium, artesanías y soluciones comerciales." },
+      { "year": "2020", "title": "Visión Global", "desc": "Grupo Palenkke no solo identifica marcas y productos, sino que trabaja en su solidificación, construye identidad, impulsa la expansión y garantiza la permanencia en mercados internacionales exigentes." },
+      { "year": "2024", "title": "Ecosistema Premium", "desc": "Más de 7 marcas desarrolladas, con presencia en mercados nacionales e internacionales." }
+    ],
+    "team": [
+      { "role": "Dirección General", "sub": "Liderazgo Estratégico", "desc": "Visión de largo plazo, relaciones internacionales y desarrollo de ecosistema de marcas premium." },
+      { "role": "Desarrollo Comercial", "sub": "Expansión de Mercados", "desc": "Identificación de oportunidades, apertura de canales y negociación con distribuidores globales." },
+      { "role": "Branding & Diseño", "sub": "Identidad de Marca", "desc": "Creación de identidades visuales premium con posicionamiento diferenciado en mercados competitivos." },
+      { "role": "Operaciones", "sub": "Ejecución y Logística", "desc": "Coordinación de cadena de suministro, distribución y operaciones internacionales." }
+    ],
+    "map_eyebrow": "Expansión Global",
+    "map_heading": "Presencia Internacional",
+    "map_sub": "7 regiones nacionales e internacionales con compromiso 100% en cada mercado.",
+    "map_dots": [
+      { "label": "México", "sub": "Sede Principal" },
+      { "label": "EE.UU", "sub": "Norteamérica" },
+      { "label": "Asia", "sub": "Mercados Asiáticos" },
+      { "label": "India", "sub": "Asia del Sur" },
+      { "label": "España", "sub": "Europa" }
+    ],
+    "map_regions": [
+      { "region": "México", "detail": "Sede Principal" },
+      { "region": "EE.UU", "detail": "Norteamérica" },
+      { "region": "Centroamérica", "detail": "C. América" },
+      { "region": "Asia", "detail": "Mercados Asiáticos" },
+      { "region": "India", "detail": "Asia del Sur" },
+      { "region": "España", "detail": "Europa" }
+    ],
+    "global_eyebrow": "Equipo Global",
+    "global_heading": "Liderazgo Internacional",
+    "global_mx_role": "Dirección General · México",
+    "global_mx_desc": "Liderazgo estratégico, relaciones internacionales y desarrollo del ecosistema de marcas premium de Grupo Palenkke.",
+    "global_us_role": "Desarrollo Comercial · EE.UU",
+    "global_us_desc": "Expansión de mercados en Norteamérica, apertura de canales y negociación con distribuidores en el mercado estadounidense.",
+    "global_coming_soon": "Próximamente",
+    "global_asia_role": "Representación Asia",
+    "global_asia_desc": "Espacio reservado para el representante de Grupo Palenkke en los mercados asiáticos.",
     "cta_heading": "¿Listo para Crecer con Nosotros?",
     "cta_sub": "Únete al ecosistema de Grupo Palenkke y lleva tu marca al siguiente nivel.",
     "cta_contact": "Contáctanos",
@@ -161,6 +228,7 @@
   "servicios": {
     "meta_title": "Servicios — Grupo Palenkke",
     "meta_desc": "Desarrollo de marcas, incubación, comercialización y expansión internacional. Servicios integrales para impulsar tu negocio.",
+    "meta_keywords": "servicios Grupo Palenkke, desarrollo de marcas México, incubación productos, comercialización nacional, expansión internacional, estrategia de retail, marcas privadas",
     "hero_eyebrow": "Servicios Estratégicos",
     "hero_heading": "Servicios Estratégicos",
     "hero_sub": "Desde un sueño hasta la expansión internacional, acompañamos cada etapa de tu proyecto.",
@@ -169,6 +237,119 @@
     "methodology_sub": "Un enfoque estructurado y probado para garantizar resultados.",
     "audiences_eyebrow": "¿Para Quién?",
     "audiences_heading": "Trabajamos con",
+    "pills": ["Desarrollo de Marcas", "Incubación", "Comercialización", "Expansión Global", "Alianzas", "Consultoría"],
+    "portfolio_eyebrow": "Portafolio de Servicios",
+    "portfolio_heading": "Soluciones para Cada Etapa",
+    "portfolio_sub": "Trabajamos con marcas, productos y empresas en cualquier etapa de su desarrollo — desde la idea hasta la expansión global.",
+    "services": [
+      {
+        "title": "Desarrollo de Marcas",
+        "subtitle": "Brand Building Premium",
+        "desc": "Creamos y posicionamos marcas con identidad sólida, diferenciación estratégica y presencia premium en mercados nacionales e internacionales.",
+        "features": [
+          "Diagnóstico y estrategia de marca",
+          "Identidad visual y naming",
+          "Posicionamiento competitivo",
+          "Arquitectura de marca",
+          "Guías de estilo y manuales",
+          "Lanzamiento y activación"
+        ],
+        "tag": "Estrategia"
+      },
+      {
+        "title": "Incubación de Productos",
+        "subtitle": "Product Incubation",
+        "desc": "Acompañamos el ciclo completo de un producto: desde la idea hasta el mercado. Validamos, desarrollamos y lanzamos con metodología probada.",
+        "features": [
+          "Validación de concepto y mercado",
+          "Desarrollo de producto mínimo viable",
+          "Prototipado y pruebas piloto",
+          "Estrategia de go-to-market",
+          "Financiamiento y estructura",
+          "Escalamiento y crecimiento"
+        ],
+        "tag": "Innovación"
+      },
+      {
+        "title": "Comercialización",
+        "subtitle": "Sales & Market Access",
+        "desc": "Abrimos canales de venta nacionales e internacionales. Conectamos marcas con distribuidores, retailers y plataformas de alto impacto.",
+        "features": [
+          "Estrategia comercial multicanal",
+          "Apertura de canales de distribución",
+          "Negociación con retailers premium",
+          "E-commerce y marketplaces",
+          "Fuerza de ventas especializada",
+          "Métricas y optimización continua"
+        ],
+        "tag": "Ventas"
+      },
+      {
+        "title": "Expansión Internacional",
+        "subtitle": "Global Market Entry",
+        "desc": "Llevamos marcas mexicanas a los mercados más exigentes del mundo. Estrategia, regulación, distribución y posicionamiento en México, USA, Centroamérica, Sudamérica, Asia, España e India",
+        "features": [
+          "Análisis de mercados objetivo",
+          "Cumplimiento regulatorio y legal",
+          "Red de distribuidores internacionales",
+          "Adaptación cultural y de producto",
+          "Estrategia de precios internacionales",
+          "Representación y alianzas locales"
+        ],
+        "tag": "Global"
+      },
+      {
+        "title": "Alianzas Estratégicas",
+        "subtitle": "Strategic Partnerships",
+        "desc": "Conectamos empresas, inversionistas, productores y distribuidores para crear sinergias que generan valor sostenible y crecimiento compartido.",
+        "features": [
+          "Identificación de socios estratégicos",
+          "Estructuración de alianzas",
+          "Negociación y acuerdos comerciales",
+          "Joint ventures y co-inversiones",
+          "Red de inversionistas calificados",
+          "Gestión de relaciones de largo plazo"
+        ],
+        "tag": "Alianzas"
+      },
+      {
+        "title": "Consultoría Empresarial",
+        "subtitle": "Business Consulting",
+        "desc": "Diagnóstico profundo, estrategia personalizada y acompañamiento ejecutivo para empresas que buscan crecer, transformarse o internacionalizarse.",
+        "features": [
+          "Diagnóstico organizacional",
+          "Planeación estratégica",
+          "Reestructura comercial",
+          "Modelos de negocio y monetización",
+          "Gestión del cambio",
+          "Mentoría ejecutiva"
+        ],
+        "tag": "Consultoría"
+      }
+    ],
+    "request_service": "Solicitar este servicio",
+    "process": [
+      { "num": "01", "title": "Diagnóstico", "desc": "Análisis profundo de la marca, producto o empresa: mercado, competencia, fortalezas y oportunidades." },
+      { "num": "02", "title": "Estrategia", "desc": "Diseño de un plan personalizado con objetivos claros, métricas definidas y hoja de ruta ejecutable." },
+      { "num": "03", "title": "Ejecución", "desc": "Implementación con equipo especializado, seguimiento continuo y ajustes ágiles según resultados." },
+      { "num": "04", "title": "Escalamiento", "desc": "Consolidación de resultados, expansión de canales y crecimiento sostenible a largo plazo." }
+    ],
+    "audiences": [
+      { "title": "Inversionistas", "desc": "Oportunidades de inversión en marcas con alto potencial de crecimiento y retorno comprobado." },
+      { "title": "Socios Estratégicos", "desc": "Alianzas para co-desarrollar, co-distribuir o co-invertir en proyectos de alto impacto." },
+      { "title": "Distribuidores", "desc": "Acceso a un portafolio de marcas premium listas para distribución nacional e internacional." },
+      { "title": "Productores", "desc": "Incubación, desarrollo y comercialización de productos con visión global desde el origen." }
+    ],
+    "checklist_title": "Lo que incluye nuestra consulta inicial",
+    "checklist": [
+      "Diagnóstico rápido de tu marca o producto",
+      "Identificación de oportunidades de mercado",
+      "Revisión de canales de distribución actuales",
+      "Análisis de posicionamiento competitivo",
+      "Propuesta de servicios personalizada",
+      "Hoja de ruta preliminar sin costo"
+    ],
+    "checklist_quote": "\"La consulta inicial es completamente gratuita y sin compromiso. Nuestro objetivo es entender tu situación antes de proponer cualquier solución.\"",
     "cta_eyebrow": "Consulta Inicial Gratuita",
     "cta_heading": "¿Listo para Impulsar tu Marca?",
     "cta_sub": "Agenda una consulta inicial sin costo y descubre cómo podemos ayudarte a crecer.",
@@ -177,7 +358,33 @@
   },
   "casos": {
     "meta_title": "Casos de Éxito — Grupo Palenkke",
-    "meta_desc": "Descubre cómo Grupo Palenkke ha impulsado marcas como ELIXIR DEL ALMA, KANAN, Palenkke Mezcal, SAN ROJO, KOLDVOLT, RITEVOLT y HeartfulCraft hacia el éxito global."
+    "meta_desc": "Descubre cómo Grupo Palenkke ha impulsado marcas como ELIXIR DEL ALMA, KANAN, Palenkke Mezcal, SAN ROJO, KOLDVOLT, RITEVOLT y HeartfulCraft hacia el éxito global.",
+    "meta_keywords": "Grupo Palenkke, marcas, proyectos, Elixír del Alma, San Rojo, Kanan, Palenkke Mezcal, Koldvolt, Ritevolt, Heartfulcraft, incubación, expansión internacional",
+    "hero_eyebrow": "Portafolio",
+    "hero_heading_1": "Nuestras Marcas",
+    "hero_heading_2": "y Proyectos",
+    "hero_sub": "Conoce el portafolio de marcas y proyectos que forman parte de Grupo Palenkke. Innovación, tradición y expansión global.",
+    "pills": ["Marcas Premium", "Proyección Global", "Incubación Activa", "Equipo Estratégico"],
+    "brands_eyebrow": "Marcas Integradas",
+    "brands_sub": "Cada marca representa una historia de calidad, identidad y visión. Conoce las empresas que integran nuestro portafolio.",
+    "projects_eyebrow": "Iniciativas",
+    "projects_heading": "Proyectos Destacados",
+    "projects_sub": "Proyectos estratégicos en desarrollo, incubación y expansión internacional.",
+    "projects": [
+      { "title": "Incubación de Productos Premium", "subtitle": "De la idea al mercado global", "desc": "Acompañamos productos desde la validación hasta su lanzamiento en mercados nacionales e internacionales, con metodología probada y red de distribución activa.", "tag": "Activo", "active": true },
+      { "title": "Expansión Comercial Internacional", "subtitle": "Marcas mexicanas en el mundo", "desc": "Llevamos marcas a mercados estratégicos: EE.UU., Sudamérica, Europa y Asia. Gestión regulatoria, distribución y posicionamiento local.", "tag": "Activo", "active": true },
+      { "title": "Desarrollo de Marcas Premium", "subtitle": "Identidad y posicionamiento", "desc": "Construimos marcas con identidad sólida, diferenciación estratégica y presencia premium. Desde el naming hasta la activación comercial.", "tag": "Activo", "active": true },
+      { "title": "Alianzas Estratégicas", "subtitle": "Sinergias de alto impacto", "desc": "Conectamos productores, inversionistas y distribuidores para crear ecosistemas de negocio sostenibles con proyección internacional.", "tag": "En Desarrollo", "active": false }
+    ],
+    "stats": [
+      { "value": "7", "label": "Marcas en Portafolio" },
+      { "value": "17+", "label": "Años de Experiencia" },
+      { "value": "7", "label": "Mercados Internacionales" }
+    ],
+    "cta_heading": "¿Tienes una Marca o Proyecto que Quieras Impulsar?",
+    "cta_sub": "En Grupo Palenkke convertimos ideas en negocios globales. Contáctanos para explorar cómo podemos colaborar.",
+    "cta_button": "Impulsar Proyecto",
+    "cta_secondary": "Ver Servicios"
   },
   "productos": {
     "meta_title": "Productos — Grupo Palenkke",
@@ -193,56 +400,584 @@
   "productos_landing": {
     "meta_title": "Productos — Grupo Palenkke",
     "meta_desc": "Explora los productos de las marcas Grupo Palenkke: mezcales artesanales, licor de chiles, soluciones de cadena de frío, energía solar y artesanías.",
+    "meta_keywords": "Grupo Palenkke, productos, marcas, mezcal, Koldvolt, Ritevolt, Heartfulcraft, San Rojo, Kanan",
     "hero_eyebrow": "Nuestros Productos",
     "hero_heading": "Explora los Productos<br/>de Nuestras <span class=\"text-[#C9A84C]\">Marcas</span>",
     "hero_sub": "Cada marca representa una historia de calidad, identidad y visión. Conoce los productos que integran nuestro portafolio global.",
     "section_eyebrow": "Marcas del Grupo",
     "section_heading": "Productos por Marca",
-    "section_sub": "Selecciona una marca para conocer sus productos y descubrir la calidad, tradición e innovación que representan."
+    "section_sub": "Selecciona una marca para conocer sus productos y descubrir la calidad, tradición e innovación que representan.",
+    "pills": ["Marcas Premium", "Presencia Global", "Productos Únicos", "Calidad Artesanal"],
+    "view_products": "Ver Productos",
+    "cta_heading": "¿Interesado en Comercializar Nuestros Productos?",
+    "cta_sub": "Contáctanos para conocer las oportunidades de distribución y colaboración disponibles para cada marca.",
+    "cta_button": "Solicitar Información",
+    "cta_secondary": "Ver Casos de Éxito"
+  },
+  "productPage": {
+    "premium": "Premium",
+    "view_detail": "Ver detalle",
+    "the_brand": "La Marca",
+    "collection": "Colección",
+    "variants": "Variantes",
+    "tasting_notes": "Notas de Cata",
+    "available_formats": "Presentaciones Disponibles",
+    "request_info": "Solicitar Información",
+    "close": "Cerrar",
+    "see_all_brands": "Ver Todas las Marcas",
+    "specs": {
+      "agave": "Tipo de Agave",
+      "region": "Región",
+      "process": "Proceso",
+      "abv": "Graduación"
+    }
   },
   "brand_pages": {
     "elixir": {
       "short_name": "Elixir del Alma",
+      "meta_title": "Elixír del Alma Mezcal — Productos | Grupo Palenkke",
+      "meta_keywords": "Elixír del Alma Mezcal, mezcal artesanal mexicano, mezcal premium Michoacán, mezcal joven añejo rosé, Grupo Palenkke productos",
       "hero_heading": "Mezcal Elixír<br/>del Alma",
-      "hero_sub": "Mezcal artesanal elaborado en México bajo procesos tradicionales que respetan el origen y la calidad del agave."
+      "hero_sub": "Mezcal artesanal elaborado en México bajo procesos tradicionales que respetan el origen y la calidad del agave.",
+      "eyebrow": "Mezcal Artesanal",
+      "pills": ["Agave Seleccionado", "Proceso Artesanal", "Distribución Internacional", "Reconocimiento Premium"],
+      "origin_badge": "Michoacán",
+      "origin_sub": "México · Origen",
+      "stats": [
+        { "value": "100%", "label": "Artesanal" },
+        { "value": "Michoacán", "label": "Origen" },
+        { "value": "3", "label": "Variantes" }
+      ],
+      "img_alt": "Campos de agave en Michoacán",
+      "variants_sub": "Seleccione la variante que desea conocer más detalles",
+      "variants": [
+        {
+          "name": "Elixír del Alma Mezcal Joven",
+          "subtitle": "Mezcal Artesanal",
+          "tag": "Joven",
+          "abv": "40% Alc. Vol.",
+          "agave": "Cupreata Silvestre",
+          "region": "Michoacán, México",
+          "process": "Destilación artesanal en alambique de cobre",
+          "tasting": "Notas de agave fresco, cítricos suaves y un final ahumado elegante.",
+          "sizes": ["375 ml", "750 ml"],
+          "description": "IXU Nahual Joven es la esencia desnuda del agave, un destilado que transmite la fuerza de la tierra y la frescura del momento. Cada sorbo es un canto ancestral, un recordatorio de que en la pureza reside la grandeza."
+        },
+        {
+          "name": "Elixír del Alma Mezcal Añejo",
+          "subtitle": "Mezcal Artesanal Reposado",
+          "tag": "Añejo",
+          "abv": "42% Alc. Vol.",
+          "agave": "Cupreata Silvestre",
+          "region": "Turicato, Michoacán, México",
+          "process": "Reposado en barricas de roble americano",
+          "tasting": "Notas de vainilla, caramelo, madera tostada y agave maduro con final largo.",
+          "sizes": ["750 ml", "Edición Especial 1L"],
+          "description": "El mezcal añejo IXU Nahual es una expresion sofisticada, resultado de un proceso de maduracion en barricas de roble durante al menos 12 meses. Este reposo aporta complejidad, suavidad y un perfil aromatico unico, convirtiéndolo en un destilado de caracter elegante y profundo."
+        },
+        {
+          "name": "Elixír del Alma Mezcal Rosé",
+          "subtitle": "Mezcal Artesanal Premium",
+          "tag": "Rosé",
+          "abv": "38% Alc. Vol.",
+          "agave": "Cupreata Silvestre",
+          "region": "Turicato, Michoacán, México",
+          "process": "Maceración con frutos rojos seleccionados",
+          "tasting": "Notas florales, frutos rojos, agave suave y un final fresco y elegante.",
+          "sizes": ["375 ml", "750 ml"],
+          "description": "En cada gota de IXU Nahual Rosé habita la fuerza y la dulzura de la mujer. Es un mezcal que nace del agave Cupreata Silvestre de Michoacan, cocido en hornos de piedra y destilado en cobre, pero que recibe un delicado toque de frutos rojos y pétalos de rosa, logrando un tono rosado sutil que ilumina la copa como un atardecer eterno."
+        },
+        {
+          "name": "Elíxir del alma Mezcal Coco Blend",
+          "subtitle": "Mezcal Artesanal Premium",
+          "tag": "Coco Blend",
+          "abv": "38% Alc. Vol.",
+          "agave": "Cupreata Silvestre",
+          "region": "Michoacán, México",
+          "process": "Maceración con frutos rojos seleccionados",
+          "tasting": "Notas florales, frutos rojos, agave suave y un final fresco y elegante.",
+          "sizes": ["375 ml", "750 ml"],
+          "description": "En el corazon de Michoacan, donde el fuego acaricia la tierra y el viento danza con los agaves, nace una joya unica: IXU Nahual Mezcal Joven - Coco Blend. Este elixir se forja en hornos de piedra, donde las piñas del agave Cupreata Silvestre se cuecen entamente junto con la magia del coco, impregnando cada fibra de su esencia tropical y ancestral."
+        }
+      ],
+      "process_eyebrow": "Proceso 100% Artesanal",
+      "process_heading": "Del Agave a la Botella",
+      "process_intro": "Elaborar un buen mezcal es un arte que requiere tiempo, paciencia y experiencia. Nuestros Maestros Mezcaleros siguen un proceso cuidado y tradicional:",
+      "process_steps": [
+        { "title": "Cocción", "desc": "Las piñas del agave se cuecen en hornos de piedra." },
+        { "title": "Molienda", "desc": "Se trituran artesanalmente para extraer los jugos." },
+        { "title": "Fermentación", "desc": "Se deja que la naturaleza transforme el mosto." },
+        { "title": "Destilación", "desc": "El mezcal toma forma en alambiques de cobre." }
+      ],
+      "process_outro": "Cada maestro imprime su sello único en cada lote, logrando un equilibrio perfecto entre sabor, aroma y carácter.",
+      "awards_eyebrow": "Reconocimientos",
+      "awards_heading": "Premios y Distinciones",
+      "awards_pending": "Actualizando",
+      "distribution_eyebrow": "Distribución",
+      "distribution_heading": "Presencia Internacional",
+      "distribution_sub": "Elixír del Alma Mezcal está disponible en mercados clave a través de canales especializados",
+      "distributors": [
+        { "region": "México", "channels": "Retail especializado, restaurantes premium, bares de autor" },
+        { "region": "Estados Unidos", "channels": "Importadores especializados, on-trade premium, e-commerce" },
+        { "region": "Sudamérica", "channels": "Distribuidores regionales, duty-free, hoteles boutique" },
+        { "region": "Europa", "channels": "En desarrollo — contactar para oportunidades" }
+      ],
+      "cta_heading": "¿Interesado en distribuir Mezcal Elixír del Alma?",
+      "cta_sub": "Buscamos distribuidores y socios estratégicos en mercados internacionales. Contáctanos para conocer las oportunidades disponibles.",
+      "cta_button": "Ser Distribuidor",
+      "cta_secondary": "Ver Casos de Éxito"
     },
     "kanan": {
       "short_name": "KANAN",
+      "meta_title": "KANAN Mezcal — Productos | Grupo Palenkke",
+      "meta_desc": "KANAN Mezcal: marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea.",
+      "meta_keywords": "KANAN Mezcal, mezcal artesanal Oaxaca, mezcal joven rosé añejo, preservación cultural del mezcal, Grupo Palenkke productos",
       "hero_heading": "KANAN<br/>Mezcal",
-      "hero_sub": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea."
+      "hero_sub": "Marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea.",
+      "eyebrow": "Mezcal Artesanal",
+      "pills": ["Agave Silvestre", "Proceso Tradicional", "Origen Oaxaca", "Calidad Premium"],
+      "origin_badge": "Oaxaca",
+      "origin_sub": "México · Origen",
+      "intro_p1": "KANAN es una marca enfocada en preservar el valor cultural del mezcal a través de procesos tradicionales y una visión contemporánea. Cada botella representa el respeto por la tierra y la herencia ancestral de los maestros mezcaleros.",
+      "intro_p2": "Con tres variedades —Joven, Rosé y Añejo— KANAN ofrece una experiencia única que conecta la tradición con el paladar moderno.",
+      "img_alt": "Campos de agave",
+      "variants_sub": "Seleccione la variante que desea conocer más detalles",
+      "variants": [
+        {
+          "name": "KANAN Mezcal Joven",
+          "subtitle": "Mezcal Artesanal",
+          "tag": "Joven",
+          "abv": "40% Alc. Vol.",
+          "agave": "Cupreata Silvestre",
+          "region": "Oaxaca, México",
+          "process": "Destilación artesanal en alambique de cobre",
+          "tasting": "Notas de agave fresco, cítricos y un final ahumado equilibrado.",
+          "sizes": ["375 ml", "750 ml"],
+          "description": "KANAN Joven captura la esencia más pura del agave, un destilado que transmite la fuerza de la tierra y la tradición ancestral."
+        },
+        {
+          "name": "KANAN Mezcal Rosé",
+          "subtitle": "Mezcal Artesanal Premium",
+          "tag": "Rosé",
+          "abv": "38% Alc. Vol.",
+          "agave": "Cupreata Silvestre",
+          "region": "Oaxaca, México",
+          "process": "Maceración con frutos rojos seleccionados",
+          "tasting": "Notas florales, frutos rojos, agave suave y un final fresco y elegante.",
+          "sizes": ["375 ml", "750 ml"],
+          "description": "KANAN Rosé es una expresión única que combina la tradición del mezcal con un delicado toque de frutos rojos."
+        },
+        {
+          "name": "KANAN Mezcal Añejo",
+          "subtitle": "Mezcal Artesanal Reposado",
+          "tag": "Añejo",
+          "abv": "42% Alc. Vol.",
+          "agave": "Cupreata Silvestre",
+          "region": "Oaxaca, México",
+          "process": "Reposado en barricas de roble americano",
+          "tasting": "Notas de vainilla, caramelo, madera tostada y agave maduro.",
+          "sizes": ["750 ml"],
+          "description": "KANAN Añejo es una expresión sofisticada, resultado de una maduración en barricas de roble que aporta complejidad y suavidad."
+        }
+      ],
+      "cta_heading": "¿Interesado en KANAN Mezcal?",
+      "cta_sub": "Contáctanos para conocer las oportunidades de distribución y colaboración.",
+      "cta_button": "Solicitar Información"
     },
     "palenkke": {
       "short_name": "Palenkke Mezcal",
+      "meta_title": "PALENKKE Mezcal — Productos | Grupo Palenkke",
+      "meta_desc": "PALENKKE Mezcal: tradición artesanal, identidad mexicana y expansión comercial internacional.",
+      "meta_keywords": "PALENKKE Mezcal, mezcal artesanal Michoacán, mezcal joven rosé añejo, identidad mexicana, Grupo Palenkke productos",
       "hero_heading": "PALENKKE<br/>Mezcal",
-      "hero_sub": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional."
+      "hero_sub": "Representación de tradición artesanal, identidad mexicana y expansión comercial internacional.",
+      "eyebrow": "Mezcal Artesanal",
+      "pills": ["Agave Silvestre", "Identidad Mexicana", "Proceso Artesanal", "Expansión Global"],
+      "origin_badge": "Michoacán",
+      "origin_sub": "México · Origen",
+      "intro_p1": "PALENKKE Mezcal representa la tradición artesanal, la identidad mexicana y la expansión comercial internacional. Elaborado con agave Cupreata Silvestre en Michoacán, cada botella captura la esencia de México.",
+      "intro_p2": "Con tres variedades —Rosé, Joven y Añejo— PALENKKE Mezcal ofrece una experiencia completa para los paladares más exigentes.",
+      "img_alt": "Campos de agave",
+      "variants_sub": "Seleccione la variante que desea conocer más detalles",
+      "variants": [
+        {
+          "name": "PALENKKE Mezcal Joven",
+          "subtitle": "Mezcal Artesanal",
+          "tag": "Joven",
+          "abv": "40% Alc. Vol.",
+          "agave": "Cupreata Silvestre",
+          "region": "Michoacán, México",
+          "process": "Destilación artesanal en alambique de cobre",
+          "tasting": "Notas de agave fresco, cítricos suaves y un final ahumado elegante.",
+          "sizes": ["375 ml", "750 ml"],
+          "description": "PALENKKE Mezcal Joven es la esencia más pura del agave, un destilado que transmite la fuerza de la tierra."
+        },
+        {
+          "name": "PALENKKE Mezcal Rosé",
+          "subtitle": "Mezcal Artesanal Premium",
+          "tag": "Rosé",
+          "abv": "38% Alc. Vol.",
+          "agave": "Cupreata Silvestre",
+          "region": "Michoacán, México",
+          "process": "Maceración con frutos rojos seleccionados",
+          "tasting": "Notas florales, frutos rojos, agave suave y un final fresco.",
+          "sizes": ["375 ml", "750 ml"],
+          "description": "PALENKKE Mezcal Rosé combina la tradición del mezcal con un delicado toque de frutos rojos."
+        },
+        {
+          "name": "PALENKKE Mezcal Añejo",
+          "subtitle": "Mezcal Artesanal Reposado",
+          "tag": "Añejo",
+          "abv": "42% Alc. Vol.",
+          "agave": "Cupreata Silvestre",
+          "region": "Michoacán, México",
+          "process": "Reposado en barricas de roble americano",
+          "tasting": "Notas de vainilla, caramelo y madera tostada.",
+          "sizes": ["750 ml"],
+          "description": "PALENKKE Mezcal Añejo es una expresión sofisticada con maduración en barricas de roble."
+        }
+      ],
+      "cta_heading": "¿Interesado en PALENKKE Mezcal?",
+      "cta_sub": "Contáctanos para conocer las oportunidades de distribución y colaboración.",
+      "cta_button": "Solicitar Información"
     },
     "san-rojo": {
       "short_name": "San Rojo",
+      "meta_title": "San Rojo — Productos | Grupo Palenkke",
+      "meta_desc": "SAN ROJO: Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo.",
+      "meta_keywords": "SAN ROJO, licor de chiles, licor artesanal Querétaro, licor de chiles único, Grupo Palenkke productos",
       "hero_heading": "SAN ROJO<br/>Licor de Chiles",
-      "hero_sub": "Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo."
+      "hero_sub": "Licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo.",
+      "eyebrow": "Licor Artesanal",
+      "pills": ["100% Artesanal", "Hecho en Querétaro", "Único en el Mundo", "Receta Tradicional"],
+      "origin_badge": "Querétaro",
+      "origin_sub": "México · Origen",
+      "intro_p1": "SAN ROJO es un licor de chiles elaborado en Querétaro de forma completamente artesanal, único en el mundo. Un homenaje a nuestras costumbres y tradiciones, capturando en cada botella la esencia de México.",
+      "intro_p2": "Cada botella de SAN ROJO representa horas de trabajo artesanal, desde la selección de chiles hasta el envasado final, todo hecho a mano con pasión y dedicación.",
+      "img_alt": "Querétaro, México",
+      "variants_sub": "Descubra nuestras variantes de licor de chiles",
+      "variants": [
+        {
+          "name": "SAN ROJO Clásico",
+          "subtitle": "Licor de Chiles Artesanal",
+          "tag": "Original",
+          "abv": "30% Alc. Vol.",
+          "chiles": "Chile de Árbol, Chile Serrano",
+          "region": "Querétaro, México",
+          "process": "Maceración artesanal en frío",
+          "tasting": "Notas de chile asado, especias mexicanas y un final cálido y persistente.",
+          "sizes": ["375 ml", "750 ml"],
+          "description": "SAN ROJO Clásico captura la esencia de los chiles mexicanos en un licor único en el mundo, elaborado completamente a mano en Querétaro."
+        },
+        {
+          "name": "SAN ROJO Ahumado",
+          "subtitle": "Licor de Chiles Premium",
+          "tag": "Ahumado",
+          "abv": "32% Alc. Vol.",
+          "chiles": "Chile Chipotle, Chile Morita",
+          "region": "Querétaro, México",
+          "process": "Maceración con chiles ahumados",
+          "tasting": "Notas ahumadas profundas, chocolate amargo y un final especiado.",
+          "sizes": ["375 ml", "750 ml"],
+          "description": "SAN ROJO Ahumado ofrece una experiencia intensa con chiles cuidadosamente ahumados para un perfil de sabor único."
+        },
+        {
+          "name": "SAN ROJO Edición Limitada",
+          "subtitle": "Licor de Chiles de Autor",
+          "tag": "Edición Limitada",
+          "abv": "35% Alc. Vol.",
+          "chiles": "Selección de chiles mexicanos",
+          "region": "Querétaro, México",
+          "process": "Receta de autor en lotes pequeños",
+          "tasting": "Notas complejas de chiles silvestres, agave y especias exóticas.",
+          "sizes": ["750 ml"],
+          "description": "Edición Limitada SAN ROJO es una creación exclusiva en lotes pequeños para conocedores y coleccionistas."
+        }
+      ],
+      "cta_heading": "¿Interesado en SAN ROJO?",
+      "cta_sub": "Contáctanos para conocer las oportunidades de distribución de este licor único.",
+      "cta_button": "Solicitar Información"
     },
     "koldvolt": {
       "short_name": "Koldvolt",
+      "meta_title": "KOLDVOLT — Productos | Grupo Palenkke",
+      "meta_desc": "KOLDVOLT: Innovador en Cadena de Frío, soluciones Slide-in ColdBox, ColdContainer, ReeferVan y ReeferTruck.",
+      "meta_keywords": "KOLDVOLT, cadena de frío, ColdBox, ColdContainer, ReeferVan, ReeferTruck, vehículos refrigerados, Grupo Palenkke productos",
       "hero_heading": "KOLDVOLT<br/>Cadena de Frío",
-      "hero_sub": "Tu socio integral para todas las necesidades de vehículos de reparto refrigerados."
+      "hero_sub": "Tu socio integral para todas las necesidades de vehículos de reparto refrigerados.",
+      "eyebrow": "Cadena de Frío",
+      "pills": ["Temperatura Controlada", "Vehículos Especializados", "Sistemas Modulares", "Presencia en Asia"],
+      "origin_badge": "Asia",
+      "origin_sub": "Presencia Internacional",
+      "intro_p1": "KOLDVOLT es tu socio integral para todas las necesidades de vehículos de reparto refrigerados. Desde sistemas desmontables Slide-in ColdBox y ColdContainer para furgonetas de carga seca, hasta soluciones de alto rendimiento ReeferVan y ReeferTruck.",
+      "intro_p2": "Con presencia en Asia, KOLDVOLT ofrece soluciones innovadoras en cadena de frío para la industria logística y de distribución.",
+      "img_alt": "Soluciones KOLDVOLT",
+      "products_eyebrow": "Productos",
+      "products_heading": "Soluciones de Frío",
+      "products_sub": "Sistemas modulares de refrigeración para vehículos comerciales",
+      "capacity_label": "Capacidad",
+      "temp_label": "Temp.",
+      "products": [
+        {
+          "name": "ColdBox Slide-in",
+          "subtitle": "Sistema Desmontable de Frío",
+          "tag": "Slide-in",
+          "capacity": "Hasta 8 m³",
+          "temp": "-20°C a 4°C",
+          "application": "Furgonetas de carga seca",
+          "power": "12V / 24V CC",
+          "description": "Sistema desmontable ColdBox que convierte cualquier furgoneta de carga seca en un vehículo de reparto refrigerado. Fácil instalación y remoción sin modificaciones permanentes.",
+          "features": ["Instalación rápida sin herramientas", "Aislamiento térmico de alta densidad", "Compresor de bajo consumo", "Control digital de temperatura"]
+        },
+        {
+          "name": "ColdContainer",
+          "subtitle": "Contenedor Refrigerado",
+          "tag": "Container",
+          "capacity": "Hasta 15 m³",
+          "temp": "-25°C a 4°C",
+          "application": "Furgonetas de carga",
+          "power": "12V / 24V / 110V",
+          "description": "ColdContainer es la solución ideal para transporte de mercancías que requieren temperatura controlada constante, con capacidad ampliada para carga de mayor volumen.",
+          "features": ["Construcción monobloque reforzada", "Sistema de refrigeración dual", "Monitoreo remoto de temperatura", "Certificación sanitaria internacional"]
+        },
+        {
+          "name": "ReeferVan",
+          "subtitle": "Furgoneta Refrigerada Integral",
+          "tag": "ReeferVan",
+          "capacity": "Hasta 20 m³",
+          "temp": "-30°C a 4°C",
+          "application": "Furgonetas de carga",
+          "power": "Motor diésel / Eléctrico",
+          "description": "Solución integral ReeferVan para furgonetas de carga, combinando carrocería de alta resistencia con sistema de refrigeración de alto rendimiento.",
+          "features": ["Carrocería de aluminio reforzado", "Sistema de frío con respaldo", "Rampa de carga integrada", "Sistema GPS con control de temperatura"]
+        },
+        {
+          "name": "ReeferTruck",
+          "subtitle": "Camión Refrigerado Pesado",
+          "tag": "ReeferTruck",
+          "capacity": "Hasta 28 pies",
+          "temp": "-30°C a 4°C",
+          "application": "Camiones rectos",
+          "power": "Motor diésel / Eléctrico",
+          "description": "ReeferTruck es la solución definitiva para camiones rectos de hasta 28 pies, diseñada para operaciones de logística de gran escala.",
+          "features": ["Estructura de acero galvanizado", "Sistema de refrigeración industrial", "Puertas herméticas con sello térmico", "Sistema de datalogger y trazabilidad"]
+        }
+      ],
+      "stats": [
+        { "value": "4", "label": "Líneas de Producto" },
+        { "value": "Asia", "label": "Mercado Principal" },
+        { "value": "10+", "label": "Años de Experiencia" },
+        { "value": "1000+", "label": "Unidades Instaladas" }
+      ],
+      "cta_heading": "¿Interesado en KOLDVOLT?",
+      "cta_sub": "Contáctanos para conocer nuestras soluciones de cadena de frío.",
+      "cta_button": "Solicitar Información"
     },
     "ritevolt": {
       "short_name": "Ritevolt",
+      "meta_title": "RITEVOLT — Productos | Grupo Palenkke",
+      "meta_desc": "RITEVOLT: Empresa dedicada a la investigación, desarrollo e integración de equipos de energía solar.",
+      "meta_keywords": "RITEVOLT, energía solar, paneles solares, inversores, almacenamiento de energía, generación distribuida, Grupo Palenkke productos",
       "hero_heading": "RITEVOLT<br/>Energía Solar",
-      "hero_sub": "Empresa dedicada a la investigación, desarrollo e integración de equipos de energía solar."
+      "hero_sub": "Empresa dedicada a la investigación, desarrollo e integración de equipos de energía solar.",
+      "eyebrow": "Energía Solar",
+      "pills": ["Energía Limpia", "Almacenamiento", "Soluciones Integrales", "Calidad Certificada"],
+      "origin_badge": "Asia",
+      "origin_sub": "Presencia Internacional",
+      "intro_p1": "RITEVOLT es una empresa dedicada a la investigación, desarrollo, producción, venta, servicio e integración de equipos de energía solar. Ofrecemos soluciones completas para generación distribuida y almacenamiento energético.",
+      "intro_p2": "Con presencia en Asia, RITEVOLT combina innovación tecnológica con eficiencia energética para impulsar la transición hacia fuentes renovables.",
+      "img_alt": "Energía Solar RITEVOLT",
+      "products_eyebrow": "Productos",
+      "products_heading": "Soluciones Solares",
+      "products_sub": "Equipos y sistemas para generación de energía solar",
+      "potencia_label": "Potencia",
+      "eficiencia_label": "Eficiencia",
+      "products": [
+        {
+          "name": "Paneles Solares Monocristalinos",
+          "subtitle": "Alta Eficiencia Energética",
+          "tag": "Solar",
+          "potencia": "400W - 600W",
+          "eficiencia": "Hasta 22.5%",
+          "aplicacion": "Residencial, Comercial, Industrial",
+          "garantia": "25 años",
+          "description": "Paneles solares monocristalinos de alta eficiencia para generación de energía limpia en aplicaciones residenciales, comerciales e industriales.",
+          "features": ["Células PERC de alta eficiencia", "Marco de aluminio resistente a corrosión", "Bajo coeficiente de temperatura", "Certificación TÜV e IEC"]
+        },
+        {
+          "name": "Inversores Solares",
+          "subtitle": "Conversión Inteligente de Energía",
+          "tag": "Inversores",
+          "potencia": "3kW - 100kW",
+          "eficiencia": "Hasta 98%",
+          "aplicacion": "Sistemas On-Grid y Off-Grid",
+          "garantia": "10 años",
+          "description": "Inversores solares de última generación con tecnología MPPT para máxima captura de energía en sistemas conectados a red y aislados.",
+          "features": ["MPPT dual de alta velocidad", "Monitoreo WiFi integrado", "Grado de protección IP65", "Fácil instalación y configuración"]
+        },
+        {
+          "name": "Sistemas de Almacenamiento",
+          "subtitle": "Baterías de Litio Inteligentes",
+          "tag": "Almacenamiento",
+          "potencia": "5kWh - 100kWh",
+          "eficiencia": "Hasta 95%",
+          "aplicacion": "Respaldo y Autoconsumo",
+          "garantia": "10 años",
+          "description": "Baterías de litio modulares con sistema de gestión inteligente BMS para almacenamiento seguro y eficiente de energía solar.",
+          "features": ["Química LFP de larga vida", "BMS inteligente integrado", "Diseño modular apilable", "Compatibilidad multi-marca"]
+        },
+        {
+          "name": "Sistemas Solares Integrales",
+          "subtitle": "Soluciones Llave en Mano",
+          "tag": "Integral",
+          "potencia": "Personalizable",
+          "eficiencia": "Optimizada",
+          "aplicacion": "Proyectos Residenciales, Comerciales e Industriales",
+          "garantia": "Sistema completo",
+          "description": "Soluciones solares integrales diseñadas a medida para maximizar el retorno de inversión en proyectos de generación distribuida.",
+          "features": ["Diseño personalizado", "Instalación profesional", "Monitoreo en tiempo real", "Soporte técnico continuo"]
+        }
+      ],
+      "stats": [
+        { "value": "4", "label": "Líneas de Producto" },
+        { "value": "Asia", "label": "Mercado Principal" },
+        { "value": "10+", "label": "Años de I+D" },
+        { "value": "500+", "label": "Proyectos Realizados" }
+      ],
+      "cta_heading": "¿Interesado en RITEVOLT?",
+      "cta_sub": "Contáctanos para conocer nuestras soluciones de energía solar.",
+      "cta_button": "Solicitar Información"
     },
     "heartfulcraft": {
       "short_name": "HeartfulCraft",
+      "meta_title": "HeartfulCraft — Productos | Grupo Palenkke",
+      "meta_desc": "HeartfulCraft: Marca que empodera a más de 350 artesanos en la India rural, preservando técnicas artesanales centenarias.",
+      "meta_keywords": "HeartfulCraft, artesanías India, textiles artesanales, comercio justo, artesanos India rural, Grupo Palenkke productos",
       "hero_heading": "HEARTFULCRAFT<br/>Artesanías",
-      "hero_sub": "Marca que empodera a más de 350 artesanos preservando técnicas artesanales centenarias."
+      "hero_sub": "Marca que empodera a más de 350 artesanos preservando técnicas artesanales centenarias.",
+      "eyebrow": "Artesanía con Propósito",
+      "pills": ["Comercio Justo", "350+ Artesanos", "Artesanía Única", "Hecho en India"],
+      "origin_badge": "India",
+      "origin_sub": "Origen · Comercio Justo",
+      "intro_p1": "HeartfulCraft es una marca que empodera a más de 350 artesanos en la India rural, preservando técnicas artesanales centenarias y creando piezas únicas hechas a mano que llegan a compradores de todo el mundo.",
+      "intro_p2": "Cada pieza cuenta una historia de tradición, habilidad y dedicación, conectando a los artesanos con mercados globales bajo principios de comercio justo y sostenibilidad.",
+      "img_alt": "Artesanía HeartfulCraft",
+      "products_eyebrow": "Colección",
+      "products_heading": "Nuestras Colecciones",
+      "products_sub": "Artesanías únicas hechas a mano por artesanos de la India rural",
+      "origin_label": "Origen",
+      "artisans_label": "Artesanos",
+      "products": [
+        {
+          "name": "Textiles Artesanales",
+          "subtitle": "Tejidos Tradicionales",
+          "tag": "Textiles",
+          "origin": "India Rural",
+          "material": "Algodón, Seda, Lana",
+          "technique": "Telar Manual",
+          "artisans": "150+ artesanos",
+          "description": "Piezas textiles únicas tejidas a mano por artesanos de la India rural, preservando técnicas centenarias de telar manual y teñido natural.",
+          "features": ["Tejido 100% hecho a mano", "Tintes naturales", "Diseños tradicionales", "Certificación de comercio justo"]
+        },
+        {
+          "name": "Decoración para el Hogar",
+          "subtitle": "Artesanía para tu Espacio",
+          "tag": "Hogar",
+          "origin": "India Rural",
+          "material": "Madera, Metal, Cerámica",
+          "technique": "Tallado y Forja Manual",
+          "artisans": "100+ artesanos",
+          "description": "Piezas de decoración artesanales que transforman cualquier espacio con la calidez y autenticidad del trabajo hecho a mano.",
+          "features": ["Materiales naturales", "Técnicas ancestrales", "Piezas únicas", "Empaque sostenible"]
+        },
+        {
+          "name": "Accesorios Hechos a Mano",
+          "subtitle": "Moda con Propósito",
+          "tag": "Accesorios",
+          "origin": "India Rural",
+          "material": "Cuero, Textil, Cuentas",
+          "technique": "Bordado y Engarzado Manual",
+          "artisans": "100+ artesanos",
+          "description": "Accesorios únicos que combinan moda contemporánea con técnicas artesanales tradicionales de la India.",
+          "features": ["Diseños exclusivos", "Materiales sostenibles", "Producción ética", "Empoderamiento femenino"]
+        }
+      ],
+      "stats": [
+        { "value": "350+", "label": "Artesanos Empoderados" },
+        { "value": "India", "label": "País de Origen" },
+        { "value": "3", "label": "Líneas de Producto" },
+        { "value": "100%", "label": "Comercio Justo" }
+      ],
+      "cta_heading": "¿Interesado en HEARTFULCRAFT?",
+      "cta_sub": "Contáctanos para conocer nuestras colecciones de artesanía.",
+      "cta_button": "Solicitar Información"
     }
   },
   "contacto": {
     "meta_title": "Contacto — Grupo Palenkke",
     "meta_desc": "Contáctanos para explorar oportunidades de negocio, alianzas estratégicas o distribución internacional.",
+    "meta_keywords": "contacto Grupo Palenkke, inversión marcas México, distribución productos, alianzas estratégicas, socios comerciales, contact Palenkke",
     "hero_eyebrow": "Contacto",
     "hero_heading": "Construyamos Algo Más Grande Juntos",
-    "hero_sub": "Estamos abiertos a desarrollar relaciones comerciales con productores, marcas, distribuidores e inversionistas."
+    "hero_sub": "Estamos abiertos a desarrollar relaciones comerciales con productores, marcas, distribuidores e inversionistas.",
+    "info_label": "Información",
+    "info_heading": "Información de Contacto",
+    "info_sub": "Estamos disponibles para atender tu consulta. Nuestro equipo responde en menos de 24 horas hábiles.",
+    "email_label": "Correo Electrónico",
+    "offices_label": "Oficinas",
+    "offices_value": "Estados Unidos · México",
+    "response_label": "Tiempo de respuesta",
+    "response_value": "Menos de 24 horas hábiles",
+    "follow_label": "Síguenos",
+    "form": {
+      "heading": "Envíanos un Mensaje",
+      "sub": "Cuéntanos sobre tu proyecto y nos pondremos en contacto contigo.",
+      "name": "Nombre completo *",
+      "name_placeholder": "Tu nombre",
+      "email": "Correo electrónico *",
+      "email_placeholder": "tu@correo.com",
+      "phone": "Teléfono / WhatsApp",
+      "phone_placeholder": "+52 55 0000 0000",
+      "company": "Empresa / Marca",
+      "company_placeholder": "Nombre de tu empresa",
+      "help": "¿En qué podemos ayudarte?",
+      "select_default": "Selecciona una opción",
+      "interests": [
+        "Desarrollo de Marca",
+        "Incubación de Producto",
+        "Comercialización",
+        "Expansión Internacional",
+        "Alianza Estratégica",
+        "Inversión",
+        "Distribución",
+        "Consultoría",
+        "Otro"
+      ],
+      "message": "Mensaje *",
+      "message_placeholder": "Cuéntanos sobre tu proyecto, marca o idea. ¿Qué quieres lograr?",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success_title": "¡Mensaje Enviado!",
+      "success_msg": "Gracias por contactarnos. Nuestro equipo revisará tu mensaje y se pondrá en contacto contigo en menos de 24 horas.",
+      "send_another": "Enviar otro mensaje",
+      "consent": "Al enviar este formulario aceptas que nos pongamos en contacto contigo.",
+      "error_network": "Error de conexión. Por favor intenta de nuevo.",
+      "error_default": "Error al enviar. Por favor intenta de nuevo."
+    },
+    "audiences_eyebrow": "Audiencias",
+    "audiences_heading": "¿Quién Puede Contactarnos?",
+    "audiences_sub": "Trabajamos con cuatro perfiles estratégicos. Si encajas en alguno, hay una oportunidad esperándote.",
+    "audiences": [
+      { "title": "Inversionistas", "desc": "Oportunidades de inversión en marcas con alto potencial." },
+      { "title": "Distribuidores", "desc": "Acceso a portafolio premium para distribución nacional e internacional." },
+      { "title": "Socios", "desc": "Alianzas estratégicas para co-desarrollar y co-distribuir." },
+      { "title": "Productores", "desc": "Incubación y comercialización de productos con visión global." }
+    ],
+    "cta_heading": "¿Prefieres conocer más antes de escribirnos?",
+    "cta_sub": "Explora nuestros casos de éxito, servicios y productos para entender cómo trabajamos.",
+    "cta_cases": "Casos de Éxito",
+    "cta_services": "Nuestros Servicios",
+    "cta_products": "Productos"
   },
   "legal": {
     "meta_title": "Asóciate — Grupo Palenkke",
@@ -262,6 +997,7 @@
     "asesoria_title": "Asesoría Legal y Estructura Comercial",
     "asesoria_p1": "La asesoría legal es fundamental para cualquier negocio en crecimiento.\n\nEn Grupo PALENKKE ofrecemos acompañamiento legal integral orientado a proteger y fortalecer cada proyecto comercial.",
     "asesoria_p2": "Desde la creación y revisión de contratos hasta el cumplimiento regulatorio, nuestro equipo trabaja para brindar seguridad, estructura y confianza en cada etapa del desarrollo comercial.\n\nNuestro enfoque permite que cada marca opere con mayor claridad, protección y solidez dentro de mercados nacionales e internacionales.",
+    "email_direct": "O escríbenos directamente a",
     "form_eyebrow": "Contáctanos",
     "form_heading": "Envíanos tu Propuesta",
     "form_sub": "Completa el formulario y nuestro equipo se pondrá en contacto contigo dentro de 24 horas.",
@@ -276,14 +1012,41 @@
       "company_placeholder": "Nombre de tu empresa",
       "interest": "Tipo de Asociación",
       "select_default": "Selecciona una opción",
-      "options": ["Alianza de Distribución", "Colaboración Retail", "Embajador de Marca", "Patrocinio de Eventos", "Asociación Personalizada", "Otro"],
+      "options": [
+        "Distribución Nacional",
+        "Distribución Internacional",
+        "Licenciamiento de Marcas",
+        "Franquicia Comercial",
+        "Inversión en Marcas"
+      ],
       "message": "Mensaje",
-      "message_placeholder": "Cuéntanos sobre tu propuesta o idea de colaboración...",
-      "submit": "Enviar Propuesta",
-      "success_title": "¡Propuesta Enviada!",
-      "success_msg": "Gracias por tu interés. Nuestro equipo se pondrá en contacto contigo dentro de 24 horas.",
-      "error_msg": "Hubo un error al enviar. Por favor intenta de nuevo."
+      "message_placeholder": "Cuéntanos sobre tu proyecto...",
+      "error_msg": "No pudimos enviar tu mensaje. Intenta de nuevo.",
+      "submit": "Enviar Solicitud",
+      "success_title": "¡Solicitud Enviada!",
+      "success_msg": "Gracias por tu interés. Nuestro equipo revisará tu solicitud y te contactará pronto.",
+      "subject": "Oportunidad de Asociación: {{interest}}",
+      "subject_default": "General"
     }
+  },
+  "galerias": {
+    "meta_title": "Recursos de Marca — Grupo Palenkke",
+    "meta_desc": "Directorio de recursos multimedia corporativos de las marcas integradas al ecosistema de Grupo Palenkke.",
+    "hero_eyebrow": "Recursos de Marca",
+    "hero_heading": "Directorio de Recursos",
+    "hero_sub": "Acceso rápido a imágenes, videos y documentos corporativos de cada marca del ecosistema Palenkke.",
+    "website_soon": "Website en construcción",
+    "images": "Imágenes",
+    "videos": "Videos",
+    "documents": "Documentos",
+    "modal_empty": "No hay archivos disponibles en esta categoría.",
+    "modal_add_hint": "Agrega archivos a",
+    "video_unsupported": "Tu navegador no soporta la reproducción de video.",
+    "modal_image_alt": "Imagen ampliada",
+    "cta_eyebrow": "Colaboración",
+    "cta_heading": "¿Tienes material para agregar?",
+    "cta_sub": "Contacta al equipo de Grupo Palenkke para subir recursos corporativos de tu compañía.",
+    "cta_button": "Contactar Equipo"
   },
   "footer": {
     "tagline": "Estrategias que trascienden fronteras.",
@@ -291,6 +1054,11 @@
     "services_label": "Servicios",
     "contact_label": "Contacto",
     "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos",
+    "regions": "México · USA",
+    "phone_mexico": "México:",
+    "phone_usa": "USA:",
     "links": {
       "about": "Quiénes Somos",
       "cases": "Casos de Éxito",

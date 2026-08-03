@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'motion/react';
 import { Helmet } from '@dr.pogodin/react-helmet';
@@ -42,105 +42,78 @@ function AccentLine() {
 
 }
 
-const variants = [
-{
-  id: 'joven',
-  name: 'Elixír del Alma Mezcal Joven',
-  subtitle: 'Mezcal Artesanal',
-  tag: 'Joven',
-  tagBg: 'bg-[#EEF2F8] text-[#1B3A6B]',
-  imgSlot: '/assets/mezcaljoven.jpeg',
-  abv: '40% Alc. Vol.',
-  agave: 'Cupreata Silvestre',
-  region: 'Michoacán, México',
-  process: 'Destilación artesanal en alambique de cobre',
-  tasting: 'Notas de agave fresco, cítricos suaves y un final ahumado elegante.',
-  sizes: ['375 ml', '750 ml'],
-  featured: false,
-  description: ' IXU Nahual Joven es la esencia desnuda del agave, un destilado que transmite la fuerza de la tierra y la frescura del momento. Cada sorbo es un canto ancestral, un recordatorio de que en la pureza reside la grandeza.',
-  color: '#EEF2F8',
-  accentColor: '#1B3A6B'
-},
-{
-  id: 'anejo',
-  name: 'Elixír del Alma Mezcal Añejo',
-  subtitle: 'Mezcal Artesanal Reposado',
-  tag: 'Añejo',
-  tagBg: 'bg-[#C9A84C]/15 text-[#8B6914]',
-  imgSlot: '/assets/mezcalanejo.jpeg',
-  abv: '42% Alc. Vol.',
-  agave: 'Cupreata Silvestre',
-  region: ' Turicato, Michoacán, México',
-  process: 'Reposado en barricas de roble americano',
-  tasting: 'Notas de vainilla, caramelo, madera tostada y agave maduro con final largo.',
-  sizes: ['750 ml', 'Edición Especial 1L'],
-  featured: true,
-  description: ' El mezcal añejo IXU Nahual es una expresion sofisticada, resultado de un proceso de maduracion en barricas de roble durante al menos 12 meses. Este reposo aporta complejidad, suavidad y un perfil aromatico unico, convirtiéndolo en un destilado de caracter elegante y profundo.',
-  color: '#FDF6E3',
-  accentColor: '#C9A84C'
-},
-{
-  id: 'rose',
-  name: 'Elixír del Alma Mezcal Rosé',
-  subtitle: 'Mezcal Artesanal Premium',
-  tag: 'Rosé',
-  tagBg: 'bg-pink-50 text-pink-700',
-  imgSlot: '/assets/mezcalrose.jpeg',
-  abv: '38% Alc. Vol.',
-  agave: ' Cupreata Silvestre',
-  region: ' Turicato, Michoacán, México',
-  process: 'Maceración con frutos rojos seleccionados',
-  tasting: 'Notas florales, frutos rojos, agave suave y un final fresco y elegante.',
-  sizes: ['375 ml', '750 ml'],
-  featured: false,
-  description: ' En cada gota de IXU Nahual Rosé habita la fuerza y la dulzura de la mujer. Es un mezcal que nace del agave Cupreata Silvestre de Michoacan, cocido en hornos de piedra y destilado en cobre, pero que recibe un delicado toque de frutos rojos y pétalos de rosa, logrando un tono rosado sutil que ilumina la copa como un atardecer eterno.',
-  color: '#FFF0F3',
-  accentColor: '#C9A84C'
-},
-{
-  id: 'coco',
-  name: 'Elíxir del alma Mezcal Coco Blend',
-  subtitle: 'Mezcal Artesanal Premium',
-  tag: 'Coco Blend',
-  tagBg: 'bg-pink-50 text-pink-700',
-  imgSlot: '/assets/mezcalcoco.jpeg',
-  abv: '38% Alc. Vol.',
-  agave: 'Cupreata Silvestre',
-  region: 'Michoacán, México',
-  process: 'Maceración con frutos rojos seleccionados',
-  tasting: 'Notas florales, frutos rojos, agave suave y un final fresco y elegante.',
-  sizes: ['375 ml', '750 ml'],
-  featured: false,
-  description: 'En el corazon de Michoacan, donde el fuego acaricia la tierra y el viento danza con los agaves, nace una joya unica: IXU Nahual Mezcal Joven - Coco Blend. Este elixir se forja en hornos de piedra, donde las pifas del agave Cupreata Silvestre se cuecen entamente junto con la magia del coco, impregnando cada fibra de su esencia tropical y ancestral.',
-  color: '#FFF0F3',
-  accentColor: '#C9A84C'
+interface VariantData {
+  name: string;
+  subtitle: string;
+  tag: string;
+  abv: string;
+  agave: string;
+  region: string;
+  process: string;
+  tasting: string;
+  sizes: string[];
+  description: string;
+}
 
-}];
+interface VariantItem extends VariantData {
+  id: string;
+  imgSlot: string;
+  featured: boolean;
+  tagBg: string;
+  color: string;
+  accentColor: string;
+}
 
+const VARIANT_PRESENTATION: Omit<VariantItem, keyof VariantData>[] = [
+  {
+    id: 'joven',
+    imgSlot: '/assets/mezcaljoven.jpeg',
+    featured: false,
+    tagBg: 'bg-[#EEF2F8] text-[#1B3A6B]',
+    color: '#EEF2F8',
+    accentColor: '#1B3A6B'
+  },
+  {
+    id: 'anejo',
+    imgSlot: '/assets/mezcalanejo.jpeg',
+    featured: true,
+    tagBg: 'bg-[#C9A84C]/15 text-[#8B6914]',
+    color: '#FDF6E3',
+    accentColor: '#C9A84C'
+  },
+  {
+    id: 'rose',
+    imgSlot: '/assets/mezcalrose.jpeg',
+    featured: false,
+    tagBg: 'bg-pink-50 text-pink-700',
+    color: '#FFF0F3',
+    accentColor: '#C9A84C'
+  },
+  {
+    id: 'coco',
+    imgSlot: '/assets/mezcalcoco.jpeg',
+    featured: false,
+    tagBg: 'bg-pink-50 text-pink-700',
+    color: '#FFF0F3',
+    accentColor: '#C9A84C'
+  }
+];
 
 const specs = [
-{ Icon: Leaf, label: 'Tipo de Agave', key: 'agave' },
-{ Icon: MapPin, label: 'Región', key: 'region' },
-{ Icon: Flame, label: 'Proceso', key: 'process' },
-{ Icon: Droplets, label: 'Graduación', key: 'abv' }];
+  { Icon: Leaf, labelKey: 'agave', key: 'agave' },
+  { Icon: MapPin, labelKey: 'region', key: 'region' },
+  { Icon: Flame, labelKey: 'process', key: 'process' },
+  { Icon: Droplets, labelKey: 'abv', key: 'abv' }];
 
+const pillIcons = [Leaf, Flame, Globe, Award];
 
-const awards = [
-{ year: '', title: 'Actualizando', org: '' },
-{ year: '', title: 'Actualizando', org: '' },
-{ year: '', title: 'Actualizando', org: '' }];
-
-
-const distributors = [
-{ region: 'México', channels: 'Retail especializado, restaurantes premium, bares de autor' },
-{ region: 'Estados Unidos', channels: 'Importadores especializados, on-trade premium, e-commerce' },
-{ region: 'Sudamérica', channels: 'Distribuidores regionales, duty-free, hoteles boutique' },
-{ region: 'Europa', channels: 'En desarrollo — contactar para oportunidades' }];
+const AWARD_COUNT = 3;
 
 
 function VariantCard({ v, isActive, onClick
 
-}: {v: typeof variants[0];isActive: boolean;onClick: () => void;}) {
+}: {v: VariantItem;isActive: boolean;onClick: () => void;}) {
+  const { t } = useTranslation();
   return (
     <motion.div
       variants={fadeUp}
@@ -166,7 +139,7 @@ function VariantCard({ v, isActive, onClick
         {v.featured &&
         <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-[#C9A84C] text-[#0D1B2E] px-3 py-1 text-xs font-bold tracking-wide rounded-sm">
             <Star size={10} />
-            Premium
+            {t('productPage.premium')}
           </div>
         }
         <div className="absolute bottom-4 left-4">
@@ -196,7 +169,7 @@ function VariantCard({ v, isActive, onClick
         <div className="flex items-center justify-between">
           <span className="text-[#5A7099] text-xs">{v.abv}</span>
           <span className={`flex items-center gap-1 text-xs font-semibold transition-colors duration-200 ${isActive ? 'text-[#1B3A6B]' : 'text-[#5A7099] group-hover:text-[#1B3A6B]'}`}>
-            Ver detalle <ChevronRight size={12} />
+            {t('productPage.view_detail')} <ChevronRight size={12} />
           </span>
         </div>
         <div className={`mt-4 h-0.5 bg-[#1B3A6B] transition-all duration-400 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
@@ -210,6 +183,19 @@ export default function ProductoElixirPage() {
   const [activeVariant, setActiveVariant] = useState<string | null>(null);
   const detailRef = useRef<HTMLDivElement>(null);
 
+  const variants = useMemo(() => {
+    const data = t('brand_pages.elixir.variants', { returnObjects: true }) as VariantData[];
+    return data.map((d, i) => ({ ...d, ...(VARIANT_PRESENTATION[i] ?? VARIANT_PRESENTATION[0]) }));
+  }, [t]);
+
+  const pills = t('brand_pages.elixir.pills', { returnObjects: true }) as string[];
+
+  const stats = t('brand_pages.elixir.stats', { returnObjects: true }) as { value: string; label: string }[];
+
+  const distributors = t('brand_pages.elixir.distributors', { returnObjects: true }) as { region: string; channels: string }[];
+
+  const processSteps = t('brand_pages.elixir.process_steps', { returnObjects: true }) as { title: string; desc: string }[];
+
   const handleVariantClick = (id: string) => {
     setActiveVariant((prev) => prev === id ? null : id);
     setTimeout(() => {
@@ -222,28 +208,28 @@ export default function ProductoElixirPage() {
   return (
     <>
       <Helmet>
-        <title>Elixír del Alma Mezcal — Productos | Grupo Palenkke</title>
+        <title>{t('brand_pages.elixir.meta_title')}</title>
         <meta name="description" content={t('productos.meta_desc')} />
-        <meta name="keywords" content="Elixír del Alma Mezcal, mezcal artesanal mexicano, mezcal premium Michoacán, mezcal joven añejo rosé, Grupo Palenkke productos" />
+        <meta name="keywords" content={t('brand_pages.elixir.meta_keywords')} />
         <link rel="canonical" href="https://www.palenkke.org/productos/elixir" />
-        <meta property="og:title" content="Elixír del Alma Mezcal — Productos | Grupo Palenkke" />
+        <meta property="og:title" content={t('brand_pages.elixir.meta_title')} />
         <meta property="og:description" content={t('productos.meta_desc')} />
         <meta property="og:image" content="https://www.palenkke.org/airo-assets/images/pages/productos/hero" />
         <meta property="og:url" content="https://www.palenkke.org/productos/elixir" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Grupo Palenkke" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Elixír del Alma Mezcal — Productos | Grupo Palenkke" />
+        <meta name="twitter:title" content={t('brand_pages.elixir.meta_title')} />
         <meta name="twitter:description" content={t('productos.meta_desc')} />
         <meta name="twitter:image" content="https://www.palenkke.org/airo-assets/images/pages/productos/hero" />
         <script type="application/ld+json">{JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Product',
-            name: 'Mezcal Elixír del Alma',
+            name: t('brand_pages.elixir.hero_heading').replace(/<br\/?>/gi, ' ').replace(/\s+/g, ' ').trim(),
             description: t('productos.meta_desc'),
             brand: {
               '@type': 'Brand',
-              name: 'Elixír del Alma'
+              name: t('brand_pages.elixir.short_name')
             },
             manufacturer: {
               '@type': 'Organization',
@@ -309,21 +295,19 @@ export default function ProductoElixirPage() {
             </motion.p>
 
             <motion.div variants={stagger} className="flex flex-wrap gap-4">
-              {[
-              { Icon: Leaf, label: 'Agave Seleccionado' },
-              { Icon: Flame, label: 'Proceso Artesanal' },
-              { Icon: Globe, label: 'Distribución Internacional' },
-              { Icon: Award, label: 'Reconocimiento Premium' }].
-              map(({ Icon, label }) =>
-              <motion.div
-                key={label}
-                variants={fadeUp}
-                className="flex items-center gap-2 px-4 py-2 border border-white/15 text-white/60 text-xs rounded-sm hover:border-white/30 hover:text-white/80 transition-all duration-200">
-                
-                  <Icon size={12} className="text-[#C9A84C]" />
-                  {label}
-                </motion.div>
-              )}
+              {pills.map((label, i) => {
+                const Icon = pillIcons[i] ?? Leaf;
+                return (
+                <motion.div
+                  key={label}
+                  variants={fadeUp}
+                  className="flex items-center gap-2 px-4 py-2 border border-white/15 text-white/60 text-xs rounded-sm hover:border-white/30 hover:text-white/80 transition-all duration-200">
+                  
+                    <Icon size={12} className="text-[#C9A84C]" />
+                    {label}
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </motion.div>
         </div>
@@ -336,7 +320,7 @@ export default function ProductoElixirPage() {
             <InView>
               <AccentLine />
               <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">
-                La Marca
+                {t('productPage.the_brand')}
               </motion.span>
               <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-[#0D1B2E] leading-tight mb-6">
                 {t('productos.about_heading')}
@@ -348,11 +332,7 @@ export default function ProductoElixirPage() {
                 {t('productos.about_p2')}
               </motion.p>
               <motion.div variants={stagger} className="grid grid-cols-3 gap-4">
-                {[
-                { value: '100%', label: 'Artesanal' },
-                { value: 'Michoacán', label: 'Origen' },
-                { value: '3', label: 'Variantes' }].
-                map(({ value, label }) =>
+                {stats.map(({ value, label }) =>
                 <motion.div key={label} variants={fadeUp} className="text-center p-4 bg-[#EEF2F8] rounded-sm">
                     <span className="block font-heading text-2xl font-bold text-[#1B3A6B] mb-1">{value}</span>
                     <span className="block text-[#5A7099] text-xs">{label}</span>
@@ -371,7 +351,7 @@ export default function ProductoElixirPage() {
               <div className="overflow-hidden rounded-sm shadow-[0_24px_80px_rgba(27,58,107,0.12)] group">
                 <motion.img
                   src="/assets/agave-fields.jpg"
-                  alt="Campos de agave en Michoacán"
+                  alt={t('brand_pages.elixir.img_alt')}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.6, ease: 'easeOut' as const }}
                   className="w-full h-[420px] object-cover object-[center_70%]" />
@@ -385,8 +365,8 @@ export default function ProductoElixirPage() {
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="absolute -bottom-5 -right-5 bg-[#C9A84C] text-[#0D1B2E] p-5 rounded-sm shadow-xl">
                 
-                <span className="block font-heading text-2xl font-bold">Michoacán</span>
-                <span className="block text-[#0D1B2E]/70 text-xs mt-0.5">México · Origen</span>
+                <span className="block font-heading text-2xl font-bold">{t('brand_pages.elixir.origin_badge')}</span>
+                <span className="block text-[#0D1B2E]/70 text-xs mt-0.5">{t('brand_pages.elixir.origin_sub')}</span>
               </motion.div>
               <div className="absolute -top-3 -left-3 w-16 h-16 border-t-2 border-l-2 border-[#1B3A6B]/20 rounded-tl-sm pointer-events-none" />
             </motion.div>
@@ -399,13 +379,13 @@ export default function ProductoElixirPage() {
           <InView className="mb-14">
             <AccentLine />
             <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">
-              Colección
+              {t('productPage.collection')}
             </motion.span>
-            <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-black leading-tight">Variantes
+            <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-black leading-tight">{t('productPage.variants')}
 
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
-             Seleccione la variante que desea conocer más detalles 
+              {t('brand_pages.elixir.variants_sub')}
             </motion.p>
             </InView>
 
@@ -449,7 +429,7 @@ export default function ProductoElixirPage() {
                   </div>
 
                   <div className="bg-[#EEF2F8] rounded-sm p-6 border-l-4 border-[#1B3A6B]">
-                    <p className="text-[#1B3A6B] text-xs font-semibold tracking-[0.2em] uppercase mb-2">Notas de Cata</p>
+                    <p className="text-[#1B3A6B] text-xs font-semibold tracking-[0.2em] uppercase mb-2">{t('productPage.tasting_notes')}</p>
                     <p className="text-[#0D1B2E] text-sm leading-relaxed italic">"{active.tasting}"</p>
                   </div>
                 </div>
@@ -461,7 +441,7 @@ export default function ProductoElixirPage() {
                     </span>
                     {active.featured &&
                   <span className="flex items-center gap-1 text-xs text-[#C9A84C] font-semibold">
-                        <Star size={11} /> Premium
+                        <Star size={11} /> {t('productPage.premium')}
                       </span>
                   }
                   </div>
@@ -476,14 +456,14 @@ export default function ProductoElixirPage() {
                   <p className="text-[#5A7099] text-base leading-relaxed mb-8">{active.description}</p>
 
                   <div className="grid grid-cols-2 gap-4 mb-8">
-                    {specs.map(({ Icon, label, key }) =>
+                    {specs.map(({ Icon, labelKey, key }) =>
                   <div key={key} className="flex items-start gap-3 p-4 bg-[#F7F9FC] rounded-sm border border-[#D4DCE8]">
                         <div className="w-8 h-8 bg-[#EEF2F8] rounded-sm flex items-center justify-center shrink-0">
                           <Icon size={13} className="text-[#1B3A6B]" />
                         </div>
                         <div>
-                          <p className="text-[#5A7099] text-xs tracking-wide mb-0.5">{label}</p>
-                          <p className="text-[#0D1B2E] text-sm font-medium">{active[key as keyof typeof active] as string}</p>
+                          <p className="text-[#5A7099] text-xs tracking-wide mb-0.5">{t(`productPage.specs.${labelKey}`)}</p>
+                          <p className="text-[#0D1B2E] text-sm font-medium">{active[key as keyof VariantItem] as string}</p>
                         </div>
                       </div>
                   )}
@@ -492,7 +472,7 @@ export default function ProductoElixirPage() {
                   <div className="mb-8">
                     <p className="text-[#5A7099] text-xs tracking-[0.2em] uppercase mb-3 flex items-center gap-2">
                       <Package size={12} className="text-[#1B3A6B]" />
-                      Presentaciones Disponibles
+                      {t('productPage.available_formats')}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {active.sizes.map((s) =>
@@ -513,14 +493,14 @@ export default function ProductoElixirPage() {
                     to="/contacto"
                     className="group inline-flex items-center gap-3 px-7 py-3.5 bg-[#1B3A6B] text-white font-semibold text-sm tracking-wide uppercase hover:bg-[#142d54] transition-all duration-300 rounded-sm shadow-[0_4px_16px_rgba(27,58,107,0.25)] hover:-translate-y-0.5">
                     
-                      Solicitar Información
+                      {t('productPage.request_info')}
                       <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <button
                     onClick={() => setActiveVariant(null)}
                     className="inline-flex items-center gap-2 px-7 py-3.5 border border-[#D4DCE8] text-[#5A7099] font-semibold text-sm tracking-wide uppercase hover:border-[#1B3A6B] hover:text-[#1B3A6B] transition-all duration-300 rounded-sm">
                     
-                      Cerrar
+                      {t('productPage.close')}
                     </button>
                   </div>
                 </div>
@@ -574,27 +554,22 @@ export default function ProductoElixirPage() {
             <InView>
               <motion.div variants={fadeUp} className="flex items-center gap-3 mb-5">
                 <div className="h-px w-8 bg-[#C9A84C]" />
-                <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">Proceso 100% Artesanal</span>
+                <span className="text-[#C9A84C] text-xs font-semibold tracking-[0.3em] uppercase">{t('brand_pages.elixir.process_eyebrow')}</span>
               </motion.div>
               <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,48px)] font-bold text-white leading-tight mb-8">
-                Del Agave a la Botella
+                {t('brand_pages.elixir.process_heading')}
               </motion.h2>
               <motion.div variants={fadeUp} className="font-heading text-clamp(14px,2.0vw,28px)] font-light text-white leading-tight mb-8">
-                    <p>Elaborar un buen mezcal es un arte que requiere tiempo, paciencia y experiencia. Nuestros Maestros Mezcaleros siguen un proceso cuidado y tradicional:</p>
+                    <p>{t('brand_pages.elixir.process_intro')}</p>
               </motion.div>
               <motion.div variants={stagger} className="space-y-5">
-                {[
-                { num: '01', title: 'Cocción', desc: 'Las piñas del agave se cuecen en hornos de piedra.' },
-                { num: '02', title: 'Molienda', desc: ' Se trituran artesanalmente para extraer los jugos.' },
-                { num: '03', title: 'Fermentación ', desc: 'Se deja que la naturaleza transforme el mosto.' },
-                { num: '04', title: 'Destilación', desc: 'El mezcal toma forma en alambiques de cobre.' }].
-                map(({ num, title, desc }) =>
+                {processSteps.map(({ title, desc }, i) =>
                 <motion.div
-                  key={num}
+                  key={i}
                   variants={fadeUp}
                   className="flex gap-5 group">
                   
-                    <span className="text-[#C9A84C]/40 text-xs font-mono tracking-widest mt-1 shrink-0 group-hover:text-[#C9A84C]/70 transition-colors">{num}</span>
+                    <span className="text-[#C9A84C]/40 text-xs font-mono tracking-widest mt-1 shrink-0 group-hover:text-[#C9A84C]/70 transition-colors">{String(i + 1).padStart(2, '0')}</span>
                     <div>
                       <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-[#C9A84C] transition-colors duration-300">{title}</h4>
                       <p className="text-white/40 text-sm leading-relaxed">{desc}</p>
@@ -602,7 +577,7 @@ export default function ProductoElixirPage() {
                   </motion.div>
                 )}
               <motion.div variants={fadeUp} className="font-heading text-clamp(14px,2.0vw,28px)] font-light text-white leading-tight mb-8">
-                    <p>Cada maestro imprime su sello único en cada lote, logrando un equilibrio perfecto entre sabor, aroma y carácter.</p>
+                    <p>{t('brand_pages.elixir.process_outro')}</p>
               </motion.div>
               </motion.div>
             </InView>
@@ -618,16 +593,16 @@ export default function ProductoElixirPage() {
               <div className="h-0.5 w-12 bg-[#C9A84C]" />
             </motion.div>
             <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">
-              Reconocimientos
+              {t('brand_pages.elixir.awards_eyebrow')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,44px)] font-bold text-[#0D1B2E] leading-tight">
-              Premios y Distinciones
+              {t('brand_pages.elixir.awards_heading')}
             </motion.h2>
           </InView>
 
           <InView>
             <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {awards.map((_award, idx) =>
+              {Array.from({ length: AWARD_COUNT }).map((_, idx) =>
               <motion.div
                 key={idx}
                 variants={fadeUp}
@@ -637,7 +612,7 @@ export default function ProductoElixirPage() {
                   <div className="w-10 h-10 bg-[#C9A84C]/10 rounded-sm flex items-center justify-center mx-auto mb-4 group-hover:bg-[#C9A84C]/20 transition-colors">
                     <Award size={18} className="text-[#C9A84C]" />
                   </div>
-                  <h4 className="text-[#5A7099] font-medium text-sm italic tracking-wide">Actualizando</h4>
+                  <h4 className="text-[#5A7099] font-medium text-sm italic tracking-wide">{t('brand_pages.elixir.awards_pending')}</h4>
                 </motion.div>
               )}
             </motion.div>
@@ -651,13 +626,13 @@ export default function ProductoElixirPage() {
           <InView className="mb-14">
             <AccentLine />
             <motion.span variants={fadeUp} className="block text-xs font-semibold tracking-[0.25em] uppercase mb-3 text-[#2E5FA3]">
-              Distribución
+              {t('brand_pages.elixir.distribution_eyebrow')}
             </motion.span>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,44px)] font-bold text-[#0D1B2E] leading-tight">
-              Presencia Internacional
+              {t('brand_pages.elixir.distribution_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-lg mt-3 max-w-xl">
-              Elixír del Alma Mezcal está disponible en mercados clave a través de canales especializados
+              {t('brand_pages.elixir.distribution_sub')}
             </motion.p>
           </InView>
 
@@ -703,10 +678,10 @@ export default function ProductoElixirPage() {
               <div className="h-0.5 w-12 bg-[#C9A84C]" />
             </motion.div>
             <motion.h2 variants={fadeUp} className="font-heading text-[clamp(28px,3.5vw,52px)] font-bold text-white leading-tight mb-5 max-w-2xl mx-auto">
-              ¿Interesado en distribuir Mezcal Elixír del Alma?
+              {t('brand_pages.elixir.cta_heading')}
             </motion.h2>
             <motion.p variants={fadeUp} className="text-white/55 text-lg mb-10 max-w-lg mx-auto">
-              Buscamos distribuidores y socios estratégicos en mercados internacionales. Contáctanos para conocer las oportunidades disponibles.
+              {t('brand_pages.elixir.cta_sub')}
             </motion.p>
             <motion.div variants={stagger} className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div variants={fadeUp}>
@@ -714,7 +689,7 @@ export default function ProductoElixirPage() {
                   to="/contacto"
                   className="group inline-flex items-center gap-3 px-10 py-4 bg-white text-[#1B3A6B] font-semibold text-sm tracking-wider uppercase hover:bg-[#EEF2F8] transition-all duration-300 rounded-sm shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:-translate-y-0.5">
                   
-                  Ser Distribuidor
+                  {t('brand_pages.elixir.cta_button')}
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
@@ -723,7 +698,7 @@ export default function ProductoElixirPage() {
                   to="/casos"
                   className="inline-flex items-center gap-3 px-10 py-4 border border-white/30 text-white font-semibold text-sm tracking-wider uppercase hover:border-white/60 hover:bg-white/10 transition-all duration-300 rounded-sm">
                   
-                  Ver Casos de Éxito
+                  {t('brand_pages.elixir.cta_secondary')}
                 </Link>
               </motion.div>
             </motion.div>

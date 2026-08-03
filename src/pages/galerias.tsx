@@ -68,86 +68,23 @@ interface CompanyEntry {
   tag: string;
   desc: string;
   website: string | null;
-  logoSlot: string;
   logoImg: string;
   color: string;
 }
 
-const COMPANIES: CompanyEntry[] = [
-  {
-    id: 'elixir-del-alma',
-    name: 'ELIXIR DEL ALMA',
-    tag: 'México',
-    desc: 'Tradición, esencia y autenticidad mexicana en una propuesta de experiencia premium.',
-    website: 'https://mezcalelixirdelalma.com',
-    logoSlot: '/airo-assets/images/logos/elixir',
-    logoImg: '/assets/images/logos/elixir-del-alma.png',
-    color: 'bg-[#241b6b]',
-  },
-  {
-    id: 'kanan',
-    name: 'KANAN',
-    tag: 'México',
-    desc: 'Preservación del valor cultural del mezcal a través de procesos tradicionales.',
-    website: null,
-    logoSlot: '/airo-assets/images/logos/kanan',
-    logoImg: '/assets/images/logos/kanan.png',
-    color: 'bg-[#2D6A4F]',
-  },
-  {
-    id: 'palenkke-mezcal',
-    name: 'PALENKKE MEZCAL',
-    tag: 'México',
-    desc: 'Tradición artesanal, identidad mexicana y expansión comercial nacional e internacional.',
-    website: null,
-    logoSlot: '/airo-assets/images/logos/palenkke-mezcal',
-    logoImg: '/assets/images/logos/palenkke-mezcal.png',
-    color: 'bg-[#7B3F00]',
-  },
-  {
-    id: 'san-rojo',
-    name: 'SAN ROJO',
-    tag: 'México',
-    desc: 'Diseño, identidad visual y experiencias de marca contemporáneas.',
-    website: 'https://sanrojo.com',
-    logoSlot: '/airo-assets/images/logos/san-rojo',
-    logoImg: '/assets/images/logos/san-rojo.png',
-    color: 'bg-[#8B1A1A]',
-  },
-  {
-    id: 'koldvolt',
-    name: 'KOLDVOLT',
-    tag: 'Asia',
-    desc: 'Innovación, desarrollo comercial y posicionamiento estratégico en nuevos mercados.',
-    website: 'https://koldvolt.com',
-    logoSlot: '/airo-assets/images/logos/koldvolt',
-    logoImg: '/assets/images/logos/koldvolt.png',
-    color: 'bg-[#1B3A6B]',
-  },
-  {
-    id: 'ritevolt',
-    name: 'RITEVOLT',
-    tag: 'Asia',
-    desc: 'Evolución comercial, expansión estratégica y visión nacional e internacional.',
-    website: 'https://ritevolt.net',
-    logoSlot: '/airo-assets/images/logos/ritevolt',
-    logoImg: '/assets/images/logos/ritevolt.png',
-    color: 'bg-[#241b6b]',
-  },
-  {
-    id: 'heartfulcraft',
-    name: 'HEARTFULCRAFT',
-    tag: 'India',
-    desc: 'Creatividad, autenticidad y desarrollo de productos con identidad y valor humano.',
-    website: 'https://heartfulcraft.com',
-    logoSlot: '/airo-assets/images/logos/heartfulcraft',
-    logoImg: '/assets/images/logos/heartfulcraft.png',
-    color: 'bg-[#2D6A4F]',
-  },
-];
+const PRESENTATION: Record<string, { logoImg: string; color: string }> = {
+  'elixir-del-alma': { logoImg: '/assets/images/logos/elixir-del-alma.png', color: 'bg-[#241b6b]' },
+  kanan: { logoImg: '/assets/images/logos/kanan.png', color: 'bg-[#2D6A4F]' },
+  'palenkke-mezcal': { logoImg: '/assets/images/logos/palenkke-mezcal.png', color: 'bg-[#7B3F00]' },
+  'san-rojo': { logoImg: '/assets/images/logos/san-rojo.png', color: 'bg-[#8B1A1A]' },
+  koldvolt: { logoImg: '/assets/images/logos/koldvolt.png', color: 'bg-[#1B3A6B]' },
+  ritevolt: { logoImg: '/assets/images/logos/ritevolt.png', color: 'bg-[#241b6b]' },
+  heartfulcraft: { logoImg: '/assets/images/logos/heartfulcraft.png', color: 'bg-[#2D6A4F]' },
+};
 
 const TAG_COLORS: Record<string, string> = {
   'México': 'bg-[#EEF2F8] text-[#1B3A6B]',
+  'Mexico': 'bg-[#EEF2F8] text-[#1B3A6B]',
   'Asia':   'bg-[#FFF8EE] text-[#92400E]',
   'India':  'bg-[#FFF3E0] text-[#B45309]',
 };
@@ -200,6 +137,7 @@ function MediaButton({
 
 // ─── Company Media Card ───────────────────────────────────────────────────────
 function CompanyMediaCard({ company, onOpenMedia }: { company: CompanyEntry; onOpenMedia: (type: MediaType) => void }) {
+  const { t } = useTranslation();
   const tagColor = TAG_COLORS[company.tag] ?? 'bg-[#EEF2F8] text-[#1B3A6B]';
 
   return (
@@ -241,15 +179,15 @@ function CompanyMediaCard({ company, onOpenMedia }: { company: CompanyEntry; onO
               <ExternalLink size={9} />
             </a>
           ) : (
-            <span className="text-[#B0BCCC] text-xs">Website en construcción</span>
+            <span className="text-[#B0BCCC] text-xs">{t('galerias.website_soon')}</span>
           )}
         </div>
 
         {/* ── Buttons ── */}
         <div className="flex flex-row md:flex-col gap-2 shrink-0">
-          <MediaButton onClick={() => onOpenMedia('images')}    icon={ImageIcon} label="Imágenes"   />
-          <MediaButton onClick={() => onOpenMedia('videos')}    icon={Film}      label="Videos"    />
-          <MediaButton onClick={() => onOpenMedia('documents')} icon={FileText}  label="Documentos" />
+          <MediaButton onClick={() => onOpenMedia('images')}    icon={ImageIcon} label={t('galerias.images')}   />
+          <MediaButton onClick={() => onOpenMedia('videos')}    icon={Film}      label={t('galerias.videos')}    />
+          <MediaButton onClick={() => onOpenMedia('documents')} icon={FileText}  label={t('galerias.documents')} />
         </div>
 
       </div>
@@ -271,6 +209,7 @@ function GalleryModal({
   onClose: () => void;
 }) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   const files = useMemo(() => {
     return GALLERY_ITEMS
@@ -288,7 +227,7 @@ function GalleryModal({
     };
   }, [onClose]);
 
-  const label = mediaType === 'images' ? 'Imágenes' : mediaType === 'videos' ? 'Videos' : 'Documentos';
+  const label = mediaType === 'images' ? t('galerias.images') : mediaType === 'videos' ? t('galerias.videos') : t('galerias.documents');
   const Icon = mediaType === 'images' ? ImageIcon : mediaType === 'videos' ? Film : FileText;
 
   return (
@@ -329,9 +268,9 @@ function GalleryModal({
             {files.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-16 text-center">
                 <Icon size={48} className="text-[#D4DCE8] mb-4" />
-                <p className="text-[#5A7099] text-sm">No hay archivos disponibles en esta categoría.</p>
+                <p className="text-[#5A7099] text-sm">{t('galerias.modal_empty')}</p>
                 <p className="text-[#B0BCCC] text-xs mt-1">
-                  Agrega archivos a <code className="text-[#1B3A6B] bg-[#F4F7FB] px-1 py-0.5 rounded text-[10px]">
+                  {t('galerias.modal_add_hint')} <code className="text-[#1B3A6B] bg-[#F4F7FB] px-1 py-0.5 rounded text-[10px]">
                   assets/gallery/{company.id}/{mediaType}/</code>
                 </p>
               </div>
@@ -362,7 +301,7 @@ function GalleryModal({
                       controls
                       className="w-full aspect-video"
                     >
-                      Tu navegador no soporta la reproducción de video.
+                      {t('galerias.video_unsupported')}
                     </video>
                   </div>
                 ))}
@@ -370,7 +309,7 @@ function GalleryModal({
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {files.map((url, i) => {
-                  const name = url.split('/').pop() ?? `archivo-${i + 1}`;
+                  const name = url.split('/').pop() ?? `file-${i + 1}`;
                   return (
                     <a
                       key={i}
@@ -407,7 +346,7 @@ function GalleryModal({
           </button>
           <img
             src={selectedImage}
-            alt="Imagen ampliada"
+            alt={t('galerias.modal_image_alt')}
             className="max-w-full max-h-full object-contain"
             onClick={(e) => e.stopPropagation()}
           />
@@ -422,14 +361,33 @@ export default function GaleriasPage() {
   const { t } = useTranslation();
   const [modal, setModal] = useState<{ company: CompanyEntry; mediaType: MediaType } | null>(null);
 
+  const companies = useMemo(() => {
+    const items = t('companies.items', { returnObjects: true }) as Array<{
+      name: string;
+      logo: string;
+      tag: string;
+      desc: string;
+      website: string | null;
+    }>;
+    return items.map((c) => ({
+      id: c.logo,
+      name: c.name,
+      tag: c.tag,
+      desc: c.desc,
+      website: c.website,
+      logoImg: PRESENTATION[c.logo]?.logoImg ?? '/assets/images/logos/palenkke.png',
+      color: PRESENTATION[c.logo]?.color ?? 'bg-[#1B3A6B]',
+    }));
+  }, [t]);
+
   return (
     <>
       <Helmet>
-        <title>Recursos de Marca — Grupo Palenkke</title>
-        <meta name="description" content="Directorio de recursos multimedia corporativos de las marcas integradas al ecosistema de Grupo Palenkke." />
+        <title>{t('galerias.meta_title')}</title>
+        <meta name="description" content={t('galerias.meta_desc')} />
         <link rel="canonical" href="https://palenkke.org/galerias" />
-        <meta property="og:title" content="Recursos de Marca — Grupo Palenkke" />
-        <meta property="og:description" content="Directorio de recursos multimedia corporativos de las marcas de Grupo Palenkke." />
+        <meta property="og:title" content={t('galerias.meta_title')} />
+        <meta property="og:description" content={t('galerias.meta_desc')} />
         <meta property="og:url" content="https://palenkke.org/galerias" />
       </Helmet>
 
@@ -439,13 +397,13 @@ export default function GaleriasPage() {
           <InView className="max-w-2xl">
             <motion.div variants={fadeUp} className="h-px w-10 bg-[#C9A84C] mb-6" />
             <motion.span variants={fadeUp} className="block text-[11px] font-semibold tracking-[0.22em] uppercase mb-4 text-[#2E5FA3]">
-              {t('nav.galleries', 'Recursos de Marca')}
+              {t('galerias.hero_eyebrow')}
             </motion.span>
             <motion.h1 variants={fadeUp} className="font-heading text-[clamp(32px,4.5vw,56px)] font-bold text-[#0D1B2E] leading-tight mb-5">
-              Directorio de Recursos
+              {t('galerias.hero_heading')}
             </motion.h1>
             <motion.p variants={fadeUp} className="text-[#5A7099] text-base leading-relaxed">
-              Acceso rápido a imágenes, videos y documentos corporativos de cada marca del ecosistema Palenkke.
+              {t('galerias.hero_sub')}
             </motion.p>
           </InView>
         </div>
@@ -455,7 +413,7 @@ export default function GaleriasPage() {
       <section className="py-16 bg-[#F7F9FC]">
         <div className="container mx-auto px-6 lg:px-10">
           <InView className="flex flex-col gap-4">
-            {COMPANIES.map(company => (
+            {companies.map(company => (
               <CompanyMediaCard key={company.id} company={company} onOpenMedia={(type) => setModal({ company, mediaType: type })} />
             ))}
           </InView>
@@ -467,12 +425,12 @@ export default function GaleriasPage() {
         <div className="container mx-auto px-6 lg:px-10">
           <InView className="flex flex-col md:flex-row items-center justify-between gap-6">
             <motion.div variants={fadeUp}>
-              <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#C9A84C] mb-2">Colaboración</p>
+              <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#C9A84C] mb-2">{t('galerias.cta_eyebrow')}</p>
               <h2 className="font-heading font-bold text-[#0D1B2E] text-xl md:text-2xl">
-                ¿Tienes material para agregar?
+                {t('galerias.cta_heading')}
               </h2>
               <p className="text-[#5A7099] text-sm mt-1.5 max-w-md">
-                Contacta al equipo de Grupo Palenkke para subir recursos corporativos de tu compañía.
+                {t('galerias.cta_sub')}
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="shrink-0">
@@ -480,7 +438,7 @@ export default function GaleriasPage() {
                 href="/contacto"
                 className="inline-flex items-center gap-2 px-7 py-3 bg-[#1B3A6B] text-white text-sm font-semibold tracking-wide rounded-sm hover:bg-[#142d54] transition-colors duration-300 shadow-[0_4px_20px_rgba(27,58,107,0.20)]"
               >
-                Contactar Equipo
+                {t('galerias.cta_button')}
               </a>
             </motion.div>
           </InView>
